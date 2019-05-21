@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Git命令 | Jovins Blog</title>
+    <meta name="description" content="Work Hard, Play Hard">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.0d19fd84.css" as="style"><link rel="preload" href="/assets/js/app.aee163d7.js" as="script"><link rel="preload" href="/assets/js/27.42848bbe.js" as="script"><link rel="prefetch" href="/assets/js/10.1e34e5ff.js"><link rel="prefetch" href="/assets/js/11.491dfd54.js"><link rel="prefetch" href="/assets/js/12.a55c1fe7.js"><link rel="prefetch" href="/assets/js/13.5af2a714.js"><link rel="prefetch" href="/assets/js/14.14535d2d.js"><link rel="prefetch" href="/assets/js/15.3a5c4d96.js"><link rel="prefetch" href="/assets/js/16.f0724826.js"><link rel="prefetch" href="/assets/js/17.a41afda0.js"><link rel="prefetch" href="/assets/js/18.8dd90a66.js"><link rel="prefetch" href="/assets/js/19.4fb6d9b8.js"><link rel="prefetch" href="/assets/js/2.b7fedc2a.js"><link rel="prefetch" href="/assets/js/20.c7ee29bf.js"><link rel="prefetch" href="/assets/js/21.ec5919dd.js"><link rel="prefetch" href="/assets/js/22.7351d6cc.js"><link rel="prefetch" href="/assets/js/23.8adf705b.js"><link rel="prefetch" href="/assets/js/24.5dda7d7c.js"><link rel="prefetch" href="/assets/js/25.d6c4beda.js"><link rel="prefetch" href="/assets/js/26.3fae1b4d.js"><link rel="prefetch" href="/assets/js/28.80aeb13f.js"><link rel="prefetch" href="/assets/js/29.d3f479f5.js"><link rel="prefetch" href="/assets/js/3.fe3c8939.js"><link rel="prefetch" href="/assets/js/30.b28e0cfa.js"><link rel="prefetch" href="/assets/js/31.39756cd5.js"><link rel="prefetch" href="/assets/js/32.475d42d9.js"><link rel="prefetch" href="/assets/js/33.db2c4cfb.js"><link rel="prefetch" href="/assets/js/34.8e9cd72f.js"><link rel="prefetch" href="/assets/js/35.48663882.js"><link rel="prefetch" href="/assets/js/36.f92ac67a.js"><link rel="prefetch" href="/assets/js/37.67c65ed9.js"><link rel="prefetch" href="/assets/js/38.841de0ec.js"><link rel="prefetch" href="/assets/js/39.9ee667aa.js"><link rel="prefetch" href="/assets/js/4.28e0dd42.js"><link rel="prefetch" href="/assets/js/40.0f4d2bb8.js"><link rel="prefetch" href="/assets/js/41.a292c8af.js"><link rel="prefetch" href="/assets/js/42.ca402a95.js"><link rel="prefetch" href="/assets/js/43.1a920a89.js"><link rel="prefetch" href="/assets/js/44.1136c43f.js"><link rel="prefetch" href="/assets/js/45.09cdae5d.js"><link rel="prefetch" href="/assets/js/46.bf04cee8.js"><link rel="prefetch" href="/assets/js/47.4be1442f.js"><link rel="prefetch" href="/assets/js/48.c90986e6.js"><link rel="prefetch" href="/assets/js/49.e0df44d7.js"><link rel="prefetch" href="/assets/js/5.106e8893.js"><link rel="prefetch" href="/assets/js/50.e589f43d.js"><link rel="prefetch" href="/assets/js/51.52e2dd5e.js"><link rel="prefetch" href="/assets/js/52.9b9b1b60.js"><link rel="prefetch" href="/assets/js/53.51261bc0.js"><link rel="prefetch" href="/assets/js/54.9a082c0b.js"><link rel="prefetch" href="/assets/js/55.cb478dba.js"><link rel="prefetch" href="/assets/js/56.a9c5ea04.js"><link rel="prefetch" href="/assets/js/57.a1b56ab7.js"><link rel="prefetch" href="/assets/js/58.60e77be8.js"><link rel="prefetch" href="/assets/js/59.c07f2b7e.js"><link rel="prefetch" href="/assets/js/6.015a6f59.js"><link rel="prefetch" href="/assets/js/60.2d300070.js"><link rel="prefetch" href="/assets/js/61.f54bc147.js"><link rel="prefetch" href="/assets/js/62.0ec8ca93.js"><link rel="prefetch" href="/assets/js/63.7c8b03d9.js"><link rel="prefetch" href="/assets/js/64.78d7222e.js"><link rel="prefetch" href="/assets/js/65.866ef779.js"><link rel="prefetch" href="/assets/js/66.a52448b6.js"><link rel="prefetch" href="/assets/js/67.9d0c871c.js"><link rel="prefetch" href="/assets/js/68.27308da1.js"><link rel="prefetch" href="/assets/js/69.88f30473.js"><link rel="prefetch" href="/assets/js/7.e591ee0c.js"><link rel="prefetch" href="/assets/js/70.74560474.js"><link rel="prefetch" href="/assets/js/71.3f81de49.js"><link rel="prefetch" href="/assets/js/72.261a96ba.js"><link rel="prefetch" href="/assets/js/73.7d09ee13.js"><link rel="prefetch" href="/assets/js/74.668f53a7.js"><link rel="prefetch" href="/assets/js/75.5a07cf00.js"><link rel="prefetch" href="/assets/js/76.5cb7756e.js"><link rel="prefetch" href="/assets/js/77.ee0ac284.js"><link rel="prefetch" href="/assets/js/78.a4bf6899.js"><link rel="prefetch" href="/assets/js/79.86d6a675.js"><link rel="prefetch" href="/assets/js/8.c3659f73.js"><link rel="prefetch" href="/assets/js/80.ca1d23ad.js"><link rel="prefetch" href="/assets/js/81.834d4fa2.js"><link rel="prefetch" href="/assets/js/82.c1c44655.js"><link rel="prefetch" href="/assets/js/83.b2f5aaef.js"><link rel="prefetch" href="/assets/js/84.49bf081e.js"><link rel="prefetch" href="/assets/js/85.036dd295.js"><link rel="prefetch" href="/assets/js/86.8ede464d.js"><link rel="prefetch" href="/assets/js/9.6d2e7baf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d19fd84.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jovins Blog</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link router-link-active">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link router-link-active">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>Git</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/source/git/" class="sidebar-link">Git版本控制</a></li><li><a href="/source/git/Git-Flow.html" class="sidebar-link">Git-Flow 的工作流程</a></li><li><a href="/source/git/git-terminal.html" class="active sidebar-link">Git命令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/source/git/git-terminal.html#创建pods库的模板库" class="sidebar-link">创建pods库的模板库</a></li><li class="sidebar-sub-header"><a href="/source/git/git-terminal.html#私有库" class="sidebar-link">私有库</a></li><li class="sidebar-sub-header"><a href="/source/git/git-terminal.html#常用-git-命令清单" class="sidebar-link">常用 Git 命令清单</a></li><li class="sidebar-sub-header"><a href="/source/git/git-terminal.html#新建代码库" class="sidebar-link">新建代码库</a></li><li class="sidebar-sub-header"><a href="/source/git/git-terminal.html#配置" class="sidebar-link">配置</a></li><li class="sidebar-sub-header"><a href="/source/git/git-terminal.html#增加-删除文件" class="sidebar-link">增加/删除文件</a></li><li class="sidebar-sub-header"><a href="/source/git/git-terminal.html#代码提交" class="sidebar-link">代码提交</a></li><li class="sidebar-sub-header"><a href="/source/git/git-terminal.html#分支" class="sidebar-link">分支</a></li><li class="sidebar-sub-header"><a href="/source/git/git-terminal.html#标签" class="sidebar-link">标签</a></li><li class="sidebar-sub-header"><a href="/source/git/git-terminal.html#查看信息" class="sidebar-link">查看信息</a></li><li class="sidebar-sub-header"><a href="/source/git/git-terminal.html#远程同步" class="sidebar-link">远程同步</a></li><li class="sidebar-sub-header"><a href="/source/git/git-terminal.html#撤销" class="sidebar-link">撤销</a></li><li class="sidebar-sub-header"><a href="/source/git/git-terminal.html#回滚" class="sidebar-link">回滚</a></li><li class="sidebar-sub-header"><a href="/source/git/git-terminal.html#合并" class="sidebar-link">合并</a></li></ul></li><li><a href="/source/git/Interview-Git.html" class="sidebar-link">面试中遇到的Git 问题</a></li><li><a href="/source/git/Git-Error.html" class="sidebar-link">Git 遇到的问题</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="git命令"><a href="#git命令" aria-hidden="true" class="header-anchor">#</a> Git命令</h1> <div class="language- extra-class"><pre class="language-text"><code>git init  // 创建代码仓库
+git status // 查看仓库状态
+git add .  // 将代码添加到暂缓区
+git commit -m '注释' // 添加到本地代码仓库
+git remote // 查看本地代码仓库是否关联远程仓库
+git remote --help // 帮助
+git remote add origin + url  // eg: https://github.com/Jovins/VRPhoto.git
+git push origin master // 提交到远程代码仓库
+
+/// 打标签
+git tag  // 查看是否已经打标签
+git tag -a '1.0.0' -m '注释' // 打一个标签1.0.0 
+git push --tags // 提交所有标签
+git log // 查看标签日记 
+git tag -d 1.0.0  //  删除本地标签
+git push origin :1.0.0 // 删除远程标签
+
+// pod 
+pod spec create LoaderButton  // 创建LoaderButton.podspec描述文件
+pod init // 初始化代码仓库
+pod repo // 查看代码仓库url
+pod repo --help 
+pod lib lint // 本地验证描述文件
+pod spec lint // 远程验证
+pod repo push master xxx.podspec  // 提交到本地索引库(实质上提交到本地时会做提交到远程索引库)
+
+/// cocoapods 
+// 首先需要将本机注册到trunk
+pod trunk register &lt;E-mail&gt; '&lt;用户名&gt;' --description='&lt;设备别名&gt;'
+// 通过配置好的Podspec，我们可以将库提交到CocoaPods上。
+pod trunk push &lt;文件名&gt;.podspec
+// 查看是库是否已经在CocoaPods上
+pod search &lt;库名&gt;
+// 如果查找不到，可以尝试
+pod search &lt;库名&gt; --simple
+// 删除指定版本
+pod trunk delete &lt;库名&gt; &lt;版本号&gt;
+</code></pre></div><h2 id="创建pods库的模板库"><a href="#创建pods库的模板库" aria-hidden="true" class="header-anchor">#</a> 创建pods库的模板库</h2> <div class="language- extra-class"><pre class="language-text"><code>pod lib create [name] 
+What platform do you want to use?? [ iOS / macOS ]
+&gt; iOS
+what is your name?
+&gt; jovins
+what is your email?
+&gt; jovinscoder@163.com
+what language do you want to use?[Swift/Objc]
+&gt; Swift
+Would you like to include a demo application with your library? [Yes/No]
+&gt; Yes
+Which testing frameworks will you use?[Specta / Kiwi / None]
+&gt; None
+Would you like to do view based testing? [Yes / No]
+&gt; No
+What is your Class prefix?
+&gt; WM
+</code></pre></div><p>删除Development Pods -&gt; [name] -&gt; [name] -&gt; Classes中的ReplaceMe.m</p> <p>然后把框架代码放到Classes文件中，cd 到example目录，执行pod install</p> <h2 id="私有库"><a href="#私有库" aria-hidden="true" class="header-anchor">#</a> 私有库</h2> <div class="language- extra-class"><pre class="language-text"><code>// 1、创建远程私有库(url)
+pod repo add [master] url
+// 2、将远程私有库clone到本地
+
+// 本地创建一个pod 私有库的模板库
+pod lib create [name]
+// 将核心代码拖入Classes文件夹中
+pod install
+// 编写描述文件
+
+// 上传代码/tag
+git add .
+git commit -m '注释'
+git remote add origin + url 
+git push origin master
+
+git tag -a '1.0.0' -m '注释'
+git push --tags
+
+// 向私有索引库提交spec描述文件
+pod lib lint
+pod spec lint
+pod repo push [master] xxx.podspec
+
+</code></pre></div><h2 id="常用-git-命令清单"><a href="#常用-git-命令清单" aria-hidden="true" class="header-anchor">#</a> 常用 Git 命令清单</h2> <div class="language- extra-class"><pre class="language-text"><code>Workspace：工作区
+Index / Stage：暂存区
+Repository：仓库区（或本地仓库）
+Remote：远程仓库
+</code></pre></div><h2 id="新建代码库"><a href="#新建代码库" aria-hidden="true" class="header-anchor">#</a> 新建代码库</h2> <div class="language- extra-class"><pre class="language-text"><code># 在当前目录新建一个Git代码库
+$ git init
+
+# 新建一个目录，将其初始化为Git代码库
+$ git init [project-name]
+
+# 下载一个项目和它的整个代码历史
+$ git clone [url]
+</code></pre></div><h2 id="配置"><a href="#配置" aria-hidden="true" class="header-anchor">#</a> 配置</h2> <p>Git的设置文件为<code>.gitconfig</code>，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。</p> <div class="language- extra-class"><pre class="language-text"><code># 显示当前的Git配置
+$ git config --list
+
+# 编辑Git配置文件
+$ git config -e [--global]
+
+# 设置提交代码时的用户信息
+$ git config [--global] user.name &quot;[name]&quot;
+$ git config [--global] user.email &quot;[email address]&quot;
+</code></pre></div><h2 id="增加-删除文件"><a href="#增加-删除文件" aria-hidden="true" class="header-anchor">#</a> 增加/删除文件</h2> <div class="language- extra-class"><pre class="language-text"><code># 添加指定文件到暂存区
+$ git add [file1] [file2] ...
+
+# 添加指定目录到暂存区，包括子目录
+$ git add [dir]
+
+# 添加当前目录的所有文件到暂存区
+$ git add .
+
+# 添加每个变化前，都会要求确认
+# 对于同一个文件的多处变化，可以实现分次提交
+$ git add -p
+
+# 删除工作区文件，并且将这次删除放入暂存区
+$ git rm [file1] [file2] ...
+
+# 停止追踪指定文件，但该文件会保留在工作区
+$ git rm --cached [file]
+
+# 改名文件，并且将这个改名放入暂存区
+$ git mv [file-original] [file-renamed]
+</code></pre></div><h2 id="代码提交"><a href="#代码提交" aria-hidden="true" class="header-anchor">#</a> 代码提交</h2> <div class="language- extra-class"><pre class="language-text"><code># 提交暂存区到仓库区
+$ git commit -m [message]
+
+# 提交暂存区的指定文件到仓库区
+$ git commit [file1] [file2] ... -m [message]
+
+# 提交工作区自上次commit之后的变化，直接到仓库区
+$ git commit -a
+
+# 提交时显示所有diff信息
+$ git commit -v
+
+# 使用一次新的commit，替代上一次提交
+# 如果代码没有任何新变化，则用来改写上一次commit的提交信息
+$ git commit --amend -m [message]
+
+# 重做上一次commit，并包括指定文件的新变化
+$ git commit --amend [file1] [file2] ...
+</code></pre></div><h2 id="分支"><a href="#分支" aria-hidden="true" class="header-anchor">#</a> 分支</h2> <div class="language- extra-class"><pre class="language-text"><code># 列出所有本地分支
+$ git branch
+
+# 列出所有远程分支
+$ git branch -r
+
+# 列出所有本地分支和远程分支
+$ git branch -a
+
+# 新建一个分支，但依然停留在当前分支
+$ git branch [branch-name]
+
+# 新建一个分支，并切换到该分支
+$ git checkout -b [branch]
+
+# 新建一个分支，指向指定commit
+$ git branch [branch] [commit]
+
+# 新建一个分支，与指定的远程分支建立追踪关系
+$ git branch --track [branch] [remote-branch]
+
+# 切换到指定分支，并更新工作区
+$ git checkout [branch-name]
+
+# 切换到上一个分支
+$ git checkout -
+
+# 建立追踪关系，在现有分支与指定的远程分支之间
+$ git branch --set-upstream [branch] [remote-branch]
+
+# 合并指定分支到当前分支
+$ git merge [branch]
+
+# 选择一个commit，合并进当前分支
+$ git cherry-pick [commit]
+
+# 删除分支
+$ git branch -d [branch-name]
+
+# 删除远程分支
+$ git push origin --delete [branch-name]
+$ git branch -dr [remote/branch]
+</code></pre></div><h2 id="标签"><a href="#标签" aria-hidden="true" class="header-anchor">#</a> 标签</h2> <div class="language- extra-class"><pre class="language-text"><code># 列出所有tag
+$ git tag
+
+# 新建一个tag在当前commit
+$ git tag [tag]
+
+# 新建一个tag在指定commit
+$ git tag [tag] [commit]
+
+# 删除本地tag
+$ git tag -d [tag]
+
+# 删除远程tag
+$ git push origin :refs/tags/[tagName]
+
+# 查看tag信息
+$ git show [tag]
+
+# 提交指定tag
+$ git push [remote] [tag]
+
+# 提交所有tag
+$ git push [remote] --tags
+
+# 新建一个分支，指向某个tag
+$ git checkout -b [branch] [tag]
+</code></pre></div><h2 id="查看信息"><a href="#查看信息" aria-hidden="true" class="header-anchor">#</a> 查看信息</h2> <div class="language- extra-class"><pre class="language-text"><code># 显示有变更的文件
+$ git status
+
+# 显示当前分支的版本历史
+$ git log
+
+# 显示commit历史，以及每次commit发生变更的文件
+$ git log --stat
+
+# 搜索提交历史，根据关键词
+$ git log -S [keyword]
+
+# 显示某个commit之后的所有变动，每个commit占据一行
+$ git log [tag] HEAD --pretty=format:%s
+
+# 显示某个commit之后的所有变动，其&quot;提交说明&quot;必须符合搜索条件
+$ git log [tag] HEAD --grep feature
+
+# 显示某个文件的版本历史，包括文件改名
+$ git log --follow [file]
+$ git whatchanged [file]
+
+# 显示指定文件相关的每一次diff
+$ git log -p [file]
+
+# 显示过去5次提交
+$ git log -5 --pretty --oneline
+
+# 显示所有提交过的用户，按提交次数排序
+$ git shortlog -sn
+
+# 显示指定文件是什么人在什么时间修改过
+$ git blame [file]
+
+# 显示暂存区和工作区的代码差异
+$ git diff
+
+# 显示暂存区和上一个commit的差异
+$ git diff --cached [file]
+
+# 显示工作区与当前分支最新commit之间的差异
+$ git diff HEAD
+
+# 显示两次提交之间的差异
+$ git diff [first-branch]...[second-branch]
+
+# 显示今天你写了多少行代码
+$ git diff --shortstat &quot;@{0 day ago}&quot;
+
+# 显示某次提交的元数据和内容变化
+$ git show [commit]
+
+# 显示某次提交发生变化的文件
+$ git show --name-only [commit]
+
+# 显示某次提交时，某个文件的内容
+$ git show [commit]:[filename]
+
+# 显示当前分支的最近几次提交
+$ git reflog
+
+# 从本地master拉取代码更新当前分支：branch 一般为master
+$ git rebase [branch]
+</code></pre></div><h2 id="远程同步"><a href="#远程同步" aria-hidden="true" class="header-anchor">#</a> 远程同步</h2> <div class="language- extra-class"><pre class="language-text"><code># 下载远程仓库的所有变动
+$ git fetch [remote]
+
+# 显示所有远程仓库
+$ git remote -v
+
+# 显示某个远程仓库的信息
+$ git remote show [remote]
+
+# 增加一个新的远程仓库，并命名
+$ git remote add [shortname] [url]
+
+# 取回远程仓库的变化，并与本地分支合并
+$ git pull [remote] [branch]
+
+# 上传本地指定分支到远程仓库
+$ git push [remote] [branch]
+
+# 强行推送当前分支到远程仓库，即使有冲突
+$ git push [remote] --force
+
+# 推送所有分支到远程仓库
+$ git push [remote] --all
+</code></pre></div><h2 id="撤销"><a href="#撤销" aria-hidden="true" class="header-anchor">#</a> 撤销</h2> <div class="language- extra-class"><pre class="language-text"><code># 恢复暂存区的指定文件到工作区
+$ git checkout [file]
+
+# 恢复某个commit的指定文件到暂存区和工作区
+$ git checkout [commit] [file]
+
+# 恢复暂存区的所有文件到工作区
+$ git checkout .
+
+# 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变
+$ git reset [file]
+
+# 重置暂存区与工作区，与上一次commit保持一致
+$ git reset --hard
+
+# 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变
+$ git reset [commit]
+
+# 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致
+$ git reset --hard [commit]
+
+# 重置当前HEAD为指定commit，但保持暂存区和工作区不变
+$ git reset --keep [commit]
+
+# 新建一个commit，用来撤销指定commit
+# 后者的所有变化都将被前者抵消，并且应用到当前分支
+$ git revert [commit]
+
+# 暂时将未提交的变化移除，稍后再移入
+$ git stash
+$ git stash pop
+</code></pre></div><h2 id="回滚"><a href="#回滚" aria-hidden="true" class="header-anchor">#</a> 回滚</h2> <div class="language- extra-class"><pre class="language-text"><code>$ git reset --hard HEAD^         回退到上个版本
+$ git reset --hard HEAD~3        回退到前3次提交之前，以此类推，回退到n次提交之前
+$ git reset --hard commit_id     退到/进到 指定commit的sha码
+</code></pre></div><h2 id="合并"><a href="#合并" aria-hidden="true" class="header-anchor">#</a> 合并</h2> <div class="language- extra-class"><pre class="language-text"><code>对于复杂的系统，我们可能要开好几个分支来开发，那么怎样使用git合并分支呢？
+
+合并步骤：
+1、进入要合并的分支（如开发分支合并到master，则进入master目录）
+git checkout master
+git pull
+
+2、查看所有分支是否都pull下来了
+git branch -a
+
+3、使用merge合并开发分支
+git merge 分支名
+
+4、查看合并之后的状态
+git status
+
+5、有冲突的话，通过IDE解决冲突；
+
+6、解决冲突之后，将冲突文件提交暂存区
+git add 冲突文件
+
+7、提交merge之后的结果
+git commit
+
+如果不是使用git commit -m &quot;备注&quot; ，那么git会自动将合并的结果作为备注，提交本地仓库；
+
+8、本地仓库代码提交远程仓库
+git push
+
+git将分支合并到分支，将master合并到分支的操作步骤是一样的。
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/source/git/Git-Flow.html" class="prev">
+          Git-Flow 的工作流程
+        </a></span> <span class="next"><a href="/source/git/Interview-Git.html">
+          面试中遇到的Git 问题
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.aee163d7.js" defer></script><script src="/assets/js/27.42848bbe.js" defer></script>
+  </body>
+</html>

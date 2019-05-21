@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>链表 | Jovins Blog</title>
+    <meta name="description" content="Work Hard, Play Hard">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.0d19fd84.css" as="style"><link rel="preload" href="/assets/js/app.aee163d7.js" as="script"><link rel="preload" href="/assets/js/14.14535d2d.js" as="script"><link rel="prefetch" href="/assets/js/10.1e34e5ff.js"><link rel="prefetch" href="/assets/js/11.491dfd54.js"><link rel="prefetch" href="/assets/js/12.a55c1fe7.js"><link rel="prefetch" href="/assets/js/13.5af2a714.js"><link rel="prefetch" href="/assets/js/15.3a5c4d96.js"><link rel="prefetch" href="/assets/js/16.f0724826.js"><link rel="prefetch" href="/assets/js/17.a41afda0.js"><link rel="prefetch" href="/assets/js/18.8dd90a66.js"><link rel="prefetch" href="/assets/js/19.4fb6d9b8.js"><link rel="prefetch" href="/assets/js/2.b7fedc2a.js"><link rel="prefetch" href="/assets/js/20.c7ee29bf.js"><link rel="prefetch" href="/assets/js/21.ec5919dd.js"><link rel="prefetch" href="/assets/js/22.7351d6cc.js"><link rel="prefetch" href="/assets/js/23.8adf705b.js"><link rel="prefetch" href="/assets/js/24.5dda7d7c.js"><link rel="prefetch" href="/assets/js/25.d6c4beda.js"><link rel="prefetch" href="/assets/js/26.3fae1b4d.js"><link rel="prefetch" href="/assets/js/27.42848bbe.js"><link rel="prefetch" href="/assets/js/28.80aeb13f.js"><link rel="prefetch" href="/assets/js/29.d3f479f5.js"><link rel="prefetch" href="/assets/js/3.fe3c8939.js"><link rel="prefetch" href="/assets/js/30.b28e0cfa.js"><link rel="prefetch" href="/assets/js/31.39756cd5.js"><link rel="prefetch" href="/assets/js/32.475d42d9.js"><link rel="prefetch" href="/assets/js/33.db2c4cfb.js"><link rel="prefetch" href="/assets/js/34.8e9cd72f.js"><link rel="prefetch" href="/assets/js/35.48663882.js"><link rel="prefetch" href="/assets/js/36.f92ac67a.js"><link rel="prefetch" href="/assets/js/37.67c65ed9.js"><link rel="prefetch" href="/assets/js/38.841de0ec.js"><link rel="prefetch" href="/assets/js/39.9ee667aa.js"><link rel="prefetch" href="/assets/js/4.28e0dd42.js"><link rel="prefetch" href="/assets/js/40.0f4d2bb8.js"><link rel="prefetch" href="/assets/js/41.a292c8af.js"><link rel="prefetch" href="/assets/js/42.ca402a95.js"><link rel="prefetch" href="/assets/js/43.1a920a89.js"><link rel="prefetch" href="/assets/js/44.1136c43f.js"><link rel="prefetch" href="/assets/js/45.09cdae5d.js"><link rel="prefetch" href="/assets/js/46.bf04cee8.js"><link rel="prefetch" href="/assets/js/47.4be1442f.js"><link rel="prefetch" href="/assets/js/48.c90986e6.js"><link rel="prefetch" href="/assets/js/49.e0df44d7.js"><link rel="prefetch" href="/assets/js/5.106e8893.js"><link rel="prefetch" href="/assets/js/50.e589f43d.js"><link rel="prefetch" href="/assets/js/51.52e2dd5e.js"><link rel="prefetch" href="/assets/js/52.9b9b1b60.js"><link rel="prefetch" href="/assets/js/53.51261bc0.js"><link rel="prefetch" href="/assets/js/54.9a082c0b.js"><link rel="prefetch" href="/assets/js/55.cb478dba.js"><link rel="prefetch" href="/assets/js/56.a9c5ea04.js"><link rel="prefetch" href="/assets/js/57.a1b56ab7.js"><link rel="prefetch" href="/assets/js/58.60e77be8.js"><link rel="prefetch" href="/assets/js/59.c07f2b7e.js"><link rel="prefetch" href="/assets/js/6.015a6f59.js"><link rel="prefetch" href="/assets/js/60.2d300070.js"><link rel="prefetch" href="/assets/js/61.f54bc147.js"><link rel="prefetch" href="/assets/js/62.0ec8ca93.js"><link rel="prefetch" href="/assets/js/63.7c8b03d9.js"><link rel="prefetch" href="/assets/js/64.78d7222e.js"><link rel="prefetch" href="/assets/js/65.866ef779.js"><link rel="prefetch" href="/assets/js/66.a52448b6.js"><link rel="prefetch" href="/assets/js/67.9d0c871c.js"><link rel="prefetch" href="/assets/js/68.27308da1.js"><link rel="prefetch" href="/assets/js/69.88f30473.js"><link rel="prefetch" href="/assets/js/7.e591ee0c.js"><link rel="prefetch" href="/assets/js/70.74560474.js"><link rel="prefetch" href="/assets/js/71.3f81de49.js"><link rel="prefetch" href="/assets/js/72.261a96ba.js"><link rel="prefetch" href="/assets/js/73.7d09ee13.js"><link rel="prefetch" href="/assets/js/74.668f53a7.js"><link rel="prefetch" href="/assets/js/75.5a07cf00.js"><link rel="prefetch" href="/assets/js/76.5cb7756e.js"><link rel="prefetch" href="/assets/js/77.ee0ac284.js"><link rel="prefetch" href="/assets/js/78.a4bf6899.js"><link rel="prefetch" href="/assets/js/79.86d6a675.js"><link rel="prefetch" href="/assets/js/8.c3659f73.js"><link rel="prefetch" href="/assets/js/80.ca1d23ad.js"><link rel="prefetch" href="/assets/js/81.834d4fa2.js"><link rel="prefetch" href="/assets/js/82.c1c44655.js"><link rel="prefetch" href="/assets/js/83.b2f5aaef.js"><link rel="prefetch" href="/assets/js/84.49bf081e.js"><link rel="prefetch" href="/assets/js/85.036dd295.js"><link rel="prefetch" href="/assets/js/86.8ede464d.js"><link rel="prefetch" href="/assets/js/9.6d2e7baf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d19fd84.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jovins Blog</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link router-link-active">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link router-link-active">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>算法基础</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/source/algorithm/" class="sidebar-link">数据结构</a></li><li><a href="/source/algorithm/Linked-list.html" class="active sidebar-link">链表</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/source/algorithm/Linked-list.html#链表的基本概念" class="sidebar-link">链表的基本概念</a></li><li class="sidebar-sub-header"><a href="/source/algorithm/Linked-list.html#静态链表" class="sidebar-link">静态链表</a></li><li class="sidebar-sub-header"><a href="/source/algorithm/Linked-list.html#动态链表" class="sidebar-link">动态链表</a></li><li class="sidebar-sub-header"><a href="/source/algorithm/Linked-list.html#动态链表尾插法" class="sidebar-link">动态链表尾插法</a></li><li class="sidebar-sub-header"><a href="/source/algorithm/Linked-list.html#动态链表头插法" class="sidebar-link">动态链表头插法</a></li><li class="sidebar-sub-header"><a href="/source/algorithm/Linked-list.html#动态链优化" class="sidebar-link">动态链优化</a></li><li class="sidebar-sub-header"><a href="/source/algorithm/Linked-list.html#链表销毁" class="sidebar-link">链表销毁</a></li><li class="sidebar-sub-header"><a href="/source/algorithm/Linked-list.html#链表长度计算" class="sidebar-link">链表长度计算</a></li><li class="sidebar-sub-header"><a href="/source/algorithm/Linked-list.html#链表查找" class="sidebar-link">链表查找</a></li><li class="sidebar-sub-header"><a href="/source/algorithm/Linked-list.html#链表删除" class="sidebar-link">链表删除</a></li><li class="sidebar-sub-header"><a href="/source/algorithm/Linked-list.html#作业" class="sidebar-link">作业</a></li><li class="sidebar-sub-header"><a href="/source/algorithm/Linked-list.html#swift实现链表" class="sidebar-link">Swift实现链表</a></li><li class="sidebar-sub-header"><a href="/source/algorithm/Linked-list.html#小结" class="sidebar-link">小结</a></li></ul></li><li><a href="/source/algorithm/Swift-Stack-Queue.html" class="sidebar-link">栈和队列</a></li><li><a href="/source/algorithm/Swift-Tree.html" class="sidebar-link">二叉树</a></li><li><a href="/source/algorithm/Swift-Sort.html" class="sidebar-link">排序</a></li><li><a href="/source/algorithm/Swift-Search.html" class="sidebar-link">搜索</a></li><li><a href="/source/algorithm/Swift-Dynamic-Program.html" class="sidebar-link">动态规划</a></li><li><a href="/source/algorithm/Swift-Greedy.html" class="sidebar-link">贪心算法</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>算法练习</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="链表"><a href="#链表" aria-hidden="true" class="header-anchor">#</a> 链表</h1> <h2 id="链表的基本概念"><a href="#链表的基本概念" aria-hidden="true" class="header-anchor">#</a> 链表的基本概念</h2> <p>链表是一组节点组成的集合，每个节点都使用一个对象的引用来指向它的后一个节点。指向另一节点的引用讲做链.</p> <p><img src="https://upload-images.jianshu.io/upload_images/6633377-caa2e934886c5ae1.png" alt></p> <p>链表实现了，内存零碎数据的有效组织。比如，当我们用 malloc 来进行内存申请的时候，当内存足够，但是由于碎片太多，没有连续内存时，只能以申请失败而告终，而用链表这种数据结构来组织数据，就可以解决上类问题。</p> <p><img src="https://upload-images.jianshu.io/upload_images/647982-0592fe030234c8ca.png" alt></p> <h2 id="静态链表"><a href="#静态链表" aria-hidden="true" class="header-anchor">#</a> 静态链表</h2> <p><img src="https://upload-images.jianshu.io/upload_images/647982-c7878dd6ebd71cdf.png" alt></p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
+
+<span class="token comment">// 1.定义链表节点</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">node</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> data<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>Node<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+
+    <span class="token comment">// 2.创建链表节点</span>
+    Node a<span class="token punctuation">;</span>
+    Node b<span class="token punctuation">;</span>
+    Node c<span class="token punctuation">;</span>
+
+    <span class="token comment">// 3.初始化节点数据</span>
+    a<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    b<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    c<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 4.链接节点</span>
+    a<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token operator">&amp;</span>b<span class="token punctuation">;</span>
+    b<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token operator">&amp;</span>c<span class="token punctuation">;</span>
+    c<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 5.创建链表头</span>
+    Node <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+
+    <span class="token comment">// 6.使用链表</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>head <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> currentData <span class="token operator">=</span> head<span class="token operator">-&gt;</span>data<span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;currentData = %i\n&quot;</span><span class="token punctuation">,</span> currentData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        head <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="动态链表"><a href="#动态链表" aria-hidden="true" class="header-anchor">#</a> 动态链表</h2> <ul><li>静态链表的意义不是很大，主要原因，数据存储在栈上，栈的存储空间有限，不能动态分配。所以链表要实现存储的自由，要动态的申请堆里的空间。</li> <li>有一个点要说清楚，我们的实现的链表是带头节点。至于，为什么带头节点，需等大家对链表有个整体的的认知以后，再来体会，会更有意义。</li> <li>空链表
+<ul><li>头指针带了一个空链表节点, 空链表节点中的next指向NULL</li></ul></li></ul> <p><img src="https://upload-images.jianshu.io/upload_images/647982-a34eeee2474ca592.png" alt></p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+
+<span class="token comment">// 1.定义链表节点</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">node</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> data<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>Node<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Node <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token function">createList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 创建空链表</span>
+Node <span class="token operator">*</span><span class="token function">createList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 1.创建一个节点</span>
+    Node <span class="token operator">*</span>node <span class="token operator">=</span> <span class="token punctuation">(</span>Node <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>node <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">exet</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 2.设置下一个节点为NULL</span>
+    node<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token comment">// 3.返回创建好的节点</span>
+    <span class="token keyword">return</span> node<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>非空链表
+<ul><li>头指针带了一个非空节点, 最后一个节点中的next指向NULL</li></ul></li></ul> <p><img src="https://upload-images.jianshu.io/upload_images/647982-85634b62cb70335d.png" alt></p> <h2 id="动态链表尾插法"><a href="#动态链表尾插法" aria-hidden="true" class="header-anchor">#</a> 动态链表尾插法</h2> <ul><li>1.让新节点的下一个节点等于头结点的下一个节点</li> <li>2.让头节点的下一个节点等于新节点</li></ul> <div class="language-c extra-class"><pre class="language-c"><code><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+
+<span class="token comment">// 1.定义链表节点</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">node</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> data<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>Node<span class="token punctuation">;</span>
+Node <span class="token operator">*</span><span class="token function">createList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">printNodeList</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Node <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token function">createList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printNodeList</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/**
+ * @brief createList 创建链表
+ * @return  创建好的链表
+ */</span>
+Node <span class="token operator">*</span><span class="token function">createList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 1.创建头节点</span>
+    Node <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token punctuation">(</span>Node <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    head<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 2.接收用户输入数据</span>
+    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;请输入节点数据\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%i&quot;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 3.通过循环创建其它节点</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>num <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">// 3.1创建一个新的节点</span>
+        Node <span class="token operator">*</span>cur <span class="token operator">=</span> <span class="token punctuation">(</span>Node <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cur<span class="token operator">-&gt;</span>data <span class="token operator">=</span> num<span class="token punctuation">;</span>
+
+        <span class="token comment">// 3.2让新节点的下一个节点指向头节点的下一个节点</span>
+        cur<span class="token operator">-&gt;</span>next <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        <span class="token comment">// 3.3让头节点的下一个节点指向新节点</span>
+        head<span class="token operator">-&gt;</span>next <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+
+        <span class="token comment">// 3.4再次接收用户输入数据</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%i&quot;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 3.返回创建好的节点</span>
+    <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/**
+ * @brief printNodeList 遍历链表
+ * @param node 链表指针头
+ */</span>
+<span class="token keyword">void</span> <span class="token function">printNodeList</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>node<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Node <span class="token operator">*</span>head <span class="token operator">=</span> node<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>head <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> currentData <span class="token operator">=</span> head<span class="token operator">-&gt;</span>data<span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;currentData = %i\n&quot;</span><span class="token punctuation">,</span> currentData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        head <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="动态链表头插法"><a href="#动态链表头插法" aria-hidden="true" class="header-anchor">#</a> 动态链表头插法</h2> <ul><li>1.定义变量记录新节点的上一个节点</li> <li>2.将新节点添加到上一个节点后面</li> <li>3.让新节点成为下一个节点的上一个节点</li></ul> <div class="language-c extra-class"><pre class="language-c"><code><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+
+<span class="token comment">// 1.定义链表节点</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">node</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> data<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>Node<span class="token punctuation">;</span>
+Node <span class="token operator">*</span><span class="token function">createList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">printNodeList</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Node <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token function">createList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printNodeList</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/**
+ * @brief createList 创建链表
+ * @return  创建好的链表
+ */</span>
+Node <span class="token operator">*</span><span class="token function">createList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 1.创建头节点</span>
+    Node <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token punctuation">(</span>Node <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    head<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 2.接收用户输入数据</span>
+    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;请输入节点数据\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%i&quot;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 3.通过循环创建其它节点</span>
+    <span class="token comment">// 定义变量记录上一个节点</span>
+    Node <span class="token operator">*</span>pre <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>num <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">// 3.1创建一个新的节点</span>
+        Node <span class="token operator">*</span>cur <span class="token operator">=</span> <span class="token punctuation">(</span>Node <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cur<span class="token operator">-&gt;</span>data <span class="token operator">=</span> num<span class="token punctuation">;</span>
+
+        <span class="token comment">// 3.2让新节点链接到上一个节点后面</span>
+        pre<span class="token operator">-&gt;</span>next <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+        <span class="token comment">// 3.3当前节点下一个节点等于NULL</span>
+        cur<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        <span class="token comment">// 3.4让当前节点编程下一个节点的上一个节点</span>
+        pre <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+
+        <span class="token comment">// 3.5再次接收用户输入数据</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%i&quot;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 3.返回创建好的节点</span>
+    <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/**
+ * @brief printNodeList 遍历链表
+ * @param node 链表指针头
+ */</span>
+<span class="token keyword">void</span> <span class="token function">printNodeList</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>node<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Node <span class="token operator">*</span>head <span class="token operator">=</span> node<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>head <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> currentData <span class="token operator">=</span> head<span class="token operator">-&gt;</span>data<span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;currentData = %i\n&quot;</span><span class="token punctuation">,</span> currentData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        head <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="动态链优化"><a href="#动态链优化" aria-hidden="true" class="header-anchor">#</a> 动态链优化</h2> <div class="language-c extra-class"><pre class="language-c"><code><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+
+<span class="token comment">// 1.定义链表节点</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">node</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> data<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>Node<span class="token punctuation">;</span>
+Node <span class="token operator">*</span><span class="token function">createList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">printNodeList</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">insertNode1</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>head<span class="token punctuation">,</span> <span class="token keyword">int</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">insertNode2</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>head<span class="token punctuation">,</span> <span class="token keyword">int</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// 1.创建一个空链表</span>
+    Node <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token function">createList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 2.往空链表中插入数据</span>
+    <span class="token function">insertNode1</span><span class="token punctuation">(</span>head<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">insertNode1</span><span class="token punctuation">(</span>head<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">insertNode1</span><span class="token punctuation">(</span>head<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printNodeList</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/**
+ * @brief createList 创建空链表
+ * @return  创建好的空链表
+ */</span>
+Node <span class="token operator">*</span><span class="token function">createList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 1.创建头节点</span>
+    Node <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token punctuation">(</span>Node <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    head<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token comment">// 3.返回创建好的节点</span>
+    <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/**
+ * @brief insertNode1 尾插法插入节点
+ * @param head 需要插入的头指针
+ * @param data 需要插入的数据
+ * @return  插入之后的链表
+ */</span>
+<span class="token keyword">void</span> <span class="token function">insertNode1</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>head<span class="token punctuation">,</span> <span class="token keyword">int</span> data<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 1.定义变量记录最后一个节点</span>
+    Node <span class="token operator">*</span>pre <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>pre <span class="token operator">!=</span> <span class="token constant">NULL</span> <span class="token operator">&amp;&amp;</span> pre<span class="token operator">-&gt;</span>next <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        pre <span class="token operator">=</span> pre<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 2.创建一个新的节点</span>
+    Node <span class="token operator">*</span>cur <span class="token operator">=</span> <span class="token punctuation">(</span>Node <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cur<span class="token operator">-&gt;</span>data <span class="token operator">=</span> data<span class="token punctuation">;</span>
+
+    <span class="token comment">// 3.让新节点链接到上一个节点后面</span>
+    pre<span class="token operator">-&gt;</span>next <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+    <span class="token comment">// 4.当前节点下一个节点等于NULL</span>
+    cur<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token comment">// 5.让当前节点编程下一个节点的上一个节点</span>
+    pre <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/**
+ * @brief insertNode1 头插法插入节点
+ * @param head 需要插入的头指针
+ * @param data 需要插入的数据
+ * @return  插入之后的链表
+ */</span>
+<span class="token keyword">void</span> <span class="token function">insertNode2</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>head<span class="token punctuation">,</span> <span class="token keyword">int</span> data<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 1.创建一个新的节点</span>
+    Node <span class="token operator">*</span>cur <span class="token operator">=</span> <span class="token punctuation">(</span>Node <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cur<span class="token operator">-&gt;</span>data <span class="token operator">=</span> data<span class="token punctuation">;</span>
+
+    <span class="token comment">// 2.让新节点的下一个节点指向头节点的下一个节点</span>
+    cur<span class="token operator">-&gt;</span>next <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token comment">// 3.让头节点的下一个节点指向新节点</span>
+    head<span class="token operator">-&gt;</span>next <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/**
+ * @brief printNodeList 遍历链表
+ * @param node 链表指针头
+ */</span>
+<span class="token keyword">void</span> <span class="token function">printNodeList</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>node<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Node <span class="token operator">*</span>head <span class="token operator">=</span> node<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>head <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> currentData <span class="token operator">=</span> head<span class="token operator">-&gt;</span>data<span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;currentData = %i\n&quot;</span><span class="token punctuation">,</span> currentData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        head <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="链表销毁"><a href="#链表销毁" aria-hidden="true" class="header-anchor">#</a> 链表销毁</h2> <div class="language-c extra-class"><pre class="language-c"><code><span class="token comment">/**
+ * @brief destroyList 销毁链表
+ * @param head 链表头指针
+ */</span>
+<span class="token keyword">void</span> <span class="token function">destroyList</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>head<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Node <span class="token operator">*</span>cur <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>head <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        cur <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        <span class="token function">free</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        head <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="链表长度计算"><a href="#链表长度计算" aria-hidden="true" class="header-anchor">#</a> 链表长度计算</h2> <div class="language-c extra-class"><pre class="language-c"><code><span class="token comment">/**
+ * @brief listLength 计算链表长度
+ * @param head 链表头指针
+ * @return 链表长度
+ */</span>
+<span class="token keyword">int</span> <span class="token function">listLength</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>head<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    head <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       count<span class="token operator">++</span><span class="token punctuation">;</span>
+       head <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> count<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="链表查找"><a href="#链表查找" aria-hidden="true" class="header-anchor">#</a> 链表查找</h2> <div class="language-c extra-class"><pre class="language-c"><code><span class="token comment">/**
+ * @brief searchList 查找指定节点
+ * @param head 链表头指针
+ * @param key 需要查找的值
+ * @return
+ */</span>
+Node <span class="token operator">*</span><span class="token function">searchList</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>head<span class="token punctuation">,</span> <span class="token keyword">int</span> key<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    head <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>head<span class="token operator">-&gt;</span>data <span class="token operator">==</span> key<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+            head <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="链表删除"><a href="#链表删除" aria-hidden="true" class="header-anchor">#</a> 链表删除</h2> <div class="language-c extra-class"><pre class="language-c"><code><span class="token keyword">void</span> <span class="token function">deleteNodeList</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>head<span class="token punctuation">,</span> Node <span class="token operator">*</span>find<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>head<span class="token operator">-&gt;</span>next <span class="token operator">!=</span> find<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        head <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    head<span class="token operator">-&gt;</span>next <span class="token operator">=</span> find<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>find<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="作业"><a href="#作业" aria-hidden="true" class="header-anchor">#</a> 作业</h2> <ul><li>给链表排序</li></ul> <div class="language-c extra-class"><pre class="language-c"><code><span class="token comment">/**
+ * @brief bubbleSort 对链表进行排序
+ * @param head 链表头指针
+ */</span>
+<span class="token keyword">void</span> <span class="token function">bubbleSort</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>head<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 1.计算链表长度</span>
+    <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token function">listLength</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 2.定义变量记录前后节点</span>
+    Node <span class="token operator">*</span>cur <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+   <span class="token comment">// 3.相邻元素进行比较, 进行冒泡排序</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        cur <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> len <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">-</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%i, %i\n&quot;</span><span class="token punctuation">,</span> cur<span class="token operator">-&gt;</span>data<span class="token punctuation">,</span> cur<span class="token operator">-&gt;</span>next<span class="token operator">-&gt;</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>cur<span class="token operator">-&gt;</span>data<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token punctuation">(</span>cur<span class="token operator">-&gt;</span>next<span class="token operator">-&gt;</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">int</span> temp <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>data<span class="token punctuation">;</span>
+                cur<span class="token operator">-&gt;</span>data <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token operator">-&gt;</span>data<span class="token punctuation">;</span>
+                cur<span class="token operator">-&gt;</span>next<span class="token operator">-&gt;</span>data <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            cur <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-c extra-class"><pre class="language-c"><code><span class="token comment">/**
+ * @brief sortList 对链表进行排序
+ * @param head 链表头指针
+ */</span>
+<span class="token keyword">void</span> <span class="token function">sortList</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>head<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 0.计算链表长度</span>
+    <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token function">listLength</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 1.定义变量保存前后两个节点</span>
+    Node <span class="token operator">*</span>sh<span class="token punctuation">,</span> <span class="token operator">*</span>pre<span class="token punctuation">,</span> <span class="token operator">*</span>cur<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        sh <span class="token operator">=</span> head<span class="token punctuation">;</span> <span class="token comment">// 头节点</span>
+        pre <span class="token operator">=</span> sh<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span> <span class="token comment">// 第一个节点</span>
+        cur <span class="token operator">=</span> pre<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span> <span class="token comment">// 第二个节点</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> len <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">-</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>pre<span class="token operator">-&gt;</span>data <span class="token operator">&gt;</span> cur<span class="token operator">-&gt;</span>data<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token comment">// 交换节点位置</span>
+                sh<span class="token operator">-&gt;</span>next <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+                pre<span class="token operator">-&gt;</span>next <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+                cur<span class="token operator">-&gt;</span>next <span class="token operator">=</span> pre<span class="token punctuation">;</span>
+                <span class="token comment">// 恢复节点名称</span>
+                Node <span class="token operator">*</span>temp <span class="token operator">=</span> pre<span class="token punctuation">;</span>
+                pre <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+                cur <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 让所有节点往后移动</span>
+            sh <span class="token operator">=</span> sh<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+            pre <span class="token operator">=</span> pre<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+            cur <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>链表反转</li></ul> <div class="language-c extra-class"><pre class="language-c"><code><span class="token comment">/**
+ * @brief reverseList 反转链表
+ * @param head 链表头指针
+ */</span>
+<span class="token keyword">void</span> <span class="token function">reverseList</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>head<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 1.将链表一分为二</span>
+    Node <span class="token operator">*</span>pre<span class="token punctuation">,</span> <span class="token operator">*</span>cur<span class="token punctuation">;</span>
+    pre <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    head<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token comment">// 2.重新插入节点</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>pre<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        cur <span class="token operator">=</span> pre<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        pre<span class="token operator">-&gt;</span>next <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        head<span class="token operator">-&gt;</span>next <span class="token operator">=</span> pre<span class="token punctuation">;</span>
+
+        pre <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="swift实现链表"><a href="#swift实现链表" aria-hidden="true" class="header-anchor">#</a> Swift实现链表</h2> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">UIKit</span>
+
+<span class="token comment">// 节点</span>
+<span class="token keyword">class</span> <span class="token class-name">Node</span> <span class="token punctuation">{</span>
+    
+    <span class="token keyword">var</span> val<span class="token punctuation">:</span> <span class="token builtin">Int</span>
+    <span class="token keyword">var</span> next<span class="token punctuation">:</span> <span class="token builtin">Node</span><span class="token operator">?</span>
+    
+    <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token number">_</span> val<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>val <span class="token operator">=</span> val
+        <span class="token keyword">self</span><span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token constant">nil</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 链表</span>
+<span class="token comment">// 头插法: 1.让新节点的下一个节点等于头节点的下一个节点。2.让头节点的下一个节点等于新节点。规律新的节点永远都是插入到头结点后面</span>
+<span class="token comment">// 尾插法: 1.定义变量记录新节点的上一个节点。2.将新节点添加到上一个节点的后面。3.让新节点成为下一个节点的上一个节点。规律: 新节点永远添加到最后面</span>
+<span class="token comment">// 注意点: 1. 一定要注意头节点可能就是nil,所以给定链表后，要看清楚head是不是optional,然后判定是不是要处理这种边界条件</span>
+<span class="token comment">//        2. 注意每个节点的next可能是nil。如果不为nil，则用“!”修饰变量。在赋值的时候也要注意&quot;!&quot;，将optionald节点传给废optional节点的情况</span>
+<span class="token keyword">class</span> <span class="token class-name">List</span> <span class="token punctuation">{</span>
+    
+    <span class="token keyword">var</span> head<span class="token punctuation">:</span> <span class="token builtin">Node</span><span class="token operator">?</span>
+    <span class="token keyword">var</span> tail<span class="token punctuation">:</span> <span class="token builtin">Node</span><span class="token operator">?</span>
+    
+    <span class="token comment">// 尾插法</span>
+    <span class="token keyword">func</span> <span class="token function">appendToTail</span><span class="token punctuation">(</span><span class="token number">_</span> val<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> tail <span class="token operator">==</span> <span class="token constant">nil</span> <span class="token punctuation">{</span>
+            tail <span class="token operator">=</span> <span class="token function">Node</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span>
+            head <span class="token operator">=</span> tail
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            tail<span class="token operator">!</span><span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token function">Node</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span>
+            tail <span class="token operator">=</span> tail<span class="token operator">!</span><span class="token punctuation">.</span>next
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// 头插法</span>
+    <span class="token keyword">func</span> <span class="token function">appendToHead</span><span class="token punctuation">(</span><span class="token number">_</span> val<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> head <span class="token operator">==</span> <span class="token constant">nil</span> <span class="token punctuation">{</span>
+            head <span class="token operator">=</span> <span class="token function">Node</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span>
+            tail <span class="token operator">=</span> head
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> temp <span class="token operator">=</span> <span class="token function">Node</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span>
+            temp<span class="token punctuation">.</span>next <span class="token operator">=</span> head
+            head <span class="token operator">=</span> temp
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// 遍历链表</span>
+    <span class="token keyword">func</span> <span class="token function">traverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> head <span class="token operator">==</span> <span class="token constant">nil</span> <span class="token punctuation">{</span>
+            <span class="token function">fatalError</span><span class="token punctuation">(</span><span class="token string">&quot;没有创建过链表&quot;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">var</span> node <span class="token operator">=</span> head
+        <span class="token keyword">while</span> node <span class="token operator">!=</span> <span class="token constant">nil</span> <span class="token punctuation">{</span>
+            <span class="token function">print</span><span class="token punctuation">(</span>node<span class="token operator">!</span><span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+            node <span class="token operator">=</span> node<span class="token operator">!</span><span class="token punctuation">.</span>next
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// 给出一个链表和一个值x,要求将链表中所有小于x的值放到左边，所有大于或者等于x的值放到右边</span>
+    <span class="token comment">// 并且原链表的节点顺序不变。如: 1-&gt;5-&gt;3-&gt;2-&gt;4-&gt;2，给定x=3;则返回1-&gt;2-&gt;2-&gt;5-&gt;3-&gt;4</span>
+    <span class="token keyword">func</span> <span class="token function">partition</span><span class="token punctuation">(</span><span class="token number">_</span> x<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 引入dummy节点</span>
+        <span class="token keyword">var</span> pre <span class="token operator">=</span> <span class="token function">Node</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> post <span class="token operator">=</span> <span class="token function">Node</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">let</span> preV <span class="token operator">=</span> pre<span class="token punctuation">,</span> postV <span class="token operator">=</span> post
+        <span class="token keyword">var</span> node <span class="token operator">=</span> head
+        
+        <span class="token comment">// 用尾插法处理左边和右边</span>
+        <span class="token keyword">while</span> node <span class="token operator">!=</span> <span class="token constant">nil</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历</span>
+            <span class="token keyword">if</span> node<span class="token operator">!</span><span class="token punctuation">.</span>val <span class="token operator">&lt;</span> x <span class="token punctuation">{</span>
+                pre<span class="token punctuation">.</span>next <span class="token operator">=</span> node
+                pre <span class="token operator">=</span> node<span class="token operator">!</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                post<span class="token punctuation">.</span>next <span class="token operator">=</span> node
+                post <span class="token operator">=</span> node<span class="token operator">!</span>
+            <span class="token punctuation">}</span>
+            node <span class="token operator">=</span> node<span class="token operator">!</span><span class="token punctuation">.</span>next
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 防止构成环</span>
+        post<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token constant">nil</span>
+        <span class="token comment">// 左右拼接</span>
+        pre<span class="token punctuation">.</span>next <span class="token operator">=</span> postV<span class="token punctuation">.</span>next
+        head <span class="token operator">=</span> preV<span class="token punctuation">.</span>next
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// 快行指针</span>
+    <span class="token comment">// 如何检测一个链表中是否有环？</span>
+    <span class="token comment">// 用两个指针同时访问链表，其中一个的速度是另一个的两倍，如果他们变成相等的了，那么这个链表就有环了</span>
+    <span class="token keyword">func</span> <span class="token function">hasCycle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Bool</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> slow <span class="token operator">=</span> head
+        <span class="token keyword">var</span> fast <span class="token operator">=</span> head
+        <span class="token keyword">while</span> fast <span class="token operator">!=</span> <span class="token constant">nil</span> <span class="token operator">&amp;&amp;</span> fast<span class="token operator">!</span><span class="token punctuation">.</span>next <span class="token operator">!=</span> <span class="token constant">nil</span> <span class="token punctuation">{</span>
+            slow <span class="token operator">=</span> slow<span class="token operator">!</span><span class="token punctuation">.</span>next
+            fast <span class="token operator">=</span> fast<span class="token operator">!</span><span class="token punctuation">.</span>next<span class="token operator">!</span><span class="token punctuation">.</span>next
+            <span class="token keyword">if</span> slow <span class="token operator">===</span> fast <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token boolean">true</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// 删除链表中倒数第n个节点。如：1-&gt;5-&gt;3-&gt;2-&gt;4-&gt;2, n = 2 返回 1-&gt;5-&gt;3-&gt;2-&gt;2</span>
+    <span class="token comment">// 思路依然是快行指针，这次两个指针的移动速度相同。但是一开始，第一个指针(在指向头结点之前)就落后第二个指针n个节点。</span>
+    <span class="token comment">// 接着两者同时移动，当第二个节点指针移动到尾节点是，第一个节点的下一个节点就是我们要删除的节点</span>
+    <span class="token keyword">func</span> <span class="token function">deleteNthFromEnd</span><span class="token punctuation">(</span><span class="token number">_</span> n<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        
+        <span class="token keyword">let</span> dummy <span class="token operator">=</span> <span class="token function">Node</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+        dummy<span class="token punctuation">.</span>next <span class="token operator">=</span> head
+        
+        <span class="token keyword">var</span> pre<span class="token punctuation">:</span> <span class="token builtin">Node</span><span class="token operator">?</span> <span class="token operator">=</span> dummy
+        <span class="token keyword">var</span> post<span class="token punctuation">:</span> <span class="token builtin">Node</span><span class="token operator">?</span> <span class="token operator">=</span> dummy
+        <span class="token comment">// 一开始post就落后n位</span>
+        <span class="token keyword">for</span> <span class="token number">_</span> <span class="token keyword">in</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">&lt;</span>n <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> post <span class="token operator">==</span> <span class="token constant">nil</span> <span class="token punctuation">{</span>
+                <span class="token keyword">break</span>
+            <span class="token punctuation">}</span>
+            post <span class="token operator">=</span> post<span class="token operator">!</span><span class="token punctuation">.</span>next
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 同时移动两个指针</span>
+        <span class="token keyword">while</span> post <span class="token operator">!=</span> <span class="token constant">nil</span> <span class="token operator">&amp;&amp;</span> post<span class="token operator">!</span><span class="token punctuation">.</span>next <span class="token operator">!=</span> <span class="token constant">nil</span> <span class="token punctuation">{</span>
+            pre <span class="token operator">=</span> pre<span class="token operator">!</span><span class="token punctuation">.</span>next
+            post <span class="token operator">=</span> post<span class="token operator">!</span><span class="token punctuation">.</span>next
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 删除节点</span>
+        pre<span class="token operator">!</span><span class="token punctuation">.</span>next <span class="token operator">=</span> pre<span class="token operator">!</span><span class="token punctuation">.</span>next<span class="token operator">!</span><span class="token punctuation">.</span>next
+        head <span class="token operator">=</span> dummy<span class="token punctuation">.</span>next
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-swift extra-class"><pre class="language-swift"><code><span class="token comment">// 链表</span>
+<span class="token keyword">func</span> <span class="token function">listTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+    <span class="token keyword">let</span> list <span class="token operator">=</span> <span class="token function">List</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> <span class="token number">_</span> <span class="token keyword">in</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token number">10</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token function">Int</span><span class="token punctuation">(</span><span class="token function">arc4random_uniform</span><span class="token punctuation">(</span><span class="token function">UInt32</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        list<span class="token punctuation">.</span><span class="token function">appendToHead</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token comment">//    print(&quot;遍历链表&quot;)</span>
+<span class="token comment">//    list.traverse()</span>
+<span class="token comment">//    list.partition(5)</span>
+<span class="token comment">//    print(&quot;重新遍历链表&quot;)</span>
+<span class="token comment">//    list.traverse()</span>
+<span class="token comment">//    print(list.hasCycle())</span>
+    
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&quot;遍历链表&quot;</span><span class="token punctuation">)</span>
+    list<span class="token punctuation">.</span><span class="token function">traverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    list<span class="token punctuation">.</span><span class="token function">deleteNthFromEnd</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&quot;删除第n个后链表&quot;</span><span class="token punctuation">)</span>
+    list<span class="token punctuation">.</span><span class="token function">traverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="小结"><a href="#小结" aria-hidden="true" class="header-anchor">#</a> 小结</h2> <p>前面用Swift实现了链表的基本结构，并且介绍了链表的几个技巧。在本节最后，我们还想敲掉一下用Swift处理链表的问题应注意的两个细节:</p> <ul><li>一定要注意头节点可能是nil。所以给定链表后，要清楚head是不是optional，然后判断是不是要处理这种边界条件。</li> <li>注意每个节点的next可能是nil，如果不为nil，则用&quot;!&quot;修饰变量。在赋值的时候也要注意&quot;!&quot;将optional节点传给非optional节点的情况。</li></ul> <p><a href="https://github.com/Jovins/Algorithm" target="_blank" rel="noopener noreferrer">源码地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/source/algorithm/" class="prev router-link-active">
+          数据结构
+        </a></span> <span class="next"><a href="/source/algorithm/Swift-Stack-Queue.html">
+          栈和队列
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.aee163d7.js" defer></script><script src="/assets/js/14.14535d2d.js" defer></script>
+  </body>
+</html>

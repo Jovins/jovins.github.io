@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>01-C语言和Go语言对比 | Jovins Blog</title>
+    <meta name="description" content="Work Hard, Play Hard">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.0d19fd84.css" as="style"><link rel="preload" href="/assets/js/app.aee163d7.js" as="script"><link rel="preload" href="/assets/js/28.80aeb13f.js" as="script"><link rel="prefetch" href="/assets/js/10.1e34e5ff.js"><link rel="prefetch" href="/assets/js/11.491dfd54.js"><link rel="prefetch" href="/assets/js/12.a55c1fe7.js"><link rel="prefetch" href="/assets/js/13.5af2a714.js"><link rel="prefetch" href="/assets/js/14.14535d2d.js"><link rel="prefetch" href="/assets/js/15.3a5c4d96.js"><link rel="prefetch" href="/assets/js/16.f0724826.js"><link rel="prefetch" href="/assets/js/17.a41afda0.js"><link rel="prefetch" href="/assets/js/18.8dd90a66.js"><link rel="prefetch" href="/assets/js/19.4fb6d9b8.js"><link rel="prefetch" href="/assets/js/2.b7fedc2a.js"><link rel="prefetch" href="/assets/js/20.c7ee29bf.js"><link rel="prefetch" href="/assets/js/21.ec5919dd.js"><link rel="prefetch" href="/assets/js/22.7351d6cc.js"><link rel="prefetch" href="/assets/js/23.8adf705b.js"><link rel="prefetch" href="/assets/js/24.5dda7d7c.js"><link rel="prefetch" href="/assets/js/25.d6c4beda.js"><link rel="prefetch" href="/assets/js/26.3fae1b4d.js"><link rel="prefetch" href="/assets/js/27.42848bbe.js"><link rel="prefetch" href="/assets/js/29.d3f479f5.js"><link rel="prefetch" href="/assets/js/3.fe3c8939.js"><link rel="prefetch" href="/assets/js/30.b28e0cfa.js"><link rel="prefetch" href="/assets/js/31.39756cd5.js"><link rel="prefetch" href="/assets/js/32.475d42d9.js"><link rel="prefetch" href="/assets/js/33.db2c4cfb.js"><link rel="prefetch" href="/assets/js/34.8e9cd72f.js"><link rel="prefetch" href="/assets/js/35.48663882.js"><link rel="prefetch" href="/assets/js/36.f92ac67a.js"><link rel="prefetch" href="/assets/js/37.67c65ed9.js"><link rel="prefetch" href="/assets/js/38.841de0ec.js"><link rel="prefetch" href="/assets/js/39.9ee667aa.js"><link rel="prefetch" href="/assets/js/4.28e0dd42.js"><link rel="prefetch" href="/assets/js/40.0f4d2bb8.js"><link rel="prefetch" href="/assets/js/41.a292c8af.js"><link rel="prefetch" href="/assets/js/42.ca402a95.js"><link rel="prefetch" href="/assets/js/43.1a920a89.js"><link rel="prefetch" href="/assets/js/44.1136c43f.js"><link rel="prefetch" href="/assets/js/45.09cdae5d.js"><link rel="prefetch" href="/assets/js/46.bf04cee8.js"><link rel="prefetch" href="/assets/js/47.4be1442f.js"><link rel="prefetch" href="/assets/js/48.c90986e6.js"><link rel="prefetch" href="/assets/js/49.e0df44d7.js"><link rel="prefetch" href="/assets/js/5.106e8893.js"><link rel="prefetch" href="/assets/js/50.e589f43d.js"><link rel="prefetch" href="/assets/js/51.52e2dd5e.js"><link rel="prefetch" href="/assets/js/52.9b9b1b60.js"><link rel="prefetch" href="/assets/js/53.51261bc0.js"><link rel="prefetch" href="/assets/js/54.9a082c0b.js"><link rel="prefetch" href="/assets/js/55.cb478dba.js"><link rel="prefetch" href="/assets/js/56.a9c5ea04.js"><link rel="prefetch" href="/assets/js/57.a1b56ab7.js"><link rel="prefetch" href="/assets/js/58.60e77be8.js"><link rel="prefetch" href="/assets/js/59.c07f2b7e.js"><link rel="prefetch" href="/assets/js/6.015a6f59.js"><link rel="prefetch" href="/assets/js/60.2d300070.js"><link rel="prefetch" href="/assets/js/61.f54bc147.js"><link rel="prefetch" href="/assets/js/62.0ec8ca93.js"><link rel="prefetch" href="/assets/js/63.7c8b03d9.js"><link rel="prefetch" href="/assets/js/64.78d7222e.js"><link rel="prefetch" href="/assets/js/65.866ef779.js"><link rel="prefetch" href="/assets/js/66.a52448b6.js"><link rel="prefetch" href="/assets/js/67.9d0c871c.js"><link rel="prefetch" href="/assets/js/68.27308da1.js"><link rel="prefetch" href="/assets/js/69.88f30473.js"><link rel="prefetch" href="/assets/js/7.e591ee0c.js"><link rel="prefetch" href="/assets/js/70.74560474.js"><link rel="prefetch" href="/assets/js/71.3f81de49.js"><link rel="prefetch" href="/assets/js/72.261a96ba.js"><link rel="prefetch" href="/assets/js/73.7d09ee13.js"><link rel="prefetch" href="/assets/js/74.668f53a7.js"><link rel="prefetch" href="/assets/js/75.5a07cf00.js"><link rel="prefetch" href="/assets/js/76.5cb7756e.js"><link rel="prefetch" href="/assets/js/77.ee0ac284.js"><link rel="prefetch" href="/assets/js/78.a4bf6899.js"><link rel="prefetch" href="/assets/js/79.86d6a675.js"><link rel="prefetch" href="/assets/js/8.c3659f73.js"><link rel="prefetch" href="/assets/js/80.ca1d23ad.js"><link rel="prefetch" href="/assets/js/81.834d4fa2.js"><link rel="prefetch" href="/assets/js/82.c1c44655.js"><link rel="prefetch" href="/assets/js/83.b2f5aaef.js"><link rel="prefetch" href="/assets/js/84.49bf081e.js"><link rel="prefetch" href="/assets/js/85.036dd295.js"><link rel="prefetch" href="/assets/js/86.8ede464d.js"><link rel="prefetch" href="/assets/js/9.6d2e7baf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d19fd84.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jovins Blog</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link router-link-active">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link router-link-active">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>Go</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/source/go/" class="sidebar-link">Go语言开篇</a></li><li><a href="/source/go/go-deployed-on-the-server.html" class="sidebar-link">Go部署在阿里云linux服务器</a></li><li><a href="/source/go/Go-Path-Variable.html" class="sidebar-link">Go 环境变量</a></li><li><a href="/source/go/Go-Go-echarts.html" class="sidebar-link">Go Go-echarts</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Go Web学习</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>Go 基础教程</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/source/go/01-first.html" class="active sidebar-link">01-C语言和Go语言对比</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/source/go/01-first.html#源文件对比" class="sidebar-link">源文件对比</a></li><li class="sidebar-sub-header"><a href="/source/go/01-first.html#代码管理对比" class="sidebar-link">代码管理对比</a></li><li class="sidebar-sub-header"><a href="/source/go/01-first.html#关键字对比" class="sidebar-link">关键字对比</a></li><li class="sidebar-sub-header"><a href="/source/go/01-first.html#数据类型对比" class="sidebar-link">数据类型对比</a></li><li class="sidebar-sub-header"><a href="/source/go/01-first.html#常量变量对比" class="sidebar-link">常量变量对比</a></li><li class="sidebar-sub-header"><a href="/source/go/01-first.html#注释对比" class="sidebar-link">注释对比</a></li><li class="sidebar-sub-header"><a href="/source/go/01-first.html#运算符对比" class="sidebar-link">运算符对比</a></li><li class="sidebar-sub-header"><a href="/source/go/01-first.html#流程控制语句对比" class="sidebar-link">流程控制语句对比</a></li><li class="sidebar-sub-header"><a href="/source/go/01-first.html#函数和方法对比" class="sidebar-link">函数和方法对比</a></li><li class="sidebar-sub-header"><a href="/source/go/01-first.html#编程思想对比" class="sidebar-link">编程思想对比</a></li><li class="sidebar-sub-header"><a href="/source/go/01-first.html#其它新增特性" class="sidebar-link">其它新增特性</a></li><li class="sidebar-sub-header"><a href="/source/go/01-first.html#go学习笔记" class="sidebar-link">Go学习笔记</a></li></ul></li><li><a href="/source/go/02-two.html" class="sidebar-link">02-Go语言开发环境搭建</a></li><li><a href="/source/go/03-three.html" class="sidebar-link">03-第一个Go语言程序</a></li><li><a href="/source/go/04-four.html" class="sidebar-link">04-Go语言关键字和标识符</a></li><li><a href="/source/go/05-five.html" class="sidebar-link">05-Go语言常量和变量</a></li><li><a href="/source/go/06-six.html" class="sidebar-link">06-输入输出函数</a></li><li><a href="/source/go/07-seven.html" class="sidebar-link">07-Go语言命令行参数</a></li><li><a href="/source/go/08-eight.html" class="sidebar-link">08-Go语言运算符</a></li><li><a href="/source/go/09-nine.html" class="sidebar-link">09-Go语言流程控制</a></li><li><a href="/source/go/10-ten.html" class="sidebar-link">10-Go语言函数</a></li><li><a href="/source/go/11-eleven.html" class="sidebar-link">11-Go语言数组和切片</a></li><li><a href="/source/go/12-twelve.html" class="sidebar-link">12-Go语言字典和结构体</a></li><li><a href="/source/go/13-thirteen.html" class="sidebar-link">13-指针</a></li><li><a href="/source/go/14-fourteen.html" class="sidebar-link">14-Go方法和接口</a></li><li><a href="/source/go/15-fifteen.html" class="sidebar-link">15-Go语言面向对象</a></li><li><a href="/source/go/16-sixteen.html" class="sidebar-link">16-Go语言异常处理</a></li><li><a href="/source/go/17-seventeen.html" class="sidebar-link">17-Go语言字符串和正则表达式</a></li><li><a href="/source/go/18-eighteen.html" class="sidebar-link">18-Go语言和C语言交叉访问</a></li><li><a href="/source/go/19-nineteen.html" class="sidebar-link">19-文件操作</a></li><li><a href="/source/go/20-concurrent.html" class="sidebar-link">20-Go语言并发编程</a></li><li><a href="/source/go/21-Channel.html" class="sidebar-link">21-Channel</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="_01-c语言和go语言对比"><a href="#_01-c语言和go语言对比" aria-hidden="true" class="header-anchor">#</a> 01-C语言和Go语言对比</h1> <h2 id="源文件对比"><a href="#源文件对比" aria-hidden="true" class="header-anchor">#</a> 源文件对比</h2> <ul><li>C语言源文件</li></ul> <table><thead><tr><th>文件扩展名</th> <th>源类型</th></tr></thead> <tbody><tr><td>.h</td> <td>头文件，存放代码声明</td></tr> <tr><td>.c</td> <td>C语言源文件，存放代码实现</td></tr></tbody></table> <ul><li>Go语言源文件</li></ul> <table><thead><tr><th>文件扩展名</th> <th>源类型</th></tr></thead> <tbody><tr><td>.go</td> <td>Go语言源文件，存放代码实现</td></tr></tbody></table> <h2 id="代码管理对比"><a href="#代码管理对比" aria-hidden="true" class="header-anchor">#</a> 代码管理对比</h2> <ul><li>C语言中通过文件来管理代码
+<ul><li>想使用某一个函数时,只需要include导入对应的.h文件即可</li></ul></li> <li>Go语言中通过包来管理代码
+<ul><li>Go语言没有.h文件的概念, 在Go中想使用某一个函数时, 只需要import导入对应的包即可</li></ul></li> <li>C语言中函数、变量公私有管理
+<ul><li>通过extern和static实现是否公开函数和变量</li></ul></li> <li>Go语言中函数、变量公私有管理
+<ul><li>通过函数名称首字母大小写实现是否公开函数</li> <li>通过变量名称首字母大小写实现是否公开变量</li></ul></li></ul> <h2 id="关键字对比"><a href="#关键字对比" aria-hidden="true" class="header-anchor">#</a> 关键字对比</h2> <ul><li>C语言中一共有32个关键字</li></ul> <table><thead><tr><th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th> <th>6</th> <th>7</th> <th>8</th></tr></thead> <tbody><tr><td><strong>if</strong></td> <td><strong>else</strong></td> <td><strong>switch</strong></td> <td><strong>case</strong></td> <td><strong>default</strong></td> <td><strong>break</strong></td> <td><strong>return</strong></td> <td><strong>goto</strong></td></tr> <tr><td>do</td> <td>while</td> <td><strong>for</strong></td> <td><strong>continue</strong></td> <td>typedef</td> <td><strong>struct</strong></td> <td>enum</td> <td>union</td></tr> <tr><td>char</td> <td>short</td> <td>int</td> <td>long</td> <td>float</td> <td>double</td> <td>void</td> <td>sizeof</td></tr> <tr><td>signed</td> <td>unsigned</td> <td><strong>const</strong></td> <td>auto</td> <td>register</td> <td>static</td> <td>extern</td> <td>volatile</td></tr></tbody></table> <ul><li>Go语言中一共有25个关键字</li></ul> <table><thead><tr><th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th> <th>6</th> <th>7</th> <th>8</th></tr></thead> <tbody><tr><td><strong>if</strong></td> <td><strong>else</strong></td> <td><strong>switch</strong></td> <td><strong>case</strong></td> <td><strong>default</strong></td> <td><strong>break</strong></td> <td><strong>return</strong></td> <td><strong>goto</strong></td></tr> <tr><td>fallthrough</td> <td><strong>for</strong></td> <td><strong>continue</strong></td> <td>type</td> <td><strong>struct</strong></td> <td>var</td> <td><strong>const</strong></td> <td>map</td></tr> <tr><td>func</td> <td>interface</td> <td>range</td> <td>import</td> <td>package</td> <td>defer</td> <td>go</td> <td>select</td></tr> <tr><td>chan</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr></tbody></table> <ul><li>关键字</li></ul> <div class="language- extra-class"><pre class="language-text"><code>C语言关键字就是被C语言赋予特殊含义的单词
+Go语言关键字就是被GO语言赋予特殊含义的单词
+
+关键字的特点
+C语言关键字都是小写, 在开发工具中都有特殊的颜色
+Go语言关键字都是小写, 在开发工具中都有特殊的颜色
+
+关键字注意点
+C语言的关键字不能用于变量的名称和函数的名称
+Go言的关键字不能用于变量的名称和函数的名称
+</code></pre></div><h2 id="数据类型对比"><a href="#数据类型对比" aria-hidden="true" class="header-anchor">#</a> 数据类型对比</h2> <ul><li>C语言数据类型</li></ul> <p><img src="https://upload-images.jianshu.io/upload_images/647982-64594dced40fd10b.png" alt></p> <ul><li>Go语言数据类型</li></ul> <p><img src="https://upload-images.jianshu.io/upload_images/647982-0d56257d579ee0ea.png" alt></p> <ul><li>C语言各数据类型占用内存空间</li></ul> <table><thead><tr><th>类型</th> <th>32位编译器</th> <th>64位编译器</th></tr></thead> <tbody><tr><td>char</td> <td>1</td> <td>1</td></tr> <tr><td>int</td> <td>4</td> <td>4</td></tr> <tr><td>float</td> <td>4</td> <td>4</td></tr> <tr><td>double</td> <td>8</td> <td>8</td></tr> <tr><td>short</td> <td>2</td> <td>2</td></tr> <tr><td>long</td> <td>4</td> <td>8</td></tr> <tr><td>long long</td> <td>8</td> <td>8</td></tr> <tr><td>void*</td> <td>4</td> <td>8</td></tr></tbody></table> <ul><li>Go语言各数据类型占用内存空间</li></ul> <table><thead><tr><th>类型</th> <th>32位编译器</th> <th>64位编译器</th> <th>本质</th></tr></thead> <tbody><tr><td>int8/uint8</td> <td>1</td> <td>1</td> <td>signed char/unsigned char</td></tr> <tr><td>int16/uint16</td> <td>2</td> <td>2</td> <td>signed short/unsigned short</td></tr> <tr><td>int32/uint32</td> <td>4</td> <td>4</td> <td>signed int/unsigned int</td></tr> <tr><td>int64/uint64</td> <td>8</td> <td>8</td> <td>signed long long int/unsigned long long int</td></tr> <tr><td>byte</td> <td>1</td> <td>1</td> <td>uint8/unsigned char</td></tr> <tr><td>rune</td> <td>4</td> <td>4</td> <td>int32/signed int</td></tr> <tr><td>int</td> <td>4</td> <td>8</td> <td>根据机器位数决定长度</td></tr> <tr><td>uintptr</td> <td>4</td> <td>8</td> <td>根据机器位数决定长度 uint32/uint64</td></tr> <tr><td>float32</td> <td>4</td> <td>4</td> <td>float</td></tr> <tr><td>float64</td> <td>8</td> <td>8</td> <td>double</td></tr> <tr><td>true</td> <td>1</td> <td>1</td> <td>char类型的整型</td></tr> <tr><td>false</td> <td>1</td> <td>1</td> <td>char类型的整型</td></tr></tbody></table> <ul><li><p>和C语言一样,Go语言也提供了Sizeof计算变量的内存空间</p> <ul><li>1.导入import &quot;unsafe&quot;包</li> <li>2.通过unsafe.Sizeof()计算变量内存空间</li></ul></li> <li><p>Go语言基本数据类型内部实现</p> <ul><li><a href="https://github.com/golang/go/releases" target="_blank" rel="noopener noreferrer">golang官方网站下载go1.4版本源代码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>越老版本的代码越纯粹,越适合新手学习随着代码的更新迭代会逐步变得非常复杂, 所以此处建议下载1.4版本</li> <li>解压后打开路径: <code>go\src\runtime\runtime.h</code></li></ul> <p><img src="https://upload-images.jianshu.io/upload_images/647982-101651e039b7e8c4.png" alt></p> <ul><li>得到如下实现代码</li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 第8行到35行
+typedef signed char     int8;
+typedef unsigned char       uint8;
+typedef signed short        int16;
+typedef unsigned short      uint16;
+typedef signed int      int32;
+typedef unsigned int        uint32;
+typedef signed long long int    int64;
+typedef unsigned long long int  uint64;
+typedef float           float32;
+typedef double          float64;
+
+#ifdef _64BIT
+typedef uint64      uintptr;
+typedef int64       intptr;
+typedef int64       intgo; // Go's int
+typedef uint64      uintgo; // Go's uint
+#else
+typedef uint32      uintptr;
+typedef int32       intptr;
+typedef int32       intgo; // Go's int
+typedef uint32      uintgo; // Go's uint
+#endif
+
+#ifdef _64BITREG
+typedef uint64      uintreg;
+#else
+typedef uint32      uintreg;
+#endif
+
+// 第153行到157行
+enum
+{
+    true    = 1,
+    false   = 0,
+};
+</code></pre></div><ul><li>install B 时刻:
+Go本质就是用C语言编写的一门高级编程语言
+所以江哥前面教你C语言就是为了今天能让你看懂Go的实现代码,做到知其然知其所以然</li></ul></li></ul> <h2 id="常量变量对比"><a href="#常量变量对比" aria-hidden="true" class="header-anchor">#</a> 常量变量对比</h2> <ul><li>C语言定义常量和变量格式</li></ul> <div class="language- extra-class"><pre class="language-text"><code>数据类型 变量名称 = 值;
+const 数据类型 常量名称 = 值;
+
+</code></pre></div><ul><li>Go语言定义常量和变量格式
+<ul><li>除了以下标准格式外,Go语言还提供了好几种简单的语法糖</li></ul></li></ul> <div class="language- extra-class"><pre class="language-text"><code>var 变量名称 数据类型 = 值;
+const 变量名称 数据类型 = 值;
+</code></pre></div><ul><li>标识符</li></ul> <div class="language- extra-class"><pre class="language-text"><code>1.1C语言中程序员自己起的名称就是标识符
+1.2GO语言中程序员自己起的名称就是标识符
+
+2.标识符的名称规则
+2.1C语言中标识符只能由数字/字母/_组成, 并且不能以数字开头
+2.2Go语言中标识符只能由数字/字母/_组成, 并且不能以数字开头
+注意点:
+Go语言支持UTF-8, 所以可以用中文作为标识符(不推荐)
+标识符严格区分大小写 Test和test不是同一个标识符
+
+3.标识符名称规范
+3.1在C语言中要求驼峰命名
+3.2在Go语言中也要求驼峰命名
+</code></pre></div><h2 id="注释对比"><a href="#注释对比" aria-hidden="true" class="header-anchor">#</a> 注释对比</h2> <ul><li>和C语言一样,Go语言也支持单行注释和多行注释, 并且所有注释的特性都和C语言一样
+<ul><li>单行注释 <code>// 被注释内容</code></li> <li>多行注释 <code>/* 被注释内容*/</code></li></ul></li> <li>在Go语言中,官方更加推荐使用单行注释,而非多行注释(详情可以直接查看Go官方源码)</li></ul> <h2 id="运算符对比"><a href="#运算符对比" aria-hidden="true" class="header-anchor">#</a> 运算符对比</h2> <ul><li>算数运算符和C语言几乎一样
+<ul><li>Go语言中++、--运算符不支持前置
+<ul><li>错误写法: ++i; --i;</li></ul></li> <li>Go语言中++、--是语句,不是表达式,所以必须独占一行
+<ul><li>错误写法: a = i++;  return i++;</li></ul></li></ul></li></ul> <table><thead><tr><th>运算符</th> <th>描述</th> <th>实例</th></tr></thead> <tbody><tr><td>+</td> <td>相加</td> <td>A + B</td></tr> <tr><td>-</td> <td>相减</td> <td>A - B</td></tr> <tr><td>*</td> <td>相乘</td> <td>A * B</td></tr> <tr><td>/</td> <td>相除</td> <td>B / A</td></tr> <tr><td>%</td> <td>求余</td> <td>B % A</td></tr> <tr><td>++</td> <td>自增</td> <td>A++</td></tr> <tr><td>--</td> <td>自减</td> <td>A--</td></tr></tbody></table> <ul><li>关系算符和C语言一样</li></ul> <table><thead><tr><th>运算符</th> <th>描述</th> <th>实例</th></tr></thead> <tbody><tr><td>==</td> <td>检查两个值是否相等，如果相等返回 True 否则返回 False。</td> <td>A == B</td></tr> <tr><td>!=</td> <td>检查两个值是否不相等，如果不相等返回 True 否则返回 False。</td> <td>A != B</td></tr> <tr><td>&gt;</td> <td>检查左边值是否大于右边值，如果是返回 True 否则返回 False。</td> <td>A &gt; B</td></tr> <tr><td>&lt;</td> <td>检查左边值是否小于右边值，如果是返回 True 否则返回 False。</td> <td>A &lt; B</td></tr> <tr><td>&gt;=</td> <td>检查左边值是否大于等于右边值，如果是返回 True 否则返回 False。</td> <td>A &gt;= B</td></tr> <tr><td>&lt;=</td> <td>检查左边值是否小于等于右边值，如果是返回 True 否则返回 False。</td> <td>A &lt;= B</td></tr></tbody></table> <ul><li>逻辑运算符和C语言一样</li></ul> <table><thead><tr><th>运算符</th> <th>描述</th> <th>实例</th></tr></thead> <tbody><tr><td>&amp;&amp;</td> <td>如果两边的操作数都是 True，则条件 True，否则为 False。</td> <td>A &amp;&amp; B</td></tr> <tr><td><code>\|\|</code></td> <td>如果两边的操作数有一个 True，则条件 True，否则为 False。</td> <td>A || B</td></tr> <tr><td>!</td> <td>如果条件为 True，则逻辑 NOT 条件 False，否则为 True。</td> <td>!A</td></tr></tbody></table> <ul><li>位运算符和C语言几乎一样
+<ul><li>新增一个&amp;^运算符</li></ul></li></ul> <table><thead><tr><th>运算符</th> <th>描述</th> <th>实例</th></tr></thead> <tbody><tr><td>&amp;</td> <td>参与运算的两数各对应的二进位相与, 对应位只要都是1结果就为1</td> <td>A &amp; B</td></tr> <tr><td><code>\|</code></td> <td>参与运算的两数各对应的二进位相或,对应位只要其中一个是1结果就为1</td> <td>A | B</td></tr> <tr><td>^</td> <td>参与运算的两数各对应的二进位相异或,对应位只要不同结果就是1</td> <td>A ^ B</td></tr> <tr><td>&lt;&lt;</td> <td>左移运算符,左移n位就是乘以2的n次方</td> <td>A &lt;&lt; 2</td></tr> <tr><td>&gt;&gt;</td> <td>右移运算符,右移n位就是除以2的n次方</td> <td>B &gt;&gt; 2</td></tr> <tr><td>&amp;^</td> <td>逻辑清零运算符, B对应位是1,A对应位清零,B对应位是0, A对应位保留原样</td> <td>A &amp;^ B</td></tr></tbody></table> <div class="language- extra-class"><pre class="language-text"><code>int main(){
+    /*
+      0110      a
+    &amp;^1011      b 如果b位位1,那么结果为0, 否则结果为a位对应的值
+    ----------
+      0100
+    */
+    a1 := 6
+    b1 := 11
+    res1 := a1 &amp;^ b1
+    fmt.Println(&quot;res1 = &quot;, res1) // 4
+
+    /*
+      1011      a
+    &amp;^1101      b 如果b位位1,那么结果为0, 否则结果为a位对应的值
+    ----------
+      0010
+    */
+    a2 := 11
+    b2 := 13
+    res2 := a2 &amp;^ b2
+    fmt.Println(&quot;res2 = &quot;, res2) // 2
+}
+</code></pre></div><ul><li>赋值运算符和C语言几乎一样
+<ul><li>新增一个&amp;^=运算符</li></ul></li></ul> <table><thead><tr><th>运算符</th> <th>描述</th> <th>实例</th></tr></thead> <tbody><tr><td>=</td> <td>将右边赋值给左边</td> <td>C = A + B 将 A + B 表达式结果赋值给 C</td></tr> <tr><td>+=</td> <td>相加后再赋值</td> <td>C += A 等于 C = C + A</td></tr> <tr><td>-=</td> <td>相减后再赋值</td> <td>C -= A 等于 C = C - A</td></tr> <tr><td>*=</td> <td>相乘后再赋值</td> <td>C *= A 等于 C = C * A</td></tr> <tr><td>/=</td> <td>相除后再赋值</td> <td>C /= A 等于 C = C / A</td></tr> <tr><td>%=</td> <td>求余后再赋值</td> <td>C %= A 等于 C = C % A</td></tr> <tr><td>&lt;&lt;=</td> <td>左移赋值</td> <td>C &lt;&lt;= 2 等于 C = C &lt;&lt; 2</td></tr> <tr><td>&gt;&gt;=</td> <td>右移赋值</td> <td>C &gt;&gt;= 2 等于 C = C &gt;&gt; 2</td></tr> <tr><td>&amp;=</td> <td>位逻辑与赋值</td> <td>C &amp;= 2 等于 C = C &amp; 2</td></tr> <tr><td>^=</td> <td>位逻辑或赋值</td> <td>C ^= 2 等于 C = C ^ 2</td></tr> <tr><td><code>\|=</code></td> <td>位逻辑异或赋值</td> <td>C |= 2 等于 C = C | 2</td></tr> <tr><td>&amp;^=</td> <td>位逻辑清零赋值</td> <td>C &amp;^= 2 等于 C = C &amp;^ 2</td></tr></tbody></table> <h2 id="流程控制语句对比"><a href="#流程控制语句对比" aria-hidden="true" class="header-anchor">#</a> 流程控制语句对比</h2> <ul><li>C语言流程控制中的if、switch、for在Go语言都可以使用</li> <li>C语言中的四大跳转语句return、break、continue、goto在Go语言都可以使用</li> <li>Go语言除了实现C语言中if、switch、for、return、break、continue、goto的基本功能以外,还对if、switch、for、break、continue进行了增强
+<ul><li>例如: if 条件表达式前面可以添加初始化表达式</li> <li>例如: break、continue可以指定标签</li> <li>例如: switch语句可以当做if/elseif来使用</li> <li>... ...</li></ul></li> <li>值得注意的是Go语言中没有while循环和dowhile循环, 因为它们能做的Go语言中的for循环都可以做</li></ul> <h2 id="函数和方法对比"><a href="#函数和方法对比" aria-hidden="true" class="header-anchor">#</a> 函数和方法对比</h2> <ul><li>C语言定义函数格式</li></ul> <div class="language- extra-class"><pre class="language-text"><code>返回值类型 函数名称(形参列表) {
+        函数体相关语句;
+        return 返回值;
+}
+
+</code></pre></div><ul><li>Go语言定义函数格式</li></ul> <div class="language- extra-class"><pre class="language-text"><code>func  函数名称(形参列表)(返回值列表) {
+        函数体相关语句;
+        return 返回值;
+}
+
+</code></pre></div><ul><li>C语言中没有方法的概念, 但是Go语言中有方法
+<ul><li>对于初学者而言,可以简单的把方法理解为一种特殊的函数</li></ul></li></ul> <div class="language- extra-class"><pre class="language-text"><code>func  (接收者 接受者类型)函数名称(形参列表)(返回值列表) {
+        函数体相关语句;
+        return 返回值;
+}
+</code></pre></div><h2 id="编程思想对比"><a href="#编程思想对比" aria-hidden="true" class="header-anchor">#</a> 编程思想对比</h2> <ul><li>C语言是一门面向过程的编程语言
+<ul><li>面向过程: 按部就班, 亲力亲为,关注的是我应该怎么做?</li> <li>做饭例子: 面向过程做饭
+<ul><li>1.上街买菜</li> <li>2.摘菜</li> <li>3.洗菜</li> <li>4.切菜</li> <li>5.开火炒菜</li> <li>6.淘米煮饭</li> <li>7.吃饭</li></ul></li></ul></li> <li>Go语言是们面向对象的编程语言
+<ul><li>面向对象:化繁为简, 能不自己干自己就不干,关注的是我应该让谁来做?</li> <li>做饭例子: 面向对象做饭</li> <li>1.找个会做饭女朋友 or 男朋友</li> <li>2.老婆我饿了 or 老公我饿了</li> <li>3.躺着...等她/他把饭做好</li> <li>4.吃饭</li></ul></li> <li>不要把面向过程和面向对象想象得那么神奇, 它们只是思考问题的方式不同而已</li></ul> <h2 id="其它新增特性"><a href="#其它新增特性" aria-hidden="true" class="header-anchor">#</a> 其它新增特性</h2> <ul><li>接口</li> <li>并发</li> <li>反射</li> <li>异常处理</li></ul> <h2 id="go学习笔记"><a href="#go学习笔记" aria-hidden="true" class="header-anchor">#</a> Go学习笔记</h2> <ul><li>C语言是由于什么组成的?
+<ul><li>C语言是由函数组成的</li> <li>同样Go语言也是由函数组成的</li></ul></li> <li>C语言程序的入口是谁?
+<ul><li>C语言程序的入口是main函数</li> <li>同样Go语言的程序入口也是main函数</li></ul></li> <li>C语言main函数的注意点?
+<ul><li>一个程序只能有一个main函数, 没有main函数程序不能执行</li> <li>同样Go语言也只能有一个main函数, 没有main函数程序不能执行</li></ul></li> <li>main函数的格式?</li></ul> <div class="language- extra-class"><pre class="language-text"><code>int main(){
+逻辑语句;
+}
+fun: 代表这是一个函数
+main: 函数的名称
+(): 形参列表
+{}: 函数体
+fun main(){
+   逻辑语句;
+}
+</code></pre></div><ul><li>C语言中如何往控制台输出内容?</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#include &lt;stdio.h&gt; 告诉系统去哪找输出函数的实现
+printf(&quot;要输出的内容&quot;); 告诉系统要输出什么内容
+
+在GO语言中如何往控制台输出内容?
+import &quot;fmt&quot; 告诉系统去哪找输出函数的实现
+fmt.Printf(&quot;要输出的内容&quot;); 告诉系统要输出什么内容
+
+注意点:
+Go语言的main函数只能写在package main的这个包中
+</code></pre></div><ul><li>如何快速新建一个文件或者文件夹</li></ul> <div class="language- extra-class"><pre class="language-text"><code>Ctrl + Alt + Ins
+</code></pre></div><ul><li>保存源代码的文件不同</li></ul> <div class="language- extra-class"><pre class="language-text"><code>1.1C语言的源代码保存在.c文件中
+1.2Go语言的源代码保存在.go文件中
+</code></pre></div><ul><li>代码的管理方式不同</li></ul> <div class="language- extra-class"><pre class="language-text"><code>C语言通过文件来管理代码, 会将不同的功能(模块)的代码, 放到不同的文件中, 然后声明.h, 然后include导入.h文件使用对应的代码
+Go语言通过包来管理代码, 会将不同功能(模块)的代码, 放到不同的包中, 然后通过import导入包来使用对应的代码
+</code></pre></div><ul><li>什么是包?</li></ul> <div class="language- extra-class"><pre class="language-text"><code>1.在Go语言中, 一个文件夹就是一个包, 只需要将不同的类型的.go文件放到不同的文件夹中, 然后通过package声明包名即可.
+2.注意点:
+2.1Go语言规范规定, 包名要和.go文件所在的文件夹的名称保持一致
+2.2Go语言规定, 包名不能重复
+</code></pre></div><ul><li>Go语言标准的项目格式</li></ul> <div class="language- extra-class"><pre class="language-text"><code>-------|---------src文件夹(用于存储.go文件的文件夹)
+----------------------|---------main文件夹(存放package main对应文件的文件夹)
+----------------------|---------other文件夹(存放package 其它对应文件的文件夹)
+-------|---------bin文件夹(用于存放可执行程序的文件夹)
+-------|---------pkg文件夹(用于存放二进制文件的文件夹)
+</code></pre></div><ul><li>函数的调用格式不同</li></ul> <div class="language- extra-class"><pre class="language-text"><code>C语言只要include之后, 就可以直接通过函数名称调用了
+Go语言通过import之后, 还需通过报名.函数名称的方式来调用
+</code></pre></div><ul><li>语句的结束方式不同</li></ul> <div class="language- extra-class"><pre class="language-text"><code>C语言每条语句后面都必须添加分号
+Go语言每条语句后面不用添加分号, 但是如果两条语句在同一行, 就必须添加分号
+</code></pre></div><ul><li>对代码的严格程度不同</li></ul> <div class="language- extra-class"><pre class="language-text"><code>C语言中include了一个.h文件, 哪怕没有使用也不会报错
+Go语言中import了一个包, 如果没有使用, 就会报错
+
+C语言中定义变量没有使用不会报错
+Go语言中定义变量没有使用就会报错
+
+C语言中函数的{可以和函数名称在同一行, 也可以不再同一行
+Go语言中函数的{必须和函数名称在同一行, 否则会报错
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/source/go/Go-Web-Gin-HTTP-log.html" class="prev">
+          Go GiN框架: HTTP请求日志
+        </a></span> <span class="next"><a href="/source/go/02-two.html">
+          02-Go语言开发环境搭建
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.aee163d7.js" defer></script><script src="/assets/js/28.80aeb13f.js" defer></script>
+  </body>
+</html>

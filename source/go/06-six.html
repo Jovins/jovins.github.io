@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>06-输入输出函数 | Jovins Blog</title>
+    <meta name="description" content="Work Hard, Play Hard">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.0d19fd84.css" as="style"><link rel="preload" href="/assets/js/app.aee163d7.js" as="script"><link rel="preload" href="/assets/js/33.db2c4cfb.js" as="script"><link rel="prefetch" href="/assets/js/10.1e34e5ff.js"><link rel="prefetch" href="/assets/js/11.491dfd54.js"><link rel="prefetch" href="/assets/js/12.a55c1fe7.js"><link rel="prefetch" href="/assets/js/13.5af2a714.js"><link rel="prefetch" href="/assets/js/14.14535d2d.js"><link rel="prefetch" href="/assets/js/15.3a5c4d96.js"><link rel="prefetch" href="/assets/js/16.f0724826.js"><link rel="prefetch" href="/assets/js/17.a41afda0.js"><link rel="prefetch" href="/assets/js/18.8dd90a66.js"><link rel="prefetch" href="/assets/js/19.4fb6d9b8.js"><link rel="prefetch" href="/assets/js/2.b7fedc2a.js"><link rel="prefetch" href="/assets/js/20.c7ee29bf.js"><link rel="prefetch" href="/assets/js/21.ec5919dd.js"><link rel="prefetch" href="/assets/js/22.7351d6cc.js"><link rel="prefetch" href="/assets/js/23.8adf705b.js"><link rel="prefetch" href="/assets/js/24.5dda7d7c.js"><link rel="prefetch" href="/assets/js/25.d6c4beda.js"><link rel="prefetch" href="/assets/js/26.3fae1b4d.js"><link rel="prefetch" href="/assets/js/27.42848bbe.js"><link rel="prefetch" href="/assets/js/28.80aeb13f.js"><link rel="prefetch" href="/assets/js/29.d3f479f5.js"><link rel="prefetch" href="/assets/js/3.fe3c8939.js"><link rel="prefetch" href="/assets/js/30.b28e0cfa.js"><link rel="prefetch" href="/assets/js/31.39756cd5.js"><link rel="prefetch" href="/assets/js/32.475d42d9.js"><link rel="prefetch" href="/assets/js/34.8e9cd72f.js"><link rel="prefetch" href="/assets/js/35.48663882.js"><link rel="prefetch" href="/assets/js/36.f92ac67a.js"><link rel="prefetch" href="/assets/js/37.67c65ed9.js"><link rel="prefetch" href="/assets/js/38.841de0ec.js"><link rel="prefetch" href="/assets/js/39.9ee667aa.js"><link rel="prefetch" href="/assets/js/4.28e0dd42.js"><link rel="prefetch" href="/assets/js/40.0f4d2bb8.js"><link rel="prefetch" href="/assets/js/41.a292c8af.js"><link rel="prefetch" href="/assets/js/42.ca402a95.js"><link rel="prefetch" href="/assets/js/43.1a920a89.js"><link rel="prefetch" href="/assets/js/44.1136c43f.js"><link rel="prefetch" href="/assets/js/45.09cdae5d.js"><link rel="prefetch" href="/assets/js/46.bf04cee8.js"><link rel="prefetch" href="/assets/js/47.4be1442f.js"><link rel="prefetch" href="/assets/js/48.c90986e6.js"><link rel="prefetch" href="/assets/js/49.e0df44d7.js"><link rel="prefetch" href="/assets/js/5.106e8893.js"><link rel="prefetch" href="/assets/js/50.e589f43d.js"><link rel="prefetch" href="/assets/js/51.52e2dd5e.js"><link rel="prefetch" href="/assets/js/52.9b9b1b60.js"><link rel="prefetch" href="/assets/js/53.51261bc0.js"><link rel="prefetch" href="/assets/js/54.9a082c0b.js"><link rel="prefetch" href="/assets/js/55.cb478dba.js"><link rel="prefetch" href="/assets/js/56.a9c5ea04.js"><link rel="prefetch" href="/assets/js/57.a1b56ab7.js"><link rel="prefetch" href="/assets/js/58.60e77be8.js"><link rel="prefetch" href="/assets/js/59.c07f2b7e.js"><link rel="prefetch" href="/assets/js/6.015a6f59.js"><link rel="prefetch" href="/assets/js/60.2d300070.js"><link rel="prefetch" href="/assets/js/61.f54bc147.js"><link rel="prefetch" href="/assets/js/62.0ec8ca93.js"><link rel="prefetch" href="/assets/js/63.7c8b03d9.js"><link rel="prefetch" href="/assets/js/64.78d7222e.js"><link rel="prefetch" href="/assets/js/65.866ef779.js"><link rel="prefetch" href="/assets/js/66.a52448b6.js"><link rel="prefetch" href="/assets/js/67.9d0c871c.js"><link rel="prefetch" href="/assets/js/68.27308da1.js"><link rel="prefetch" href="/assets/js/69.88f30473.js"><link rel="prefetch" href="/assets/js/7.e591ee0c.js"><link rel="prefetch" href="/assets/js/70.74560474.js"><link rel="prefetch" href="/assets/js/71.3f81de49.js"><link rel="prefetch" href="/assets/js/72.261a96ba.js"><link rel="prefetch" href="/assets/js/73.7d09ee13.js"><link rel="prefetch" href="/assets/js/74.668f53a7.js"><link rel="prefetch" href="/assets/js/75.5a07cf00.js"><link rel="prefetch" href="/assets/js/76.5cb7756e.js"><link rel="prefetch" href="/assets/js/77.ee0ac284.js"><link rel="prefetch" href="/assets/js/78.a4bf6899.js"><link rel="prefetch" href="/assets/js/79.86d6a675.js"><link rel="prefetch" href="/assets/js/8.c3659f73.js"><link rel="prefetch" href="/assets/js/80.ca1d23ad.js"><link rel="prefetch" href="/assets/js/81.834d4fa2.js"><link rel="prefetch" href="/assets/js/82.c1c44655.js"><link rel="prefetch" href="/assets/js/83.b2f5aaef.js"><link rel="prefetch" href="/assets/js/84.49bf081e.js"><link rel="prefetch" href="/assets/js/85.036dd295.js"><link rel="prefetch" href="/assets/js/86.8ede464d.js"><link rel="prefetch" href="/assets/js/9.6d2e7baf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d19fd84.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jovins Blog</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link router-link-active">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link router-link-active">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>Go</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/source/go/" class="sidebar-link">Go语言开篇</a></li><li><a href="/source/go/go-deployed-on-the-server.html" class="sidebar-link">Go部署在阿里云linux服务器</a></li><li><a href="/source/go/Go-Path-Variable.html" class="sidebar-link">Go 环境变量</a></li><li><a href="/source/go/Go-Go-echarts.html" class="sidebar-link">Go Go-echarts</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Go Web学习</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>Go 基础教程</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/source/go/01-first.html" class="sidebar-link">01-C语言和Go语言对比</a></li><li><a href="/source/go/02-two.html" class="sidebar-link">02-Go语言开发环境搭建</a></li><li><a href="/source/go/03-three.html" class="sidebar-link">03-第一个Go语言程序</a></li><li><a href="/source/go/04-four.html" class="sidebar-link">04-Go语言关键字和标识符</a></li><li><a href="/source/go/05-five.html" class="sidebar-link">05-Go语言常量和变量</a></li><li><a href="/source/go/06-six.html" class="active sidebar-link">06-输入输出函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/source/go/06-six.html#输出函数" class="sidebar-link">输出函数</a></li><li class="sidebar-sub-header"><a href="/source/go/06-six.html#输入函数" class="sidebar-link">输入函数</a></li></ul></li><li><a href="/source/go/07-seven.html" class="sidebar-link">07-Go语言命令行参数</a></li><li><a href="/source/go/08-eight.html" class="sidebar-link">08-Go语言运算符</a></li><li><a href="/source/go/09-nine.html" class="sidebar-link">09-Go语言流程控制</a></li><li><a href="/source/go/10-ten.html" class="sidebar-link">10-Go语言函数</a></li><li><a href="/source/go/11-eleven.html" class="sidebar-link">11-Go语言数组和切片</a></li><li><a href="/source/go/12-twelve.html" class="sidebar-link">12-Go语言字典和结构体</a></li><li><a href="/source/go/13-thirteen.html" class="sidebar-link">13-指针</a></li><li><a href="/source/go/14-fourteen.html" class="sidebar-link">14-Go方法和接口</a></li><li><a href="/source/go/15-fifteen.html" class="sidebar-link">15-Go语言面向对象</a></li><li><a href="/source/go/16-sixteen.html" class="sidebar-link">16-Go语言异常处理</a></li><li><a href="/source/go/17-seventeen.html" class="sidebar-link">17-Go语言字符串和正则表达式</a></li><li><a href="/source/go/18-eighteen.html" class="sidebar-link">18-Go语言和C语言交叉访问</a></li><li><a href="/source/go/19-nineteen.html" class="sidebar-link">19-文件操作</a></li><li><a href="/source/go/20-concurrent.html" class="sidebar-link">20-Go语言并发编程</a></li><li><a href="/source/go/21-Channel.html" class="sidebar-link">21-Channel</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="_06-输入输出函数"><a href="#_06-输入输出函数" aria-hidden="true" class="header-anchor">#</a> 06-输入输出函数</h1> <ul><li>Go语言fmt包实现了类似C语言printf和scanf的格式化I/O, 格式化动作源自C语言但更简单。</li></ul> <h2 id="输出函数"><a href="#输出函数" aria-hidden="true" class="header-anchor">#</a> 输出函数</h2> <ul><li><p>func Printf(format string, a ...interface{}) (n int, err error)</p> <ul><li>和C语言用法几乎一模一样, 只不过新增了一些格式化符号。</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    name <span class="token operator">:=</span> <span class="token string">&quot;hjw&quot;</span>
+    age <span class="token operator">:=</span> <span class="token number">33</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;name = %s, age = %d\n&quot;</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token comment">// name = hjw, age = 33</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>值得注意的是,输出十进制只能通过%d,不能像C语言一样通过%i。</li> <li>除了和C语言一样,可以通过%o、%x输出八进制和十六进制外,<code>还可以</code>直接通过%b输出二进制。</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    num <span class="token operator">:=</span> <span class="token number">15</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;十进制 = %d\n&quot;</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;八进制 = %o\n&quot;</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;十六进制 = %x\n&quot;</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;二进制 = %b\n&quot;</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>除此之外,Go语言还增加了%T控制符, 用于输出值的类型。</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      name <span class="token builtin">string</span>
+      age <span class="token builtin">int</span>
+  <span class="token punctuation">}</span>
+  num1 <span class="token operator">:=</span> <span class="token number">10</span>
+  num2 <span class="token operator">:=</span> <span class="token number">3.14</span>
+  per <span class="token operator">:=</span> Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;num1 = %T\n&quot;</span><span class="token punctuation">,</span> num1<span class="token punctuation">)</span> <span class="token comment">// int</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;num2 = %T\n&quot;</span><span class="token punctuation">,</span> num2<span class="token punctuation">)</span> <span class="token comment">// float64</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;per = %T\n&quot;</span><span class="token punctuation">,</span> per<span class="token punctuation">)</span> <span class="token comment">// main.Person</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>除此之外,Go语言还增加了%v控制符,用于打印所有类型数据。
+<ul><li>Go语言中输出某一个值,很少使用%d%f等, 一般都使用%v即可。</li> <li>输出复合类型时会自动生成对应格式后再输出。</li></ul></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      name <span class="token builtin">string</span>
+      age <span class="token builtin">int</span>
+  <span class="token punctuation">}</span>
+  num1 <span class="token operator">:=</span> <span class="token number">10</span>
+  num2 <span class="token operator">:=</span> <span class="token number">3.14</span>
+  per <span class="token operator">:=</span> Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">}</span>
+  <span class="token comment">// 此时相当于把%v当做%d</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;num1 = %v\n&quot;</span><span class="token punctuation">,</span> num1<span class="token punctuation">)</span> <span class="token comment">// 10</span>
+  <span class="token comment">// 此时相当于把%v当做%f</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;num2 = %v\n&quot;</span><span class="token punctuation">,</span> num2<span class="token punctuation">)</span> <span class="token comment">// 3.14</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>Go语言Printf函数其它特性,如宽度、标志、精度、长度、转移符号等,和C语言一样。</li></ul></li> <li><p>func Println(a ...interface{}) (n int, err error)</p> <ul><li>采用默认格式将其参数格式化并写入标准输出。
+<ul><li>输出之后<code>会</code>在结尾处添加换行。</li> <li>传入多个参数时, 会自动在相邻参数之间添加空格。</li> <li>传入符合类型数据时, 会自动生成对应格式后再输出。</li></ul></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  num1 <span class="token operator">:=</span> <span class="token number">10</span>
+  num2 <span class="token operator">:=</span> <span class="token number">3.14</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">)</span> <span class="token comment">// 10 3.14</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;num1 =&quot;</span><span class="token punctuation">,</span> num1<span class="token punctuation">,</span> <span class="token string">&quot;num2 =&quot;</span><span class="token punctuation">,</span> num2<span class="token punctuation">)</span> <span class="token comment">// num1 = 10 num2 = 3.14</span>
+
+  <span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      name <span class="token builtin">string</span>
+      age <span class="token builtin">int</span>
+  <span class="token punctuation">}</span>
+  per <span class="token operator">:=</span> Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>per<span class="token punctuation">)</span> <span class="token comment">// {hjw 33}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>func Print(a ...interface{}) (n int, err error)</p> <ul><li>和Println几乎一样。
+<ul><li>输出之后<code>不会</code>在结尾处添加换行。</li> <li>传入多个参数时, 只有两个相邻的参数<code>都不是</code>字符串,才会在相邻参数之间添加空格。</li> <li>传入符合类型数据时, 会自动生成对应格式后再输出。</li></ul></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  num1 <span class="token operator">:=</span> <span class="token number">10</span>
+  num2 <span class="token operator">:=</span> <span class="token number">3.14</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">)</span> <span class="token comment">// 10 3.14</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token string">&quot;num1 =&quot;</span><span class="token punctuation">,</span> num1<span class="token punctuation">,</span> <span class="token string">&quot;num2 =&quot;</span><span class="token punctuation">,</span> num2<span class="token punctuation">)</span> <span class="token comment">// num1 =10 num2 =3.14</span>
+
+  <span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      name <span class="token builtin">string</span>
+      age <span class="token builtin">int</span>
+  <span class="token punctuation">}</span>
+  per <span class="token operator">:=</span> Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span>per<span class="token punctuation">)</span> <span class="token comment">// {hjw 33}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>以下三个函数和Printf/Println/Print函数一样, 只不过上面三个函数是输出到标准输出, 而下面三个函数可以通过w指定输出到什么地方。</p></li> <li><p>func Fprintf(w io.Writer, format string, a ...interface{}) (n int, err error)</p></li> <li><p>func Fprintln(w io.Writer, a ...interface{}) (n int, err error)</p></li> <li><p>func Fprint(w io.Writer, a ...interface{}) (n int, err error)</p></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;net/http&quot;</span>
+    <span class="token string">&quot;os&quot;</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// os.Stdout 写入到标准输出</span>
+    name <span class="token operator">:=</span> <span class="token string">&quot;hjw&quot;</span>
+    age <span class="token operator">:=</span> <span class="token number">33</span>
+    <span class="token comment">// 第一个参数: 指定输出到什么地方</span>
+    <span class="token comment">// 第二个参数: 指定格式控制字符串</span>
+    <span class="token comment">// 第三个参数: 指定要输出的数据</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Fprintf</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>Stdout<span class="token punctuation">,</span> <span class="token string">&quot;name = %s, age = %d\n&quot;</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span>
+
+    <span class="token comment">// http.ResponseWriter 写入到网络响应</span>
+    http<span class="token punctuation">.</span><span class="token function">HandleFunc</span><span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>writer http<span class="token punctuation">.</span>ResponseWriter<span class="token punctuation">,</span> request <span class="token operator">*</span>http<span class="token punctuation">.</span>Request<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Fprintf</span><span class="token punctuation">(</span>writer<span class="token punctuation">,</span> <span class="token string">&quot;name = %s, age = %d\n&quot;</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    http<span class="token punctuation">.</span><span class="token function">ListenAndServe</span><span class="token punctuation">(</span><span class="token string">&quot;:8888&quot;</span><span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>以下三个函数和Printf/Println/Print函数一样, 只不过上面三个函数是输出到标准输出，而下面三个函数不会输出,而是将字符串返回给我们。</li> <li>func Sprintf(format string, a ...interface{}) string</li> <li>func Sprint(a ...interface{}) string</li> <li>func Sprintln(a ...interface{}) string</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;net/http&quot;</span>
+    <span class="token string">&quot;os&quot;</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    name <span class="token operator">:=</span> <span class="token string">&quot;hjw&quot;</span>
+    age <span class="token operator">:=</span> <span class="token number">33</span>
+    <span class="token comment">// 按照指定的格式生成字符串</span>
+    str <span class="token operator">:=</span> fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">&quot;name = %s, age = %d\n&quot;</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span>
+    <span class="token comment">// 输出生成的字符串</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="输入函数"><a href="#输入函数" aria-hidden="true" class="header-anchor">#</a> 输入函数</h2> <ul><li><p>func Scanf(format string, a ...interface{}) (n int, err error)</p> <ul><li>和C语言用法几乎一模一样, 但是只能输入一行数据。</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> num1 <span class="token builtin">int</span>
+    <span class="token keyword">var</span> num2 <span class="token builtin">int</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%d%d&quot;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>num1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>num2<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>func Scan(a ...interface{}) (n int, err error)</p> <ul><li>和C语言scanf函数几乎一样, 只不过不用指定格式化字符串。</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> num1 <span class="token builtin">int</span>
+  <span class="token keyword">var</span> num2 <span class="token builtin">int</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Scan</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>num1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>num2<span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">)</span>
+
+  <span class="token keyword">var</span> num3 <span class="token builtin">float32</span>
+  <span class="token keyword">var</span> num4 <span class="token builtin">float32</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Scan</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>num3<span class="token punctuation">,</span> <span class="token operator">&amp;</span>num4<span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>num3<span class="token punctuation">,</span> num4<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>func Scanln(a ...interface{}) (n int, err error)</p> <ul><li>和C语言用法几乎一模一样, 只不过不用指定格式化字符串, 并且只能输入一行数据。</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> num1 <span class="token builtin">int</span>
+    <span class="token keyword">var</span> num2 <span class="token builtin">int</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Scanln</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>num1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>num2<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>以下三个函数和Scan/Scanln/Scanf函数一样, 只不过上面三个函数是从标准输入读取数据, 而下面三个函数可以通过r指定从哪读取数据。</p></li> <li><p>func Fscanf(r io.Reader, format string, a ...interface{}) (n int, err error)</p></li> <li><p>func Fscanln(r io.Reader, a ...interface{}) (n int, err error)</p></li> <li><p>func Fscan(r io.Reader, a ...interface{}) (n int, err error)</p></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> num1 <span class="token builtin">int</span>
+    <span class="token keyword">var</span> num2 <span class="token builtin">int</span>
+    <span class="token comment">// 第一个参数: 指定从哪读取数据</span>
+    <span class="token comment">// 第二个参数: 指定格式控制字符串</span>
+    <span class="token comment">// 第三个参数: 指定要输出的数据</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Fscanf</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>Stdin<span class="token punctuation">,</span> <span class="token string">&quot;%d%d&quot;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>num1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>num2<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">)</span>
+
+    s <span class="token operator">:=</span> strings<span class="token punctuation">.</span><span class="token function">NewReader</span><span class="token punctuation">(</span><span class="token string">&quot;hjw 33&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">var</span> name <span class="token builtin">string</span>
+    <span class="token keyword">var</span> age <span class="token builtin">int</span>
+    <span class="token comment">// 从指定字符串中扫描出想要的数据</span>
+    <span class="token comment">// 注意:</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Fscanf</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> <span class="token string">&quot;%s%d&quot;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>name<span class="token punctuation">,</span> <span class="token operator">&amp;</span>age<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;name =&quot;</span><span class="token punctuation">,</span>name<span class="token punctuation">,</span> <span class="token string">&quot;age =&quot;</span><span class="token punctuation">,</span>age<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>以下三个函数和Scan/Scanln/Scanf函数一样, 只不过上面三个函数是从标准输入读取数据, 而下面三个函数是从字符串中读取数据。</li> <li>func Sscan(str string, a ...interface{}) (n int, err error)</li> <li>func Sscanf(str string, format string, a ...interface{}) (n int, err error)</li> <li>func Sscanln(str string, a ...interface{}) (n int, err error)</li></ul> <div class="language-go extra-class"><pre class="language-go"><code>  <span class="token keyword">package</span> main
+  <span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+  <span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    str <span class="token operator">:=</span> <span class="token string">&quot;hjw 33&quot;</span>
+    <span class="token keyword">var</span> name <span class="token builtin">string</span>
+    <span class="token keyword">var</span> age <span class="token builtin">int</span>
+    <span class="token comment">//fmt.Sscanf(str, &quot;%s %d&quot;,&amp;name, &amp;age)</span>
+    <span class="token comment">//fmt.Sscanln(str,&amp;name, &amp;age)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Sscan</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span><span class="token operator">&amp;</span>name<span class="token punctuation">,</span> <span class="token operator">&amp;</span>age<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;name =&quot;</span><span class="token punctuation">,</span>name<span class="token punctuation">,</span> <span class="token string">&quot;age =&quot;</span><span class="token punctuation">,</span>age<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/source/go/05-five.html" class="prev">
+          05-Go语言常量和变量
+        </a></span> <span class="next"><a href="/source/go/07-seven.html">
+          07-Go语言命令行参数
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.aee163d7.js" defer></script><script src="/assets/js/33.db2c4cfb.js" defer></script>
+  </body>
+</html>

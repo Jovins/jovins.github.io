@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>12-Go语言字典和结构体 | Jovins Blog</title>
+    <meta name="description" content="Work Hard, Play Hard">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.0d19fd84.css" as="style"><link rel="preload" href="/assets/js/app.aee163d7.js" as="script"><link rel="preload" href="/assets/js/39.9ee667aa.js" as="script"><link rel="prefetch" href="/assets/js/10.1e34e5ff.js"><link rel="prefetch" href="/assets/js/11.491dfd54.js"><link rel="prefetch" href="/assets/js/12.a55c1fe7.js"><link rel="prefetch" href="/assets/js/13.5af2a714.js"><link rel="prefetch" href="/assets/js/14.14535d2d.js"><link rel="prefetch" href="/assets/js/15.3a5c4d96.js"><link rel="prefetch" href="/assets/js/16.f0724826.js"><link rel="prefetch" href="/assets/js/17.a41afda0.js"><link rel="prefetch" href="/assets/js/18.8dd90a66.js"><link rel="prefetch" href="/assets/js/19.4fb6d9b8.js"><link rel="prefetch" href="/assets/js/2.b7fedc2a.js"><link rel="prefetch" href="/assets/js/20.c7ee29bf.js"><link rel="prefetch" href="/assets/js/21.ec5919dd.js"><link rel="prefetch" href="/assets/js/22.7351d6cc.js"><link rel="prefetch" href="/assets/js/23.8adf705b.js"><link rel="prefetch" href="/assets/js/24.5dda7d7c.js"><link rel="prefetch" href="/assets/js/25.d6c4beda.js"><link rel="prefetch" href="/assets/js/26.3fae1b4d.js"><link rel="prefetch" href="/assets/js/27.42848bbe.js"><link rel="prefetch" href="/assets/js/28.80aeb13f.js"><link rel="prefetch" href="/assets/js/29.d3f479f5.js"><link rel="prefetch" href="/assets/js/3.fe3c8939.js"><link rel="prefetch" href="/assets/js/30.b28e0cfa.js"><link rel="prefetch" href="/assets/js/31.39756cd5.js"><link rel="prefetch" href="/assets/js/32.475d42d9.js"><link rel="prefetch" href="/assets/js/33.db2c4cfb.js"><link rel="prefetch" href="/assets/js/34.8e9cd72f.js"><link rel="prefetch" href="/assets/js/35.48663882.js"><link rel="prefetch" href="/assets/js/36.f92ac67a.js"><link rel="prefetch" href="/assets/js/37.67c65ed9.js"><link rel="prefetch" href="/assets/js/38.841de0ec.js"><link rel="prefetch" href="/assets/js/4.28e0dd42.js"><link rel="prefetch" href="/assets/js/40.0f4d2bb8.js"><link rel="prefetch" href="/assets/js/41.a292c8af.js"><link rel="prefetch" href="/assets/js/42.ca402a95.js"><link rel="prefetch" href="/assets/js/43.1a920a89.js"><link rel="prefetch" href="/assets/js/44.1136c43f.js"><link rel="prefetch" href="/assets/js/45.09cdae5d.js"><link rel="prefetch" href="/assets/js/46.bf04cee8.js"><link rel="prefetch" href="/assets/js/47.4be1442f.js"><link rel="prefetch" href="/assets/js/48.c90986e6.js"><link rel="prefetch" href="/assets/js/49.e0df44d7.js"><link rel="prefetch" href="/assets/js/5.106e8893.js"><link rel="prefetch" href="/assets/js/50.e589f43d.js"><link rel="prefetch" href="/assets/js/51.52e2dd5e.js"><link rel="prefetch" href="/assets/js/52.9b9b1b60.js"><link rel="prefetch" href="/assets/js/53.51261bc0.js"><link rel="prefetch" href="/assets/js/54.9a082c0b.js"><link rel="prefetch" href="/assets/js/55.cb478dba.js"><link rel="prefetch" href="/assets/js/56.a9c5ea04.js"><link rel="prefetch" href="/assets/js/57.a1b56ab7.js"><link rel="prefetch" href="/assets/js/58.60e77be8.js"><link rel="prefetch" href="/assets/js/59.c07f2b7e.js"><link rel="prefetch" href="/assets/js/6.015a6f59.js"><link rel="prefetch" href="/assets/js/60.2d300070.js"><link rel="prefetch" href="/assets/js/61.f54bc147.js"><link rel="prefetch" href="/assets/js/62.0ec8ca93.js"><link rel="prefetch" href="/assets/js/63.7c8b03d9.js"><link rel="prefetch" href="/assets/js/64.78d7222e.js"><link rel="prefetch" href="/assets/js/65.866ef779.js"><link rel="prefetch" href="/assets/js/66.a52448b6.js"><link rel="prefetch" href="/assets/js/67.9d0c871c.js"><link rel="prefetch" href="/assets/js/68.27308da1.js"><link rel="prefetch" href="/assets/js/69.88f30473.js"><link rel="prefetch" href="/assets/js/7.e591ee0c.js"><link rel="prefetch" href="/assets/js/70.74560474.js"><link rel="prefetch" href="/assets/js/71.3f81de49.js"><link rel="prefetch" href="/assets/js/72.261a96ba.js"><link rel="prefetch" href="/assets/js/73.7d09ee13.js"><link rel="prefetch" href="/assets/js/74.668f53a7.js"><link rel="prefetch" href="/assets/js/75.5a07cf00.js"><link rel="prefetch" href="/assets/js/76.5cb7756e.js"><link rel="prefetch" href="/assets/js/77.ee0ac284.js"><link rel="prefetch" href="/assets/js/78.a4bf6899.js"><link rel="prefetch" href="/assets/js/79.86d6a675.js"><link rel="prefetch" href="/assets/js/8.c3659f73.js"><link rel="prefetch" href="/assets/js/80.ca1d23ad.js"><link rel="prefetch" href="/assets/js/81.834d4fa2.js"><link rel="prefetch" href="/assets/js/82.c1c44655.js"><link rel="prefetch" href="/assets/js/83.b2f5aaef.js"><link rel="prefetch" href="/assets/js/84.49bf081e.js"><link rel="prefetch" href="/assets/js/85.036dd295.js"><link rel="prefetch" href="/assets/js/86.8ede464d.js"><link rel="prefetch" href="/assets/js/9.6d2e7baf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d19fd84.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jovins Blog</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link router-link-active">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link router-link-active">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>Go</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/source/go/" class="sidebar-link">Go语言开篇</a></li><li><a href="/source/go/go-deployed-on-the-server.html" class="sidebar-link">Go部署在阿里云linux服务器</a></li><li><a href="/source/go/Go-Path-Variable.html" class="sidebar-link">Go 环境变量</a></li><li><a href="/source/go/Go-Go-echarts.html" class="sidebar-link">Go Go-echarts</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Go Web学习</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>Go 基础教程</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/source/go/01-first.html" class="sidebar-link">01-C语言和Go语言对比</a></li><li><a href="/source/go/02-two.html" class="sidebar-link">02-Go语言开发环境搭建</a></li><li><a href="/source/go/03-three.html" class="sidebar-link">03-第一个Go语言程序</a></li><li><a href="/source/go/04-four.html" class="sidebar-link">04-Go语言关键字和标识符</a></li><li><a href="/source/go/05-five.html" class="sidebar-link">05-Go语言常量和变量</a></li><li><a href="/source/go/06-six.html" class="sidebar-link">06-输入输出函数</a></li><li><a href="/source/go/07-seven.html" class="sidebar-link">07-Go语言命令行参数</a></li><li><a href="/source/go/08-eight.html" class="sidebar-link">08-Go语言运算符</a></li><li><a href="/source/go/09-nine.html" class="sidebar-link">09-Go语言流程控制</a></li><li><a href="/source/go/10-ten.html" class="sidebar-link">10-Go语言函数</a></li><li><a href="/source/go/11-eleven.html" class="sidebar-link">11-Go语言数组和切片</a></li><li><a href="/source/go/12-twelve.html" class="active sidebar-link">12-Go语言字典和结构体</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/source/go/12-twelve.html#map-字典、映射" class="sidebar-link">map(字典、映射)</a></li><li class="sidebar-sub-header"><a href="/source/go/12-twelve.html#结构体" class="sidebar-link">结构体</a></li></ul></li><li><a href="/source/go/13-thirteen.html" class="sidebar-link">13-指针</a></li><li><a href="/source/go/14-fourteen.html" class="sidebar-link">14-Go方法和接口</a></li><li><a href="/source/go/15-fifteen.html" class="sidebar-link">15-Go语言面向对象</a></li><li><a href="/source/go/16-sixteen.html" class="sidebar-link">16-Go语言异常处理</a></li><li><a href="/source/go/17-seventeen.html" class="sidebar-link">17-Go语言字符串和正则表达式</a></li><li><a href="/source/go/18-eighteen.html" class="sidebar-link">18-Go语言和C语言交叉访问</a></li><li><a href="/source/go/19-nineteen.html" class="sidebar-link">19-文件操作</a></li><li><a href="/source/go/20-concurrent.html" class="sidebar-link">20-Go语言并发编程</a></li><li><a href="/source/go/21-Channel.html" class="sidebar-link">21-Channel</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="_12-go语言字典和结构体"><a href="#_12-go语言字典和结构体" aria-hidden="true" class="header-anchor">#</a> 12-Go语言字典和结构体</h1> <h2 id="map-字典、映射"><a href="#map-字典、映射" aria-hidden="true" class="header-anchor">#</a> map(字典、映射)</h2> <ul><li><p>map翻译过来就是字典或者映射, 可以把map看做是切片的升级版</p> <ul><li>切片是用来存储一组相同类型的数据的, map也是用来存储一组相同类型的数据的</li> <li>在切片中我们可以通过索引获取对应的元素, 在map中我们可以通过key获取对应的元素</li> <li>切片的索引是系统自动生成的,从0开始递增. map中的key需要我们自己指定
+<ul><li>只要是可以做==、!=判断的数据类型都可以作为key(数值类型、字符串、数组、指针、结构体、接口)</li> <li>map的key的数据类型不能是:slice、map、function</li> <li>map和切片一样容量都不是固定的, 当容量不足时底层会自动扩容</li></ul></li></ul></li> <li><p>map格式:<code>var dic map[key数据类型]value数据类型</code></p></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> dic <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>dic<span class="token punctuation">)</span> <span class="token comment">// map[0:1 1:3 2:5]</span>
+
+    <span class="token comment">// 获取map中某个key对应的值</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>dic<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// 1</span>
+    
+    <span class="token comment">// 修改map中某个key对应的值</span>
+    dic<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">666</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>dic<span class="token punctuation">)</span> <span class="token comment">// map[0:1 1:666 2:5]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> dict <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span> <span class="token operator">=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;age&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;26&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;gender&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;male&quot;</span><span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>dict<span class="token punctuation">)</span><span class="token comment">// map[name:hjw age:26 gender:male]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="https://upload-images.jianshu.io/upload_images/647982-63a196accebc1e38.png" alt></p> <ul><li><strong>创建map的三种方式</strong> <ul><li>方式一: 通过Go提供的语法糖快速创建</li></ul></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    dict  <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;age&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;26&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;gender&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;male&quot;</span><span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>dict<span class="token punctuation">)</span><span class="token comment">// map[name:hjw age:26 gender:male]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>方式二:通过make函数创建<code>make(类型, 容量)</code></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> dict <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+    dict<span class="token punctuation">[</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;hjw&quot;</span>
+    dict<span class="token punctuation">[</span><span class="token string">&quot;age&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;26&quot;</span>
+    dict<span class="token punctuation">[</span><span class="token string">&quot;gender&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;male&quot;</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>dict<span class="token punctuation">)</span><span class="token comment">// map[age:26 gender:male name:hjw]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>方式三:通过make函数创建<code>make(类型)</code></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> dict <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">)</span>
+    dict<span class="token punctuation">[</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;hjw&quot;</span>
+    dict<span class="token punctuation">[</span><span class="token string">&quot;age&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;26&quot;</span>
+    dict<span class="token punctuation">[</span><span class="token string">&quot;gender&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;male&quot;</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>dict<span class="token punctuation">)</span><span class="token comment">// map[age:26 gender:male name:hjw]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>和切片一样,没有被创建的map是不能使用的</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// map声明后不能直接使用, 只有通过make或语法糖创建之后才会开辟空间,才能使用</span>
+    <span class="token keyword">var</span> dict <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+    dict<span class="token punctuation">[</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;hjw&quot;</span> <span class="token comment">// 编译报错</span>
+    dict<span class="token punctuation">[</span><span class="token string">&quot;age&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;26&quot;</span>
+    dict<span class="token punctuation">[</span><span class="token string">&quot;gender&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;male&quot;</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>dict<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>map的增删改查</strong></p> <ul><li>增加: 当map中没有指定的key时就会自动增加</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> dict <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;增加前:&quot;</span><span class="token punctuation">,</span> dict<span class="token punctuation">)</span> <span class="token comment">// map[]</span>
+    dict<span class="token punctuation">[</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;hjw&quot;</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;增加后:&quot;</span><span class="token punctuation">,</span> dict<span class="token punctuation">)</span> <span class="token comment">// map[name:hjw]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>修改: 当map中有指定的key时就会自动修改</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> dict <span class="token operator">=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;age&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;26&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;gender&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;male&quot;</span><span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;修改前:&quot;</span><span class="token punctuation">,</span> dict<span class="token punctuation">)</span> <span class="token comment">// map[name:hjw age:26 gender:male]</span>
+    dict<span class="token punctuation">[</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;zs&quot;</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;修改后:&quot;</span><span class="token punctuation">,</span> dict<span class="token punctuation">)</span> <span class="token comment">// map[age:25 gender:male name:zs]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>删除: 可以通过Go语言内置delete函数删除指定元素</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> dict <span class="token operator">=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;age&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;26&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;gender&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;male&quot;</span><span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;删除前:&quot;</span><span class="token punctuation">,</span> dict<span class="token punctuation">)</span> <span class="token comment">// map[name:hjw age:26 gender:male]</span>
+    <span class="token comment">// 第一个参数: 被操作的字典</span>
+    <span class="token comment">// 第二个参数: 需要删除元素对应的key</span>
+    <span class="token function">delete</span><span class="token punctuation">(</span>dict<span class="token punctuation">,</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;删除后:&quot;</span><span class="token punctuation">,</span> dict<span class="token punctuation">)</span> <span class="token comment">// map[age:26 gender:male]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>查询: 通过ok-idiom模式判断指定键值对是否存储</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> dict <span class="token operator">=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;age&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;26&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;gender&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;male&quot;</span><span class="token punctuation">}</span>
+    <span class="token comment">//value, ok := dict[&quot;age&quot;]</span>
+    <span class="token comment">//if(ok){</span>
+    <span class="token comment">//  fmt.Println(&quot;有age这个key,值为&quot;, value)</span>
+    <span class="token comment">//}else{</span>
+    <span class="token comment">//  fmt.Println(&quot;没有age这个key,值为&quot;, value)</span>
+    <span class="token comment">//}</span>
+    <span class="token keyword">if</span> value<span class="token punctuation">,</span> ok <span class="token operator">:=</span> dict<span class="token punctuation">[</span><span class="token string">&quot;age&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span> ok<span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;有age这个key,值为&quot;</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li><strong>map遍历</strong>注意:
+<ul><li>map和数组以及切片不同,map中存储的数据是无序的, 所以多次打印输出的顺序可能不同</li></ul></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">var</span> dict <span class="token operator">=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;age&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;26&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;gender&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;male&quot;</span><span class="token punctuation">}</span>
+<span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token operator">:=</span> <span class="token keyword">range</span> dict<span class="token punctuation">{</span>
+   fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="结构体"><a href="#结构体" aria-hidden="true" class="header-anchor">#</a> 结构体</h2> <ul><li>Go语言中的结构体和C语言中结构体一样, 都是用来保存一组<code>不同类型的数据</code></li> <li>Go语言中的结构体和C语言中结构体一样, 都需要先定义结构体类型再利用结构体类型定义结构体变量</li> <li>定义结构体类型</li></ul> <div class="language- extra-class"><pre class="language-text"><code>type 类型名称 struct{
+  属性名称 属性类型
+  属性名称 属性类型
+  ... ...
+}
+</code></pre></div><div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> Studentstruct <span class="token punctuation">{</span>
+    name <span class="token builtin">string</span>
+    age <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li><p>创建结构体变量的两种方式</p> <ul><li>方式一: 先定义结构体类型, 再定义结构体变量
+<ul><li>和C语言中的结构体一样, 如果结构体类型需要多次使用, 那么建议先定义类型再定义变量</li></ul></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">type</span> Student <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      name <span class="token builtin">string</span>
+      age <span class="token builtin">int</span>
+  <span class="token punctuation">}</span>   
+
+  <span class="token comment">// 完全初始化</span>
+  <span class="token keyword">var</span> stu1<span class="token operator">=</span> Student<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>stu1<span class="token punctuation">)</span>
+  <span class="token comment">// 部分初始化</span>
+  <span class="token comment">// 部分初始化必须通过 属性名称: 方式指定要初始化的属性</span>
+  <span class="token keyword">var</span> stu2 <span class="token operator">=</span> Student<span class="token punctuation">{</span>name<span class="token punctuation">:</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>stu2<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>方式二: 定义结构体类型同时定义结构体变量(匿名结构体)
+<ul><li>和C语言中的结构体一样, 如果结构体类型只需要使用一次, 那么建议定义类型同时定义变量</li></ul></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 注意: 这里不用写type和结构体类型名称</span>
+  <span class="token keyword">var</span> stu2 <span class="token operator">=</span> <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      name <span class="token builtin">string</span>
+      age <span class="token builtin">int</span>
+  <span class="token punctuation">}</span><span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span>
+      age<span class="token punctuation">:</span> <span class="token number">26</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>stu2<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>结构体类型操作</p></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">type</span> Student <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    name <span class="token builtin">string</span>
+    age <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> stu<span class="token operator">=</span> Student<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">}</span>
+  <span class="token comment">// 获取结构体中某个属性对应的值</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>stu<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+
+  <span class="token comment">// 修改结构体中某个属性对应的值</span>
+  stu<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;zs&quot;</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>stu<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>和slice、map不同的是, 只要定义了结构体变量就可以使用结构体变量
+<ul><li>默认情况下结构体中的所有属性都是属性对应类型的默认值</li></ul></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">type</span> Student <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    name <span class="token builtin">string</span>
+    age <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> stu Student <span class="token comment">// 相当于 var stu = Student{}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>stu<span class="token punctuation">)</span> <span class="token comment">// { 0}</span>
+  stu<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;hjw&quot;</span> <span class="token comment">// 不会报错</span>
+  stu<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">26</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>stu<span class="token punctuation">)</span> <span class="token comment">// {hjw 26}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li><p>复杂结构体成员</p> <ul><li>创建时可以按照属性单独存在时初始化方式初始化</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">type</span> Student <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    name <span class="token builtin">string</span>
+    age <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">type</span> Demo <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      age <span class="token builtin">int</span> <span class="token comment">// 基本类型作为属性</span>
+      arr <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token comment">// 数组类型作为属性</span>
+      sce <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token comment">// 切片类型作为属性</span>
+      mp <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span> <span class="token comment">// 字典类型作为属性</span>
+      stu Student <span class="token comment">// 结构体类型作为属性</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">var</span> d Demo <span class="token operator">=</span> Demo<span class="token punctuation">{</span>
+      <span class="token number">33</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">&quot;class&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;one&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      Student<span class="token punctuation">{</span>
+          <span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span>
+          <span class="token number">26</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span> <span class="token comment">// {33 [1 3 5] [2 4 6] map[class:one] {hjw 26}}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>slice、map类型属性默认值是nil,不能直接使用</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">type</span> Student <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    name <span class="token builtin">string</span>
+    age <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">type</span> Demo <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      age <span class="token builtin">int</span> <span class="token comment">// 基本类型作为属性</span>
+      arr <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token comment">// 数组类型作为属性</span>
+      sce <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token comment">// 切片类型作为属性</span>
+      mp <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span> <span class="token comment">// 字典类型作为属性</span>
+      stu Student <span class="token comment">// 结构体类型作为属性</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 定义结构体变量</span>
+  <span class="token keyword">var</span> d Demo
+  <span class="token comment">// 可以直接使用基本类型属性</span>
+  d<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">26</span>
+  <span class="token comment">// 可以直接使用数组类型属性</span>
+  d<span class="token punctuation">.</span>arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">666</span>
+  <span class="token comment">// 不可以直接使用切片类型属性</span>
+  <span class="token comment">//d.sce[0] = 888 // 编译报错</span>
+  d<span class="token punctuation">.</span>sce <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token comment">// 先创建</span>
+  d<span class="token punctuation">.</span>sce<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">888</span> <span class="token comment">// 后使用</span>
+  <span class="token comment">// 不可以直接使用字典类型属性</span>
+  <span class="token comment">//d.mp[&quot;class&quot;] = &quot;one&quot; // 编译报错</span>
+  d<span class="token punctuation">.</span>mp <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token comment">// 先创建</span>
+  d<span class="token punctuation">.</span>mp<span class="token punctuation">[</span><span class="token string">&quot;class&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;one&quot;</span><span class="token comment">// 后使用</span>
+  <span class="token comment">// 可以直接使用结构体类型属性</span>
+  d<span class="token punctuation">.</span>stu<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;hjw&quot;</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span> <span class="token comment">// {26 [666 0 0] [888 0 0 0 0] map[class:one] {hjw 0}}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li></ul> <hr> <ul><li>结构体类型转换
+<ul><li>属性名、属性类型、属性个数、排列顺序都是类型组成部分</li> <li>只有属性名、属性类型、属性个数、排列顺序都相同的结构体类型才能转换</li></ul></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">type</span> Person1 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      name <span class="token builtin">string</span>
+      age <span class="token builtin">int</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">type</span> Person2 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      name <span class="token builtin">string</span>
+      age <span class="token builtin">int</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">type</span> Person3 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      age <span class="token builtin">int</span>
+      name <span class="token builtin">string</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">type</span> Person4 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      nm <span class="token builtin">string</span>
+      age <span class="token builtin">int</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">type</span> Person5 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      name <span class="token builtin">string</span>
+      age <span class="token builtin">string</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">type</span> Person6 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      age <span class="token builtin">int</span>
+      name <span class="token builtin">string</span>
+      gender <span class="token builtin">string</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">var</span> p1 Person1 <span class="token operator">=</span> Person1<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">}</span>
+  <span class="token keyword">var</span> p2 Person2
+  <span class="token comment">// 类型名称不一样不能直接赋值(Person1、Person2)</span>
+  <span class="token comment">//p2 = p1</span>
+
+  <span class="token comment">// 虽然类型名称不一样, 但是两个类型中的`属性名称`、`属性类型`、`属性个数`、`排列顺序`都一样,所以可以强制转换</span>
+  p2 <span class="token operator">=</span> <span class="token function">Person2</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>p2<span class="token punctuation">)</span>
+  <span class="token comment">// 两个结构体类型中的`属性名称`、`属性类型`、`属性个数`都一样,但是`排列顺序`不一样,所以不能强制转换</span>
+  <span class="token comment">//var p3 Person3</span>
+  <span class="token comment">//p3 = Person3(p1)</span>
+  <span class="token comment">//fmt.Println(p3)</span>
+
+  <span class="token comment">// 两个结构体类型中的`属性类型`、`属性个数`、`排列顺序`都一样,但是`属性名称`不一样,所以不能强制转换</span>
+  <span class="token comment">//var p4 Person4</span>
+  <span class="token comment">//p4 = Person4(p1)</span>
+  <span class="token comment">//fmt.Println(p4)</span>
+
+  <span class="token comment">// 两个结构体类型中的`属性名称`、`属性个数`、`排列顺序`都一样,但是`属性类型`不一样,所以不能强制转换</span>
+  <span class="token comment">//var p5 Person5</span>
+  <span class="token comment">//p5 = Person5(p1)</span>
+  <span class="token comment">//fmt.Println(p5)</span>
+
+  <span class="token comment">// 两个结构体类型中的`属性名称`、`属性类型`、`排列顺序`都一样,但是`属性个数`不一样,所以不能强制转换</span>
+  <span class="token comment">//var p6 Person6</span>
+  <span class="token comment">//p6 = Person6(p1)</span>
+  <span class="token comment">//fmt.Println(p6)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li><p>匿名属性</p> <ul><li>没有指定属性名称,只有属性的类型, 我们称之为匿名属性</li> <li>任何<code>有命名的数据类型</code>都可以作为匿名属性(int、float、bool、string、struct等)</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      <span class="token builtin">int</span>
+      <span class="token builtin">float32</span>
+      <span class="token builtin">bool</span>
+      <span class="token builtin">string</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 不指定名称初始化</span>
+  per1 <span class="token operator">:=</span> Person<span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3.14</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token string">&quot;hjw&quot;</span><span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>per1<span class="token punctuation">)</span>
+
+  <span class="token comment">// 可以把数据类型作为名字显示初始化</span>
+  per2 <span class="token operator">:=</span> Person<span class="token punctuation">{</span>
+      <span class="token builtin">int</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token builtin">float32</span><span class="token punctuation">:</span> <span class="token number">3.14</span><span class="token punctuation">,</span>
+      <span class="token builtin">bool</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token builtin">string</span><span class="token punctuation">:</span> <span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>per2<span class="token punctuation">)</span>
+
+  <span class="token comment">// 可以把数据类型当做属性名称操作结构体</span>
+  per2<span class="token punctuation">.</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">666</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>per2<span class="token punctuation">.</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token comment">// 666</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>Go语言中最常见的匿名属性是用<code>结构体类型作为匿名属性</code></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+     name <span class="token builtin">string</span>
+     age <span class="token builtin">int</span>
+ <span class="token punctuation">}</span>
+ <span class="token keyword">type</span> Student <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+     Person <span class="token comment">// 匿名属性</span>
+     class <span class="token builtin">string</span>
+ <span class="token punctuation">}</span>
+
+ stu <span class="token operator">:=</span> Student<span class="token punctuation">{</span>
+     Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+     <span class="token string">&quot;学前一班&quot;</span><span class="token punctuation">,</span>
+ <span class="token punctuation">}</span>
+ fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>stu<span class="token punctuation">)</span> <span class="token comment">// {{hjw 33} 学前一班}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>如果结构体作为匿名属性, 想访问匿名属性的属性有两种方式</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      name <span class="token builtin">string</span>
+      age <span class="token builtin">int</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">type</span> Student <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      Person <span class="token comment">// 匿名属性</span>
+      class <span class="token builtin">string</span>
+  <span class="token punctuation">}</span>
+
+  stu <span class="token operator">:=</span> Student<span class="token punctuation">{</span>
+      Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;学前一班&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>stu<span class="token punctuation">)</span> <span class="token comment">// {{hjw 26} 学前一班}</span>
+
+  <span class="token comment">// 方式一: 先找到匿名属性,再访问匿名属性中的属性</span>
+  stu<span class="token punctuation">.</span>Person<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;zs&quot;</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>stu<span class="token punctuation">)</span> <span class="token comment">// {{zs 24} 学前一班}</span>
+  <span class="token comment">// 方式二: 直接访问匿名属性中的属性</span>
+  <span class="token comment">// 系统会先查找当前结构体有没有名称叫做name的属性</span>
+  <span class="token comment">// 如果没有会继续查找匿名属性中有没有名称叫做name的属性</span>
+  stu<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;ww&quot;</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>stu<span class="token punctuation">)</span> <span class="token comment">// {{ww 25} 学前一班}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>注意点: 如果多个匿名属性的属性名称相同,那么不能通过方式二操作,只能通过方式一</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      name <span class="token builtin">string</span>
+      age <span class="token builtin">int</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">type</span> Class <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      name <span class="token builtin">string</span>
+      time <span class="token builtin">string</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">type</span> Student <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      Person <span class="token comment">// 匿名属性</span>
+      Class <span class="token comment">// 匿名属性</span>
+  <span class="token punctuation">}</span>
+  stu <span class="token operator">:=</span> Student<span class="token punctuation">{</span>
+      Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      Class<span class="token punctuation">{</span><span class="token string">&quot;学前一班&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;2020-12-12&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>stu<span class="token punctuation">)</span> <span class="token comment">// {{hjw 26} {学前一班 2020-12-12}}</span>
+  <span class="token comment">// 编译报错, 系统搞不清楚要找哪个name</span>
+  <span class="token comment">//stu.name = &quot;zs&quot;</span>
+
+  stu<span class="token punctuation">.</span>Person<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;zs&quot;</span>
+  stu<span class="token punctuation">.</span>Class<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;小学一年级&quot;</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>stu<span class="token punctuation">)</span> <span class="token comment">// {{zs 23} {小学一年级 2020-12-12}}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>注意点: 只有匿名结构体才支持向上查找</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      name <span class="token builtin">string</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">type</span> Student <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      per Person
+      age <span class="token builtin">int</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">var</span> stu Student <span class="token operator">=</span> Student<span class="token punctuation">{</span>Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">}</span>
+  <span class="token comment">//fmt.Println(stu.name) // 报错</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>stu<span class="token punctuation">.</span>per<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// 必须通过属性进一步查找</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>stu<span class="token punctuation">.</span>age<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>注意点: 如果匿名属性是一个结构体类型, 那么这个结构体类型不能是自己</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      Person <span class="token comment">// 错误</span>
+      name <span class="token builtin">string</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">type</span> Student <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+      <span class="token operator">*</span>Student  <span class="token comment">// 正确, 链表</span>
+      age <span class="token builtin">int</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li></ul></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/source/go/11-eleven.html" class="prev">
+          11-Go语言数组和切片
+        </a></span> <span class="next"><a href="/source/go/13-thirteen.html">
+          13-指针
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.aee163d7.js" defer></script><script src="/assets/js/39.9ee667aa.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Go 响应http请求 | Jovins Blog</title>
+    <meta name="description" content="Work Hard, Play Hard">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.0d19fd84.css" as="style"><link rel="preload" href="/assets/js/app.aee163d7.js" as="script"><link rel="preload" href="/assets/js/53.51261bc0.js" as="script"><link rel="prefetch" href="/assets/js/10.1e34e5ff.js"><link rel="prefetch" href="/assets/js/11.491dfd54.js"><link rel="prefetch" href="/assets/js/12.a55c1fe7.js"><link rel="prefetch" href="/assets/js/13.5af2a714.js"><link rel="prefetch" href="/assets/js/14.14535d2d.js"><link rel="prefetch" href="/assets/js/15.3a5c4d96.js"><link rel="prefetch" href="/assets/js/16.f0724826.js"><link rel="prefetch" href="/assets/js/17.a41afda0.js"><link rel="prefetch" href="/assets/js/18.8dd90a66.js"><link rel="prefetch" href="/assets/js/19.4fb6d9b8.js"><link rel="prefetch" href="/assets/js/2.b7fedc2a.js"><link rel="prefetch" href="/assets/js/20.c7ee29bf.js"><link rel="prefetch" href="/assets/js/21.ec5919dd.js"><link rel="prefetch" href="/assets/js/22.7351d6cc.js"><link rel="prefetch" href="/assets/js/23.8adf705b.js"><link rel="prefetch" href="/assets/js/24.5dda7d7c.js"><link rel="prefetch" href="/assets/js/25.d6c4beda.js"><link rel="prefetch" href="/assets/js/26.3fae1b4d.js"><link rel="prefetch" href="/assets/js/27.42848bbe.js"><link rel="prefetch" href="/assets/js/28.80aeb13f.js"><link rel="prefetch" href="/assets/js/29.d3f479f5.js"><link rel="prefetch" href="/assets/js/3.fe3c8939.js"><link rel="prefetch" href="/assets/js/30.b28e0cfa.js"><link rel="prefetch" href="/assets/js/31.39756cd5.js"><link rel="prefetch" href="/assets/js/32.475d42d9.js"><link rel="prefetch" href="/assets/js/33.db2c4cfb.js"><link rel="prefetch" href="/assets/js/34.8e9cd72f.js"><link rel="prefetch" href="/assets/js/35.48663882.js"><link rel="prefetch" href="/assets/js/36.f92ac67a.js"><link rel="prefetch" href="/assets/js/37.67c65ed9.js"><link rel="prefetch" href="/assets/js/38.841de0ec.js"><link rel="prefetch" href="/assets/js/39.9ee667aa.js"><link rel="prefetch" href="/assets/js/4.28e0dd42.js"><link rel="prefetch" href="/assets/js/40.0f4d2bb8.js"><link rel="prefetch" href="/assets/js/41.a292c8af.js"><link rel="prefetch" href="/assets/js/42.ca402a95.js"><link rel="prefetch" href="/assets/js/43.1a920a89.js"><link rel="prefetch" href="/assets/js/44.1136c43f.js"><link rel="prefetch" href="/assets/js/45.09cdae5d.js"><link rel="prefetch" href="/assets/js/46.bf04cee8.js"><link rel="prefetch" href="/assets/js/47.4be1442f.js"><link rel="prefetch" href="/assets/js/48.c90986e6.js"><link rel="prefetch" href="/assets/js/49.e0df44d7.js"><link rel="prefetch" href="/assets/js/5.106e8893.js"><link rel="prefetch" href="/assets/js/50.e589f43d.js"><link rel="prefetch" href="/assets/js/51.52e2dd5e.js"><link rel="prefetch" href="/assets/js/52.9b9b1b60.js"><link rel="prefetch" href="/assets/js/54.9a082c0b.js"><link rel="prefetch" href="/assets/js/55.cb478dba.js"><link rel="prefetch" href="/assets/js/56.a9c5ea04.js"><link rel="prefetch" href="/assets/js/57.a1b56ab7.js"><link rel="prefetch" href="/assets/js/58.60e77be8.js"><link rel="prefetch" href="/assets/js/59.c07f2b7e.js"><link rel="prefetch" href="/assets/js/6.015a6f59.js"><link rel="prefetch" href="/assets/js/60.2d300070.js"><link rel="prefetch" href="/assets/js/61.f54bc147.js"><link rel="prefetch" href="/assets/js/62.0ec8ca93.js"><link rel="prefetch" href="/assets/js/63.7c8b03d9.js"><link rel="prefetch" href="/assets/js/64.78d7222e.js"><link rel="prefetch" href="/assets/js/65.866ef779.js"><link rel="prefetch" href="/assets/js/66.a52448b6.js"><link rel="prefetch" href="/assets/js/67.9d0c871c.js"><link rel="prefetch" href="/assets/js/68.27308da1.js"><link rel="prefetch" href="/assets/js/69.88f30473.js"><link rel="prefetch" href="/assets/js/7.e591ee0c.js"><link rel="prefetch" href="/assets/js/70.74560474.js"><link rel="prefetch" href="/assets/js/71.3f81de49.js"><link rel="prefetch" href="/assets/js/72.261a96ba.js"><link rel="prefetch" href="/assets/js/73.7d09ee13.js"><link rel="prefetch" href="/assets/js/74.668f53a7.js"><link rel="prefetch" href="/assets/js/75.5a07cf00.js"><link rel="prefetch" href="/assets/js/76.5cb7756e.js"><link rel="prefetch" href="/assets/js/77.ee0ac284.js"><link rel="prefetch" href="/assets/js/78.a4bf6899.js"><link rel="prefetch" href="/assets/js/79.86d6a675.js"><link rel="prefetch" href="/assets/js/8.c3659f73.js"><link rel="prefetch" href="/assets/js/80.ca1d23ad.js"><link rel="prefetch" href="/assets/js/81.834d4fa2.js"><link rel="prefetch" href="/assets/js/82.c1c44655.js"><link rel="prefetch" href="/assets/js/83.b2f5aaef.js"><link rel="prefetch" href="/assets/js/84.49bf081e.js"><link rel="prefetch" href="/assets/js/85.036dd295.js"><link rel="prefetch" href="/assets/js/86.8ede464d.js"><link rel="prefetch" href="/assets/js/9.6d2e7baf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d19fd84.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jovins Blog</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link router-link-active">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link router-link-active">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>Go</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/source/go/" class="sidebar-link">Go语言开篇</a></li><li><a href="/source/go/go-deployed-on-the-server.html" class="sidebar-link">Go部署在阿里云linux服务器</a></li><li><a href="/source/go/Go-Path-Variable.html" class="sidebar-link">Go 环境变量</a></li><li><a href="/source/go/Go-Go-echarts.html" class="sidebar-link">Go Go-echarts</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>Go Web学习</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/source/go/Go-Web-Early-Experience.html" class="sidebar-link">Go Web初体验</a></li><li><a href="/source/go/Go-Handle-WebRequest.html" class="sidebar-link">Go 处理Web请求</a></li><li><a href="/source/go/Go-Response-HttpRequest.html" class="active sidebar-link">Go 响应http请求</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/source/go/Go-Response-HttpRequest.html#web数据响应" class="sidebar-link">Web数据响应</a></li><li class="sidebar-sub-header"><a href="/source/go/Go-Response-HttpRequest.html#go处理web数据响应" class="sidebar-link">Go处理Web数据响应</a></li><li class="sidebar-sub-header"><a href="/source/go/Go-Response-HttpRequest.html#json响应" class="sidebar-link">JSON响应</a></li><li class="sidebar-sub-header"><a href="/source/go/Go-Response-HttpRequest.html#html模板" class="sidebar-link">HTML模板</a></li><li class="sidebar-sub-header"><a href="/source/go/Go-Response-HttpRequest.html#总结" class="sidebar-link">总结</a></li></ul></li><li><a href="/source/go/Go-Json-Encode-Decode.html" class="sidebar-link">Go Json编码和解码</a></li><li><a href="/source/go/Go-Web-Gin-InstallToUse.html" class="sidebar-link">Go Gin: 安装与使用</a></li><li><a href="/source/go/Go-Web-Gin-DataFormat.html" class="sidebar-link">Go Gin框架: 数据响应格式</a></li><li><a href="/source/go/Go-Web-Gin-DataBind.html" class="sidebar-link">Go Gin框架: 数据绑定</a></li><li><a href="/source/go/Go-Web-Gin-Router.html" class="sidebar-link">Go Gin框架: 中间件</a></li><li><a href="/source/go/Go-Web-Gin-RouterGroup.html" class="sidebar-link">Go Gin框架: 路由分组</a></li><li><a href="/source/go/Go-Web-Gin-HTTP-log.html" class="sidebar-link">Go GiN框架: HTTP请求日志</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Go 基础教程</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="go-响应http请求"><a href="#go-响应http请求" aria-hidden="true" class="header-anchor">#</a> Go 响应http请求</h1> <p>在Web应用程序中，每个HTTP事务都由请求(Request)和响应(Response)构成，这次我们讲讲Go如何处理Web中的数据响应。</p> <h2 id="web数据响应"><a href="#web数据响应" aria-hidden="true" class="header-anchor">#</a> Web数据响应</h2> <p>Web的响应与请求结构是类似的，响应分为三个部分：响应行、响应头部、响应体。</p> <ol><li>响应行：协议、响应状态码和状态描述，如： HTTP/1.1 200 OK</li> <li>响应头部：包含各种头部字段信息，如cookie，Content-Type等头部信息。</li> <li>响应体：携带客户端想要的数据，格式与编码由头部的Content-Type决定。</li></ol> <blockquote><p><strong>响应状态码的有固定取值和意义：</strong></p> <ul><li>100~199：表示服务端成功客户端接收请求，要求客户端继续提交下一次请求才能完成整个处理过程。</li> <li>200~299：表示服务端成功接收请求并已完成整个处理过程。最常用就是：200</li> <li>300~399：为完成请求，客户端需进一步细化请求。比较常用的如：客户端请求的资源已经移动一个新地址使用302表示将资源重定向,客户端请求的资源未发生改变，使用304，告诉客户端从本地缓存中获取。</li> <li>400~499：客户端的请求有错误，如：404表示你请求的资源在web服务器中找不到，403表示服务器拒绝客户端的访问，一般是权限不够。</li> <li>500~599：服务器端出现错误，最常用的是：500</li></ul></blockquote> <h2 id="go处理web数据响应"><a href="#go处理web数据响应" aria-hidden="true" class="header-anchor">#</a> Go处理Web数据响应</h2> <p>Go将http响应封装在http.ResponseWriter结构体中，ResponseWriter的定义很简单，一共只有三个方法。</p> <p><strong>ResponseWriter</strong></p> <p>在net/http源码包中，http.ResponseWriter的结构信息定义如下所示：</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> ResponseWriter <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Header            <span class="token comment">//头部</span>
+    <span class="token function">Write</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token comment">//写入方法</span>
+    <span class="token function">WriteHeader</span><span class="token punctuation">(</span>statusCode <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token comment">//状态码</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>Header方法</strong></p> <p>header方法返回http.Header结构体，用于设置响应头部信息，http.Header数据类型map，定义如下：</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> Header <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+</code></pre></div><p>http.Header的方法列表如下：</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> Header
+    <span class="token keyword">func</span> <span class="token punctuation">(</span>h Header<span class="token punctuation">)</span> <span class="token function">Add</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value <span class="token builtin">string</span><span class="token punctuation">)</span>
+    <span class="token keyword">func</span> <span class="token punctuation">(</span>h Header<span class="token punctuation">)</span> <span class="token function">Del</span><span class="token punctuation">(</span>key <span class="token builtin">string</span><span class="token punctuation">)</span>
+    <span class="token keyword">func</span> <span class="token punctuation">(</span>h Header<span class="token punctuation">)</span> <span class="token function">Get</span><span class="token punctuation">(</span>key <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+    <span class="token keyword">func</span> <span class="token punctuation">(</span>h Header<span class="token punctuation">)</span> <span class="token function">Set</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value <span class="token builtin">string</span><span class="token punctuation">)</span>
+    <span class="token keyword">func</span> <span class="token punctuation">(</span>h Header<span class="token punctuation">)</span> <span class="token function">Write</span><span class="token punctuation">(</span>w io<span class="token punctuation">.</span>Writer<span class="token punctuation">)</span> <span class="token builtin">error</span>
+    <span class="token keyword">func</span> <span class="token punctuation">(</span>h Header<span class="token punctuation">)</span> <span class="token function">WriteSubset</span><span class="token punctuation">(</span>w io<span class="token punctuation">.</span>Writer<span class="token punctuation">,</span> exclude <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token builtin">error</span>
+</code></pre></div><p><strong>Writer()方法</strong></p> <p>Write方法定义如下，用于向客户端返回数据流，与io.Writer中的write方法的定义一致，是Go语言io流中标准方法。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token function">Write</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><strong>WriterHeader方法</strong></p> <p>writerHeader方法的定义如下所示：</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token function">WriteHeader</span><span class="token punctuation">(</span>statusCode <span class="token builtin">int</span><span class="token punctuation">)</span>
+</code></pre></div><p>参数statusCode表示响应码，其取值可以为http包中已经定义好的常量值：</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">const</span> <span class="token punctuation">(</span>
+    StatusContinue           <span class="token operator">=</span> <span class="token number">100</span> <span class="token comment">// RFC 7231, 6.2.1</span>
+    StatusSwitchingProtocols <span class="token operator">=</span> <span class="token number">101</span> <span class="token comment">// RFC 7231, 6.2.2</span>
+    StatusProcessing         <span class="token operator">=</span> <span class="token number">102</span> <span class="token comment">// RFC 2518, 10.1</span>
+
+    StatusOK                   <span class="token operator">=</span> <span class="token number">200</span> <span class="token comment">// RFC 7231, 6.3.1</span>
+    StatusCreated              <span class="token operator">=</span> <span class="token number">201</span> <span class="token comment">// RFC 7231, 6.3.2</span>
+    StatusAccepted             <span class="token operator">=</span> <span class="token number">202</span> <span class="token comment">// RFC 7231, 6.3.3</span>
+    StatusNonAuthoritativeInfo <span class="token operator">=</span> <span class="token number">203</span> <span class="token comment">// RFC 7231, 6.3.4</span>
+    StatusNoContent            <span class="token operator">=</span> <span class="token number">204</span> <span class="token comment">// RFC 7231, 6.3.5</span>
+    StatusResetContent         <span class="token operator">=</span> <span class="token number">205</span> <span class="token comment">// RFC 7231, 6.3.6</span>
+    StatusPartialContent       <span class="token operator">=</span> <span class="token number">206</span> <span class="token comment">// RFC 7233, 4.1</span>
+    StatusMultiStatus          <span class="token operator">=</span> <span class="token number">207</span> <span class="token comment">// RFC 4918, 11.1</span>
+    StatusAlreadyReported      <span class="token operator">=</span> <span class="token number">208</span> <span class="token comment">// RFC 5842, 7.1</span>
+    StatusIMUsed               <span class="token operator">=</span> <span class="token number">226</span> <span class="token comment">// RFC 3229, 10.4.1</span>
+
+    StatusMultipleChoices  <span class="token operator">=</span> <span class="token number">300</span> <span class="token comment">// RFC 7231, 6.4.1</span>
+    StatusMovedPermanently <span class="token operator">=</span> <span class="token number">301</span> <span class="token comment">// RFC 7231, 6.4.2</span>
+    StatusFound            <span class="token operator">=</span> <span class="token number">302</span> <span class="token comment">// RFC 7231, 6.4.3</span>
+    StatusSeeOther         <span class="token operator">=</span> <span class="token number">303</span> <span class="token comment">// RFC 7231, 6.4.4</span>
+    StatusNotModified      <span class="token operator">=</span> <span class="token number">304</span> <span class="token comment">// RFC 7232, 4.1</span>
+    StatusUseProxy         <span class="token operator">=</span> <span class="token number">305</span> <span class="token comment">// RFC 7231, 6.4.5</span>
+
+    StatusTemporaryRedirect <span class="token operator">=</span> <span class="token number">307</span> <span class="token comment">// RFC 7231, 6.4.7</span>
+    StatusPermanentRedirect <span class="token operator">=</span> <span class="token number">308</span> <span class="token comment">// RFC 7538, 3</span>
+
+    StatusBadRequest                   <span class="token operator">=</span> <span class="token number">400</span> <span class="token comment">// RFC 7231, 6.5.1</span>
+    StatusUnauthorized                 <span class="token operator">=</span> <span class="token number">401</span> <span class="token comment">// RFC 7235, 3.1</span>
+    StatusPaymentRequired              <span class="token operator">=</span> <span class="token number">402</span> <span class="token comment">// RFC 7231, 6.5.2</span>
+    StatusForbidden                    <span class="token operator">=</span> <span class="token number">403</span> <span class="token comment">// RFC 7231, 6.5.3</span>
+    StatusNotFound                     <span class="token operator">=</span> <span class="token number">404</span> <span class="token comment">// RFC 7231, 6.5.4</span>
+    StatusMethodNotAllowed             <span class="token operator">=</span> <span class="token number">405</span> <span class="token comment">// RFC 7231, 6.5.5</span>
+    StatusNotAcceptable                <span class="token operator">=</span> <span class="token number">406</span> <span class="token comment">// RFC 7231, 6.5.6</span>
+    StatusProxyAuthRequired            <span class="token operator">=</span> <span class="token number">407</span> <span class="token comment">// RFC 7235, 3.2</span>
+    StatusRequestTimeout               <span class="token operator">=</span> <span class="token number">408</span> <span class="token comment">// RFC 7231, 6.5.7</span>
+    StatusConflict                     <span class="token operator">=</span> <span class="token number">409</span> <span class="token comment">// RFC 7231, 6.5.8</span>
+    StatusGone                         <span class="token operator">=</span> <span class="token number">410</span> <span class="token comment">// RFC 7231, 6.5.9</span>
+    StatusLengthRequired               <span class="token operator">=</span> <span class="token number">411</span> <span class="token comment">// RFC 7231, 6.5.10</span>
+    StatusPreconditionFailed           <span class="token operator">=</span> <span class="token number">412</span> <span class="token comment">// RFC 7232, 4.2</span>
+    StatusRequestEntityTooLarge        <span class="token operator">=</span> <span class="token number">413</span> <span class="token comment">// RFC 7231, 6.5.11</span>
+    StatusRequestURITooLong            <span class="token operator">=</span> <span class="token number">414</span> <span class="token comment">// RFC 7231, 6.5.12</span>
+    StatusUnsupportedMediaType         <span class="token operator">=</span> <span class="token number">415</span> <span class="token comment">// RFC 7231, 6.5.13</span>
+    StatusRequestedRangeNotSatisfiable <span class="token operator">=</span> <span class="token number">416</span> <span class="token comment">// RFC 7233, 4.4</span>
+    StatusExpectationFailed            <span class="token operator">=</span> <span class="token number">417</span> <span class="token comment">// RFC 7231, 6.5.14</span>
+    StatusTeapot                       <span class="token operator">=</span> <span class="token number">418</span> <span class="token comment">// RFC 7168, 2.3.3</span>
+    StatusMisdirectedRequest           <span class="token operator">=</span> <span class="token number">421</span> <span class="token comment">// RFC 7540, 9.1.2</span>
+    StatusUnprocessableEntity          <span class="token operator">=</span> <span class="token number">422</span> <span class="token comment">// RFC 4918, 11.2</span>
+    StatusLocked                       <span class="token operator">=</span> <span class="token number">423</span> <span class="token comment">// RFC 4918, 11.3</span>
+    StatusFailedDependency             <span class="token operator">=</span> <span class="token number">424</span> <span class="token comment">// RFC 4918, 11.4</span>
+    StatusTooEarly                     <span class="token operator">=</span> <span class="token number">425</span> <span class="token comment">// RFC 8470, 5.2.</span>
+    StatusUpgradeRequired              <span class="token operator">=</span> <span class="token number">426</span> <span class="token comment">// RFC 7231, 6.5.15</span>
+    StatusPreconditionRequired         <span class="token operator">=</span> <span class="token number">428</span> <span class="token comment">// RFC 6585, 3</span>
+    StatusTooManyRequests              <span class="token operator">=</span> <span class="token number">429</span> <span class="token comment">// RFC 6585, 4</span>
+    StatusRequestHeaderFieldsTooLarge  <span class="token operator">=</span> <span class="token number">431</span> <span class="token comment">// RFC 6585, 5</span>
+    StatusUnavailableForLegalReasons   <span class="token operator">=</span> <span class="token number">451</span> <span class="token comment">// RFC 7725, 3</span>
+
+    StatusInternalServerError           <span class="token operator">=</span> <span class="token number">500</span> <span class="token comment">// RFC 7231, 6.6.1</span>
+    StatusNotImplemented                <span class="token operator">=</span> <span class="token number">501</span> <span class="token comment">// RFC 7231, 6.6.2</span>
+    StatusBadGateway                    <span class="token operator">=</span> <span class="token number">502</span> <span class="token comment">// RFC 7231, 6.6.3</span>
+    StatusServiceUnavailable            <span class="token operator">=</span> <span class="token number">503</span> <span class="token comment">// RFC 7231, 6.6.4</span>
+    StatusGatewayTimeout                <span class="token operator">=</span> <span class="token number">504</span> <span class="token comment">// RFC 7231, 6.6.5</span>
+    StatusHTTPVersionNotSupported       <span class="token operator">=</span> <span class="token number">505</span> <span class="token comment">// RFC 7231, 6.6.6</span>
+    StatusVariantAlsoNegotiates         <span class="token operator">=</span> <span class="token number">506</span> <span class="token comment">// RFC 2295, 8.1</span>
+    StatusInsufficientStorage           <span class="token operator">=</span> <span class="token number">507</span> <span class="token comment">// RFC 4918, 11.5</span>
+    StatusLoopDetected                  <span class="token operator">=</span> <span class="token number">508</span> <span class="token comment">// RFC 5842, 7.2</span>
+    StatusNotExtended                   <span class="token operator">=</span> <span class="token number">510</span> <span class="token comment">// RFC 2774, 7</span>
+    StatusNetworkAuthenticationRequired <span class="token operator">=</span> <span class="token number">511</span> <span class="token comment">// RFC 6585, 6</span>
+<span class="token punctuation">)</span>
+</code></pre></div><p><strong>示例</strong></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;net/http&quot;</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    http<span class="token punctuation">.</span><span class="token function">HandleFunc</span><span class="token punctuation">(</span><span class="token string">&quot;/test&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>writer http<span class="token punctuation">.</span>ResponseWriter<span class="token punctuation">,</span> request <span class="token operator">*</span>http<span class="token punctuation">.</span>Request<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        header <span class="token operator">:=</span> writer<span class="token punctuation">.</span><span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        header<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;application/json&quot;</span><span class="token punctuation">)</span>
+        writer<span class="token punctuation">.</span><span class="token function">WriteHeader</span><span class="token punctuation">(</span>http<span class="token punctuation">.</span>StatusBadGateway<span class="token punctuation">)</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Fprintln</span><span class="token punctuation">(</span>writer<span class="token punctuation">,</span><span class="token string">&quot;Web响应&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    http<span class="token punctuation">.</span><span class="token function">ListenAndServe</span><span class="token punctuation">(</span><span class="token string">&quot;:8080&quot;</span><span class="token punctuation">,</span><span class="token boolean">nil</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在浏览器控制台的Network查看运行结果：</p> <p><img src="https://upload-images.jianshu.io/upload_images/661823-a8d7be4b63ba9b41.png" alt></p> <p>##Cookie</p> <blockquote><p>注意区分Cookie与Session之间的区别，Cookie用服务端保存某些信息到客户端的，用于识别用户，一种用户追踪机制，而Session则是服务端实现用户多次请求之间保持会话的机制；两者可以配合使用，也可以独立使用。</p></blockquote> <p>net/http包提供了SetCookie方法用于向客户端写入Cookie.</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">SetCookie</span><span class="token punctuation">(</span>w ResponseWriter<span class="token punctuation">,</span> cookie <span class="token operator">*</span>Cookie<span class="token punctuation">)</span>
+</code></pre></div><p>第一个参数为ResponseWriter结构体，而第二个参数则Cookie结构体，其定义如下：</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> Cookie <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    Name  <span class="token builtin">string</span>
+    Value <span class="token builtin">string</span>
+
+    Path       <span class="token builtin">string</span>    <span class="token comment">// optional</span>
+    Domain     <span class="token builtin">string</span>    <span class="token comment">// optional</span>
+    Expires    time<span class="token punctuation">.</span>Time <span class="token comment">// optional</span>
+    RawExpires <span class="token builtin">string</span>    <span class="token comment">// for reading cookies only</span>
+
+    <span class="token comment">// MaxAge=0 means no 'Max-Age' attribute specified.</span>
+    <span class="token comment">// MaxAge&lt;0 means delete cookie now, equivalently 'Max-Age: 0'</span>
+    <span class="token comment">// MaxAge&gt;0 means Max-Age attribute present and given in seconds</span>
+    MaxAge   <span class="token builtin">int</span>
+    Secure   <span class="token builtin">bool</span>
+    HttpOnly <span class="token builtin">bool</span>
+    SameSite SameSite <span class="token comment">// Go 1.11</span>
+    Raw      <span class="token builtin">string</span>
+    Unparsed <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span> <span class="token comment">// Raw text of unparsed attribute-value pairs</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h5 id="示例"><a href="#示例" aria-hidden="true" class="header-anchor">#</a> 示例</h5> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;net/http&quot;</span>
+	<span class="token string">&quot;time&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    http<span class="token punctuation">.</span><span class="token function">HandleFunc</span><span class="token punctuation">(</span><span class="token string">&quot;/test&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>writer http<span class="token punctuation">.</span>ResponseWriter<span class="token punctuation">,</span> request <span class="token operator">*</span>http<span class="token punctuation">.</span>Request<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        expire <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        expire<span class="token punctuation">.</span><span class="token function">AddDate</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
+        cookie <span class="token operator">:=</span> <span class="token operator">&amp;</span>http<span class="token punctuation">.</span>Cookie<span class="token punctuation">{</span>Name<span class="token punctuation">:</span><span class="token string">&quot;Auth&quot;</span><span class="token punctuation">,</span>Value<span class="token punctuation">:</span><span class="token string">&quot;test&quot;</span><span class="token punctuation">,</span>Expires<span class="token punctuation">:</span>expire<span class="token punctuation">}</span>
+        http<span class="token punctuation">.</span><span class="token function">SetCookie</span><span class="token punctuation">(</span>writer<span class="token punctuation">,</span>cookie<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    http<span class="token punctuation">.</span><span class="token function">ListenAndServe</span><span class="token punctuation">(</span><span class="token string">&quot;:8080&quot;</span><span class="token punctuation">,</span><span class="token boolean">nil</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>运行结果</p> <p><img src="https://upload-images.jianshu.io/upload_images/661823-8e532a1392d9d350.png" alt></p> <h2 id="json响应"><a href="#json响应" aria-hidden="true" class="header-anchor">#</a> JSON响应</h2> <p>Go标准库并没有封装直接向客户端响应JSON数据的方法，不过，自己封装一个也很简单的，可以使用encoding/json包的Encoder结构体，将JSON数据写入响应数据流。</p> <h5 id="示例-2"><a href="#示例-2" aria-hidden="true" class="header-anchor">#</a> 示例</h5> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;encoding/json&quot;</span>
+    <span class="token string">&quot;log&quot;</span>
+    <span class="token string">&quot;net/http&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    http<span class="token punctuation">.</span><span class="token function">HandleFunc</span><span class="token punctuation">(</span><span class="token string">&quot;/profile&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>writer http<span class="token punctuation">.</span>ResponseWriter<span class="token punctuation">,</span> request <span class="token operator">*</span>http<span class="token punctuation">.</span>Request<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        data <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+            <span class="token string">&quot;username&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;小明&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;email&quot;</span><span class="token punctuation">:</span>    <span class="token string">&quot;xiaoming@163.com&quot;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+        err <span class="token operator">:=</span> <span class="token function">JSON</span><span class="token punctuation">(</span>writer<span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+        <span class="token function">check</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    http<span class="token punctuation">.</span><span class="token function">ListenAndServe</span><span class="token punctuation">(</span><span class="token string">&quot;:8080&quot;</span><span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">check</span><span class="token punctuation">(</span>err <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">JSON</span><span class="token punctuation">(</span>w http<span class="token punctuation">.</span>ResponseWriter<span class="token punctuation">,</span> data <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
+	w<span class="token punctuation">.</span><span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Set</span><span class="token punctuation">(</span><span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;application/json&quot;</span><span class="token punctuation">)</span>
+	encoder <span class="token operator">:=</span> json<span class="token punctuation">.</span><span class="token function">NewEncoder</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span>
+	<span class="token keyword">return</span> encoder<span class="token punctuation">.</span><span class="token function">Encode</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="html模板"><a href="#html模板" aria-hidden="true" class="header-anchor">#</a> HTML模板</h2> <p>虽然在前后端分离的大趋势下，后端开发更多时候是以接口api响应JSON的方式返回数据给前端，但仍然有些简单的业务，是由后端直接将HTML模板返回由浏览器，由浏览器渲染。</p> <p>Go语言可以使用html/template包渲染HTML模板。</p> <h5 id="示例-3"><a href="#示例-3" aria-hidden="true" class="header-anchor">#</a> 示例</h5> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;html/template&quot;</span>
+    <span class="token string">&quot;log&quot;</span>
+    <span class="token string">&quot;net/http&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> tpl <span class="token operator">=</span> <span class="token string">`
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;{{.Title}}&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		{{range .Items}}&lt;div&gt;{{ . }}&lt;/div&gt;{{else}}&lt;div&gt;&lt;strong&gt;no rows&lt;/strong&gt;&lt;/div&gt;{{end}}
+	&lt;/body&gt;
+&lt;/html&gt;`</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    t<span class="token punctuation">,</span> err <span class="token operator">:=</span> template<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token string">&quot;webpage&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span>tpl<span class="token punctuation">)</span>
+    <span class="token function">check</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+
+    data <span class="token operator">:=</span> <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+        Title <span class="token builtin">string</span>
+        Items <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+    <span class="token punctuation">}</span><span class="token punctuation">{</span>
+    Title<span class="token punctuation">:</span> <span class="token string">&quot;我的第一个HTML页面&quot;</span><span class="token punctuation">,</span>
+    Items<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+            <span class="token string">&quot;技术文章&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;我的Blog&quot;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+
+    http<span class="token punctuation">.</span><span class="token function">HandleFunc</span><span class="token punctuation">(</span><span class="token string">&quot;/profile&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>writer http<span class="token punctuation">.</span>ResponseWriter<span class="token punctuation">,</span> request <span class="token operator">*</span>http<span class="token punctuation">.</span>Request<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        err <span class="token operator">=</span> t<span class="token punctuation">.</span><span class="token function">Execute</span><span class="token punctuation">(</span>writer<span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+        <span class="token function">check</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    http<span class="token punctuation">.</span><span class="token function">ListenAndServe</span><span class="token punctuation">(</span><span class="token string">&quot;:8080&quot;</span><span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">check</span><span class="token punctuation">(</span>err <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="总结"><a href="#总结" aria-hidden="true" class="header-anchor">#</a> 总结</h2> <p>Go语言在net/http包中对Web开发提供了很好的支持，让开发者在使用Go进行Web应用开发时，几乎不需要使用任何的Web框架，便可完成业务逻辑开发的工作。</p></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/source/go/Go-Handle-WebRequest.html" class="prev">
+          Go 处理Web请求
+        </a></span> <span class="next"><a href="/source/go/Go-Json-Encode-Decode.html">
+          Go Json编码和解码
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.aee163d7.js" defer></script><script src="/assets/js/53.51261bc0.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>小程序多页面数据同步 | Jovins Blog</title>
+    <meta name="description" content="Work Hard, Play Hard">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.0d19fd84.css" as="style"><link rel="preload" href="/assets/js/app.aee163d7.js" as="script"><link rel="preload" href="/assets/js/66.a52448b6.js" as="script"><link rel="prefetch" href="/assets/js/10.1e34e5ff.js"><link rel="prefetch" href="/assets/js/11.491dfd54.js"><link rel="prefetch" href="/assets/js/12.a55c1fe7.js"><link rel="prefetch" href="/assets/js/13.5af2a714.js"><link rel="prefetch" href="/assets/js/14.14535d2d.js"><link rel="prefetch" href="/assets/js/15.3a5c4d96.js"><link rel="prefetch" href="/assets/js/16.f0724826.js"><link rel="prefetch" href="/assets/js/17.a41afda0.js"><link rel="prefetch" href="/assets/js/18.8dd90a66.js"><link rel="prefetch" href="/assets/js/19.4fb6d9b8.js"><link rel="prefetch" href="/assets/js/2.b7fedc2a.js"><link rel="prefetch" href="/assets/js/20.c7ee29bf.js"><link rel="prefetch" href="/assets/js/21.ec5919dd.js"><link rel="prefetch" href="/assets/js/22.7351d6cc.js"><link rel="prefetch" href="/assets/js/23.8adf705b.js"><link rel="prefetch" href="/assets/js/24.5dda7d7c.js"><link rel="prefetch" href="/assets/js/25.d6c4beda.js"><link rel="prefetch" href="/assets/js/26.3fae1b4d.js"><link rel="prefetch" href="/assets/js/27.42848bbe.js"><link rel="prefetch" href="/assets/js/28.80aeb13f.js"><link rel="prefetch" href="/assets/js/29.d3f479f5.js"><link rel="prefetch" href="/assets/js/3.fe3c8939.js"><link rel="prefetch" href="/assets/js/30.b28e0cfa.js"><link rel="prefetch" href="/assets/js/31.39756cd5.js"><link rel="prefetch" href="/assets/js/32.475d42d9.js"><link rel="prefetch" href="/assets/js/33.db2c4cfb.js"><link rel="prefetch" href="/assets/js/34.8e9cd72f.js"><link rel="prefetch" href="/assets/js/35.48663882.js"><link rel="prefetch" href="/assets/js/36.f92ac67a.js"><link rel="prefetch" href="/assets/js/37.67c65ed9.js"><link rel="prefetch" href="/assets/js/38.841de0ec.js"><link rel="prefetch" href="/assets/js/39.9ee667aa.js"><link rel="prefetch" href="/assets/js/4.28e0dd42.js"><link rel="prefetch" href="/assets/js/40.0f4d2bb8.js"><link rel="prefetch" href="/assets/js/41.a292c8af.js"><link rel="prefetch" href="/assets/js/42.ca402a95.js"><link rel="prefetch" href="/assets/js/43.1a920a89.js"><link rel="prefetch" href="/assets/js/44.1136c43f.js"><link rel="prefetch" href="/assets/js/45.09cdae5d.js"><link rel="prefetch" href="/assets/js/46.bf04cee8.js"><link rel="prefetch" href="/assets/js/47.4be1442f.js"><link rel="prefetch" href="/assets/js/48.c90986e6.js"><link rel="prefetch" href="/assets/js/49.e0df44d7.js"><link rel="prefetch" href="/assets/js/5.106e8893.js"><link rel="prefetch" href="/assets/js/50.e589f43d.js"><link rel="prefetch" href="/assets/js/51.52e2dd5e.js"><link rel="prefetch" href="/assets/js/52.9b9b1b60.js"><link rel="prefetch" href="/assets/js/53.51261bc0.js"><link rel="prefetch" href="/assets/js/54.9a082c0b.js"><link rel="prefetch" href="/assets/js/55.cb478dba.js"><link rel="prefetch" href="/assets/js/56.a9c5ea04.js"><link rel="prefetch" href="/assets/js/57.a1b56ab7.js"><link rel="prefetch" href="/assets/js/58.60e77be8.js"><link rel="prefetch" href="/assets/js/59.c07f2b7e.js"><link rel="prefetch" href="/assets/js/6.015a6f59.js"><link rel="prefetch" href="/assets/js/60.2d300070.js"><link rel="prefetch" href="/assets/js/61.f54bc147.js"><link rel="prefetch" href="/assets/js/62.0ec8ca93.js"><link rel="prefetch" href="/assets/js/63.7c8b03d9.js"><link rel="prefetch" href="/assets/js/64.78d7222e.js"><link rel="prefetch" href="/assets/js/65.866ef779.js"><link rel="prefetch" href="/assets/js/67.9d0c871c.js"><link rel="prefetch" href="/assets/js/68.27308da1.js"><link rel="prefetch" href="/assets/js/69.88f30473.js"><link rel="prefetch" href="/assets/js/7.e591ee0c.js"><link rel="prefetch" href="/assets/js/70.74560474.js"><link rel="prefetch" href="/assets/js/71.3f81de49.js"><link rel="prefetch" href="/assets/js/72.261a96ba.js"><link rel="prefetch" href="/assets/js/73.7d09ee13.js"><link rel="prefetch" href="/assets/js/74.668f53a7.js"><link rel="prefetch" href="/assets/js/75.5a07cf00.js"><link rel="prefetch" href="/assets/js/76.5cb7756e.js"><link rel="prefetch" href="/assets/js/77.ee0ac284.js"><link rel="prefetch" href="/assets/js/78.a4bf6899.js"><link rel="prefetch" href="/assets/js/79.86d6a675.js"><link rel="prefetch" href="/assets/js/8.c3659f73.js"><link rel="prefetch" href="/assets/js/80.ca1d23ad.js"><link rel="prefetch" href="/assets/js/81.834d4fa2.js"><link rel="prefetch" href="/assets/js/82.c1c44655.js"><link rel="prefetch" href="/assets/js/83.b2f5aaef.js"><link rel="prefetch" href="/assets/js/84.49bf081e.js"><link rel="prefetch" href="/assets/js/85.036dd295.js"><link rel="prefetch" href="/assets/js/86.8ede464d.js"><link rel="prefetch" href="/assets/js/9.6d2e7baf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d19fd84.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jovins Blog</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link router-link-active">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link router-link-active">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>小程序</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/source/program/" class="sidebar-link">小程序适配 iPhone X 总结</a></li><li><a href="/source/program/miniprogram-sync.html" class="active sidebar-link">小程序多页面数据同步</a></li><li><a href="/source/program/miniprogram-explore.html" class="sidebar-link">小程序多端框架测评</a></li><li><a href="/source/program/miniprogram-reporter.html" class="sidebar-link">小程序代码小记</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="小程序多页面数据同步"><a href="#小程序多页面数据同步" aria-hidden="true" class="header-anchor">#</a> 小程序多页面数据同步</h1> <p>在很多的产品中，都会存在跨页面间需要数据同步，比如一些社交类的项目，如下示例：</p> <p><img src="https://upload-images.jianshu.io/upload_images/661823-6f244ec9ca0d9efe.png" alt></p> <p>为了更好的理解该场景，我们再详细描绘一下：</p> <ol><li>本场景包括4个页面：<code>动态广场</code>、<code>个人中心</code>、<code>我的动态</code>、<code>动态详情</code></li> <li>首先，进入<code>动态广场</code>页，请求加载数据，展示动态列表，其中，我们用绿色内阴影区分该条动态是“我的”，其他未加内阴影的表示是“别人的”；</li> <li>然后，进入<code>个人中心</code>页，请求加载数据，展示获赞数量；</li> <li>点击我的动态，进入<code>我的动态</code>页，请求加载数据，展示我的动态列表；</li> <li>点击其中一条动态，进入<code>动态详情</code>页，请求加载数据，进行<code>点赞</code>操作；</li> <li>在第5步中，点赞成功后，回退到<code>我的动态</code>页，可以看到该条动态<strong>点赞状态和数量</strong>发生变化，已经同步；</li> <li>再回到到<code>个人中心</code>页，也可以看到<strong>获赞数量</strong>发生变化，已经同步；</li> <li>再回到<code>动态广场</code>页，也可以看到对应的一条动态<strong>点赞状态和数量</strong>发生变化，已经同步；</li></ol> <p>下面我们来探讨一下这个场景的实现，在此之前，我们先要了解在点赞时，该场景中各页面的状态及关系。</p> <p><img src="https://upload-images.jianshu.io/upload_images/661823-637098d2812a5b3d.png" alt></p> <p><img src="https://upload-images.jianshu.io/upload_images/661823-5ff6706860c39e75.png" alt></p> <p>如上图所示，当我们在点赞时，4个页面都已经在是打开的（4个<code>webview</code>）。当我们点赞成功时，点击左上解返回时，<code>动态详情</code>页的<code>webview</code>关掉，直接看到下一层<code>webview</code>，也就是<code>我的动态</code>页，这个页面是已经存在的。其他页面也是如此。</p> <p>那对于这些已经存在的页面，我们应该如何同步更新数据呢？</p> <p>当然，如果比较懒，可以直接在<code>onShow</code>的时候重新拉数据渲染页面。但显然这是非常低级、不可取也没必要的做法。重新拉数据需要耗时，页面重新渲染也会看到闪屏，关键是根本没必要重新拉数据，因为数据发生了变化，前端是知道的。</p> <p>所以我们可以这样做，在动态详情页点赞成功时，保存一个数据到全局<code>globalData</code>中去，回到我的动态页，在<code>onShow</code>中去检测全局<code>globalData</code>中是否有点赞变化的数据，有的话，就读取出来去更新相应的动态。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 动态详情页js</span>
+<span class="token function">onLike</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  <span class="token function-variable function">success</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    App<span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>like <span class="token operator">=</span> <span class="token punctuation">{</span>
+      fid<span class="token punctuation">:</span> <span class="token number">10001</span><span class="token punctuation">,</span>
+      likes<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      hasLike<span class="token punctuation">:</span> <span class="token boolean">true</span>         
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 我的动态页js</span>
+<span class="token function">onShow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>App<span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>like <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 读取globaldata.like数据去更新</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">doUpdata</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">// 特别需要注意，更新完后，需要把globaldata.like清掉，不然下次onShow还会继续走到该逻辑</span>
+    App<span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>like <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这样似乎可以达到我们的目的，无请求、纯前端局部更新。</p> <p>但这样还存在一个问题，当我们再退回到<code>个人中心</code>页时，要检查下获赞数量是否需要更新，以及回到<code>动态广场</code>页时，也要检查点赞有没有发生变化。但在这两个页面<code>onShow</code>去判断<code>App.globalData.like</code>时，都已经检测不到了，因为该数据已经在<code>我的动态</code>页<code>onShow</code>中置为<code>null</code>了。</p> <p>概括来说，<strong>在点赞时，只生产了一条数据，但有多个消费者，哪个页面先把数据消费了，其他页面也就无法检测到数据了</strong>。</p> <p>由此，我们想到那就使用<code>EventBus</code>来处理。</p> <p>首先，我们自己实现一套简单的EventBus。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">Events</span> <span class="token punctuation">{</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_listeners_ <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">uuid</span><span class="token punctuation">(</span>prefix <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>prefix <span class="token operator">==</span> <span class="token string">''</span> <span class="token operator">?</span> <span class="token string">''</span> <span class="token punctuation">:</span> prefix <span class="token operator">+</span> <span class="token string">'_'</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">36</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">on</span><span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> handle</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_listeners_<span class="token punctuation">[</span>event<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>_listeners_<span class="token punctuation">[</span>event<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">const</span> key <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">uuid</span><span class="token punctuation">(</span><span class="token string">'evt'</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_listeners_<span class="token punctuation">[</span>event<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      key<span class="token punctuation">:</span> key<span class="token punctuation">,</span>
+      handle<span class="token punctuation">:</span> handle
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> key<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">once</span><span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> handle</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_listeners_<span class="token punctuation">[</span>event<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>_listeners_<span class="token punctuation">[</span>event<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">const</span> key <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">uuid</span><span class="token punctuation">(</span><span class="token string">'evt_once'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_listeners_<span class="token punctuation">[</span>event<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      key<span class="token punctuation">:</span> key<span class="token punctuation">,</span>
+      handle<span class="token punctuation">:</span> handle<span class="token punctuation">,</span>
+      once<span class="token punctuation">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> key<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">emit</span><span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> <span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> handlers <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_listeners_<span class="token punctuation">[</span>event<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>handlers<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>_listeners_<span class="token punctuation">[</span>event<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> handlers<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> evt <span class="token operator">=</span> handlers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        evt<span class="token punctuation">.</span><span class="token function">handle</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>evt<span class="token punctuation">.</span>once<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>_listeners_<span class="token punctuation">[</span>event<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>evt<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">remove</span><span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>_listeners_<span class="token punctuation">[</span>event<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>_listeners_<span class="token punctuation">[</span>event<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_listeners_<span class="token punctuation">[</span>event<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">evt</span> <span class="token operator">=&gt;</span>
+        <span class="token operator">!</span><span class="token punctuation">(</span>key <span class="token operator">===</span> evt<span class="token punctuation">.</span>key <span class="token operator">||</span> key <span class="token operator">===</span> evt<span class="token punctuation">.</span>handle<span class="token punctuation">)</span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">off</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>event <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_listeners_<span class="token punctuation">[</span>event<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>_listeners_<span class="token punctuation">[</span>event<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">clearListeners</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_listeners_ <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Events
+</code></pre></div><p>在小程序启动时，初始化EventBus：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> Event <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'/util/events.js'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>default
+
+<span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  events<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token function">onLaunch</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initEvents</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">// doOtherThings</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">initEvents</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>events <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">emitFeedsLike</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>events<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'feedsLike'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">emitPublishFeeds</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>events<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'publishFeeds'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>各个页面在onLoad时，注册监听事件(在此以我的动态页为例)：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 我的动态.js</span>
+<span class="token keyword">const</span> App <span class="token operator">=</span> <span class="token function">getApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    list<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">onLoad</span><span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+    <span class="token comment">// 监听点赞事件广播</span>
+    ↓ 重点在这里 ↓
+    App<span class="token punctuation">.</span>events<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'feedsLike'</span><span class="token punctuation">,</span> <span class="token parameter">data</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'我的动态页面收到点赞变化通知：'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+      <span class="token comment">// 进行更新操作</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// 监听发布事件广播</span>
+    ↓ 重点在这里 ↓
+    App<span class="token punctuation">.</span>events<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'publishFeeds'</span><span class="token punctuation">,</span> <span class="token parameter">data</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'我的动态页面收到发布动态通知：'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+      <span class="token comment">// 进行更新操作</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>然后在动态点赞时，发出事件通知。（这里一条动态是封装成组件，不属于某一个页面，点赞事件也是封装在组件内）</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> App <span class="token operator">=</span> <span class="token function">getApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  properties<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 点赞</span>
+    <span class="token function">tapLike</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> <span class="token punctuation">{</span> likes<span class="token punctuation">,</span> hasLike <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data
+
+      likes <span class="token operator">+=</span> <span class="token punctuation">(</span>hasLike <span class="token operator">&amp;&amp;</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> <span class="token number">1</span><span class="token punctuation">)</span>
+      hasLike <span class="token operator">=</span> <span class="token operator">!</span>hasLike
+
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateFeeds</span><span class="token punctuation">(</span>likes<span class="token punctuation">,</span> hasLike<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          likes<span class="token punctuation">,</span>
+          hasLike
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+        <span class="token comment">// 广播事件</span>
+        ↓ 重点在这里 ↓
+        App<span class="token punctuation">.</span><span class="token function">emitFeedsLike</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          uid<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>uid<span class="token punctuation">,</span>
+          fid<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>fid<span class="token punctuation">,</span>
+          likes<span class="token punctuation">,</span>
+          hasLike
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token operator">...</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>这样，我们便在小程序中实现了一套跨页面数据同步的方案。</p> <p>直观上这已经非常完美的实现了我们的需求。但在小程序中存在一个与我们常规经验不太一致的地方。那就是页面在关掉后，它里面的对象并没有销毁，这点是因为小程序的逻辑层是共用一个进程。</p> <p><img src="https://upload-images.jianshu.io/upload_images/661823-a25df9a1a1552c55.png" alt></p> <p>因此，每次进入页面，都会注册一次监听事件，而退出页面后，该事件并不会销毁。这样的话，多次重复进入页面，就会注册多个重复事件，当事件发生时，就会执行多次响应。请仔细观察下图！</p> <p><img src="https://upload-images.jianshu.io/upload_images/661823-3c83b279dadd9f8c.png" alt></p> <p>为了避免该现象出现，我们切记要在页面的onUnload事件中，主动销毁监听事件。</p> <div class="language-js extra-class"><pre class="language-js"><code>  eventsListener<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    list<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">onLoad</span><span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+    <span class="token comment">// 监听点赞事件广播</span>
+    ↓ 重点在这里 ↓
+    <span class="token keyword">this</span><span class="token punctuation">.</span>eventsListener<span class="token punctuation">.</span>feedsLike <span class="token operator">=</span> App<span class="token punctuation">.</span>events<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'feedsLike'</span><span class="token punctuation">,</span> <span class="token parameter">data</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'我的动态页面收到点赞变化通知：'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+      <span class="token comment">// 进行更新操作</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// 监听发布事件广播</span>
+    ↓ 重点在这里 ↓
+    <span class="token keyword">this</span><span class="token punctuation">.</span>eventsListener<span class="token punctuation">.</span>publishFeeds<span class="token operator">=</span> App<span class="token punctuation">.</span>events<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'publishFeeds'</span><span class="token punctuation">,</span> <span class="token parameter">data</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'我的动态页面收到发布动态通知：'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+      <span class="token comment">// 进行更新操作</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  ↓ 重点在这里 ↓
+  <span class="token function">onUnload</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">in</span> <span class="token keyword">this</span><span class="token punctuation">.</span>eventsListener<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      App<span class="token punctuation">.</span>events<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>eventsListener<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> 
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>至此，我们在小程序中完美的实现了跨页面/组件、多页面数据同步。</p> <p><a href="https://git.weixin.qq.com/xinyuanliu/mina-animation" target="_blank" rel="noopener noreferrer">项目地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/source/program/" class="prev router-link-active">
+          小程序适配 iPhone X 总结
+        </a></span> <span class="next"><a href="/source/program/miniprogram-explore.html">
+          小程序多端框架测评
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.aee163d7.js" defer></script><script src="/assets/js/66.a52448b6.js" defer></script>
+  </body>
+</html>

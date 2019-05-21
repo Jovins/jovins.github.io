@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>14-Go方法和接口 | Jovins Blog</title>
+    <meta name="description" content="Work Hard, Play Hard">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.0d19fd84.css" as="style"><link rel="preload" href="/assets/js/app.aee163d7.js" as="script"><link rel="preload" href="/assets/js/41.a292c8af.js" as="script"><link rel="prefetch" href="/assets/js/10.1e34e5ff.js"><link rel="prefetch" href="/assets/js/11.491dfd54.js"><link rel="prefetch" href="/assets/js/12.a55c1fe7.js"><link rel="prefetch" href="/assets/js/13.5af2a714.js"><link rel="prefetch" href="/assets/js/14.14535d2d.js"><link rel="prefetch" href="/assets/js/15.3a5c4d96.js"><link rel="prefetch" href="/assets/js/16.f0724826.js"><link rel="prefetch" href="/assets/js/17.a41afda0.js"><link rel="prefetch" href="/assets/js/18.8dd90a66.js"><link rel="prefetch" href="/assets/js/19.4fb6d9b8.js"><link rel="prefetch" href="/assets/js/2.b7fedc2a.js"><link rel="prefetch" href="/assets/js/20.c7ee29bf.js"><link rel="prefetch" href="/assets/js/21.ec5919dd.js"><link rel="prefetch" href="/assets/js/22.7351d6cc.js"><link rel="prefetch" href="/assets/js/23.8adf705b.js"><link rel="prefetch" href="/assets/js/24.5dda7d7c.js"><link rel="prefetch" href="/assets/js/25.d6c4beda.js"><link rel="prefetch" href="/assets/js/26.3fae1b4d.js"><link rel="prefetch" href="/assets/js/27.42848bbe.js"><link rel="prefetch" href="/assets/js/28.80aeb13f.js"><link rel="prefetch" href="/assets/js/29.d3f479f5.js"><link rel="prefetch" href="/assets/js/3.fe3c8939.js"><link rel="prefetch" href="/assets/js/30.b28e0cfa.js"><link rel="prefetch" href="/assets/js/31.39756cd5.js"><link rel="prefetch" href="/assets/js/32.475d42d9.js"><link rel="prefetch" href="/assets/js/33.db2c4cfb.js"><link rel="prefetch" href="/assets/js/34.8e9cd72f.js"><link rel="prefetch" href="/assets/js/35.48663882.js"><link rel="prefetch" href="/assets/js/36.f92ac67a.js"><link rel="prefetch" href="/assets/js/37.67c65ed9.js"><link rel="prefetch" href="/assets/js/38.841de0ec.js"><link rel="prefetch" href="/assets/js/39.9ee667aa.js"><link rel="prefetch" href="/assets/js/4.28e0dd42.js"><link rel="prefetch" href="/assets/js/40.0f4d2bb8.js"><link rel="prefetch" href="/assets/js/42.ca402a95.js"><link rel="prefetch" href="/assets/js/43.1a920a89.js"><link rel="prefetch" href="/assets/js/44.1136c43f.js"><link rel="prefetch" href="/assets/js/45.09cdae5d.js"><link rel="prefetch" href="/assets/js/46.bf04cee8.js"><link rel="prefetch" href="/assets/js/47.4be1442f.js"><link rel="prefetch" href="/assets/js/48.c90986e6.js"><link rel="prefetch" href="/assets/js/49.e0df44d7.js"><link rel="prefetch" href="/assets/js/5.106e8893.js"><link rel="prefetch" href="/assets/js/50.e589f43d.js"><link rel="prefetch" href="/assets/js/51.52e2dd5e.js"><link rel="prefetch" href="/assets/js/52.9b9b1b60.js"><link rel="prefetch" href="/assets/js/53.51261bc0.js"><link rel="prefetch" href="/assets/js/54.9a082c0b.js"><link rel="prefetch" href="/assets/js/55.cb478dba.js"><link rel="prefetch" href="/assets/js/56.a9c5ea04.js"><link rel="prefetch" href="/assets/js/57.a1b56ab7.js"><link rel="prefetch" href="/assets/js/58.60e77be8.js"><link rel="prefetch" href="/assets/js/59.c07f2b7e.js"><link rel="prefetch" href="/assets/js/6.015a6f59.js"><link rel="prefetch" href="/assets/js/60.2d300070.js"><link rel="prefetch" href="/assets/js/61.f54bc147.js"><link rel="prefetch" href="/assets/js/62.0ec8ca93.js"><link rel="prefetch" href="/assets/js/63.7c8b03d9.js"><link rel="prefetch" href="/assets/js/64.78d7222e.js"><link rel="prefetch" href="/assets/js/65.866ef779.js"><link rel="prefetch" href="/assets/js/66.a52448b6.js"><link rel="prefetch" href="/assets/js/67.9d0c871c.js"><link rel="prefetch" href="/assets/js/68.27308da1.js"><link rel="prefetch" href="/assets/js/69.88f30473.js"><link rel="prefetch" href="/assets/js/7.e591ee0c.js"><link rel="prefetch" href="/assets/js/70.74560474.js"><link rel="prefetch" href="/assets/js/71.3f81de49.js"><link rel="prefetch" href="/assets/js/72.261a96ba.js"><link rel="prefetch" href="/assets/js/73.7d09ee13.js"><link rel="prefetch" href="/assets/js/74.668f53a7.js"><link rel="prefetch" href="/assets/js/75.5a07cf00.js"><link rel="prefetch" href="/assets/js/76.5cb7756e.js"><link rel="prefetch" href="/assets/js/77.ee0ac284.js"><link rel="prefetch" href="/assets/js/78.a4bf6899.js"><link rel="prefetch" href="/assets/js/79.86d6a675.js"><link rel="prefetch" href="/assets/js/8.c3659f73.js"><link rel="prefetch" href="/assets/js/80.ca1d23ad.js"><link rel="prefetch" href="/assets/js/81.834d4fa2.js"><link rel="prefetch" href="/assets/js/82.c1c44655.js"><link rel="prefetch" href="/assets/js/83.b2f5aaef.js"><link rel="prefetch" href="/assets/js/84.49bf081e.js"><link rel="prefetch" href="/assets/js/85.036dd295.js"><link rel="prefetch" href="/assets/js/86.8ede464d.js"><link rel="prefetch" href="/assets/js/9.6d2e7baf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d19fd84.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jovins Blog</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link router-link-active">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link router-link-active">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>Go</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/source/go/" class="sidebar-link">Go语言开篇</a></li><li><a href="/source/go/go-deployed-on-the-server.html" class="sidebar-link">Go部署在阿里云linux服务器</a></li><li><a href="/source/go/Go-Path-Variable.html" class="sidebar-link">Go 环境变量</a></li><li><a href="/source/go/Go-Go-echarts.html" class="sidebar-link">Go Go-echarts</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Go Web学习</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>Go 基础教程</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/source/go/01-first.html" class="sidebar-link">01-C语言和Go语言对比</a></li><li><a href="/source/go/02-two.html" class="sidebar-link">02-Go语言开发环境搭建</a></li><li><a href="/source/go/03-three.html" class="sidebar-link">03-第一个Go语言程序</a></li><li><a href="/source/go/04-four.html" class="sidebar-link">04-Go语言关键字和标识符</a></li><li><a href="/source/go/05-five.html" class="sidebar-link">05-Go语言常量和变量</a></li><li><a href="/source/go/06-six.html" class="sidebar-link">06-输入输出函数</a></li><li><a href="/source/go/07-seven.html" class="sidebar-link">07-Go语言命令行参数</a></li><li><a href="/source/go/08-eight.html" class="sidebar-link">08-Go语言运算符</a></li><li><a href="/source/go/09-nine.html" class="sidebar-link">09-Go语言流程控制</a></li><li><a href="/source/go/10-ten.html" class="sidebar-link">10-Go语言函数</a></li><li><a href="/source/go/11-eleven.html" class="sidebar-link">11-Go语言数组和切片</a></li><li><a href="/source/go/12-twelve.html" class="sidebar-link">12-Go语言字典和结构体</a></li><li><a href="/source/go/13-thirteen.html" class="sidebar-link">13-指针</a></li><li><a href="/source/go/14-fourteen.html" class="active sidebar-link">14-Go方法和接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/source/go/14-fourteen.html#方法" class="sidebar-link">方法</a></li><li class="sidebar-sub-header"><a href="/source/go/14-fourteen.html#接口" class="sidebar-link">接口</a></li></ul></li><li><a href="/source/go/15-fifteen.html" class="sidebar-link">15-Go语言面向对象</a></li><li><a href="/source/go/16-sixteen.html" class="sidebar-link">16-Go语言异常处理</a></li><li><a href="/source/go/17-seventeen.html" class="sidebar-link">17-Go语言字符串和正则表达式</a></li><li><a href="/source/go/18-eighteen.html" class="sidebar-link">18-Go语言和C语言交叉访问</a></li><li><a href="/source/go/19-nineteen.html" class="sidebar-link">19-文件操作</a></li><li><a href="/source/go/20-concurrent.html" class="sidebar-link">20-Go语言并发编程</a></li><li><a href="/source/go/21-Channel.html" class="sidebar-link">21-Channel</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="_14-go方法和接口"><a href="#_14-go方法和接口" aria-hidden="true" class="header-anchor">#</a> 14-Go方法和接口</h1> <h2 id="方法"><a href="#方法" aria-hidden="true" class="header-anchor">#</a> 方法</h2> <ul><li>Go语言中的方法其实就是一个特殊函数, 只不过这个函数是和某种属性类型绑定在一起的而已</li> <li>Go语言中的方法<code>一般用于</code>将<code>函数和结构体绑定在一起</code>, 让结构体除了能够保存数据外还能具备某些行为</li> <li>将函数和数据类型绑定的格式
+<ul><li>只需要在函数名称前面加上(接收者 数据类型), 即可将函数和某种数据类型绑定在一起</li></ul></li></ul> <div class="language- extra-class"><pre class="language-text"><code>func (接收者 数据类型)方法名称(形参列表)(返回值列表){
+  方法体
+}
+</code></pre></div><ul><li>示例: 给结构体添加一个方法,此时结构体除了可以保存数据,还具备说出自己名字和年龄的行为</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token comment">// 1.定义一个结构体</span>
+<span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    name <span class="token builtin">string</span>
+    age <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 2.定义一个函数, 并将这个函数和Person结构体绑定在一起</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Person<span class="token punctuation">)</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;my name is&quot;</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token string">&quot;my age is&quot;</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>age<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 3.创建一个结构体变量</span>
+    per <span class="token operator">:=</span> Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">}</span>
+    <span class="token comment">// 4.利用结构体变量调用和结构体绑定的方法</span>
+    <span class="token comment">// 调用时会自动将调用者(per)传递给方法的接收者(p)</span>
+    <span class="token comment">// 所以可以在方法内部通过p方法结构体变量的属性</span>
+    per<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li><p>方法和函数异同</p> <ul><li>方法的数据类型也是函数类型, 所以也可以定义变量保存(作为参数返回值等)</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  name <span class="token builtin">string</span>
+  age <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 定义一个方法</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Person<span class="token punctuation">)</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;say方法&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 定义一个函数</span>
+<span class="token keyword">func</span> <span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;say函数&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  p <span class="token operator">:=</span> Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%T\n&quot;</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>say<span class="token punctuation">)</span> <span class="token comment">// func()</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%T\n&quot;</span><span class="token punctuation">,</span> say<span class="token punctuation">)</span> <span class="token comment">// func()</span>
+
+  <span class="token comment">// 定义一个保存没有形参没有返回值的函数类型变量</span>
+  <span class="token keyword">var</span> fn <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">// 利用函数类型变量保存一个方法</span>
+  fn <span class="token operator">=</span> p<span class="token punctuation">.</span>say
+  <span class="token comment">// 利用函数类型变量调用一个方法</span>
+  <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// 利用函数类型变量保存一个函数</span>
+  fn <span class="token operator">=</span> say
+  <span class="token comment">// 利用函数类型变量调用一个函数</span>
+  <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>方法只能通过绑定类型的变量调用, 函数可以直接调用</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+   name <span class="token builtin">string</span>
+   age <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 定义一个方法</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Person<span class="token punctuation">)</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+   fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;my name is&quot;</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token string">&quot;my age is&quot;</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>age<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 定义一个函数</span>
+<span class="token keyword">func</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+   fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;test&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   per <span class="token operator">:=</span> Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">}</span>
+   per<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 方法只能通过绑定类型的变量调用</span>
+   <span class="token comment">//say() // 编译报错, 不能直接调用</span>
+   <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 编译通过, 可以直接调用</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>方法的接收者可以看做就是函数的一个形参</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+   name <span class="token builtin">string</span>
+   age <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 定义一个方法</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Person<span class="token punctuation">)</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+   fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;my name is&quot;</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token string">&quot;my age is&quot;</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>age<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 定义一个函数</span>
+<span class="token keyword">func</span> <span class="token function">test</span><span class="token punctuation">(</span>p Person<span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+   fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;my name is&quot;</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token string">&quot;my age is&quot;</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>age<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   per <span class="token operator">:=</span> Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">}</span>
+   per<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// my name is hjw my age is 26</span>
+   <span class="token function">test</span><span class="token punctuation">(</span>per<span class="token punctuation">)</span> <span class="token comment">// my name is hjw my age is 26</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>既然可以看做形参, 那么自然也具备形参的特点(值传递和地址传递)</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+   name <span class="token builtin">string</span>
+   age <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 接收者是一个变量</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Person<span class="token punctuation">)</span><span class="token function">setName</span><span class="token punctuation">(</span>name <span class="token builtin">string</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+   p<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+<span class="token punctuation">}</span>
+<span class="token comment">// 接收者是一个指针</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>Person<span class="token punctuation">)</span><span class="token function">setAge</span><span class="token punctuation">(</span>age <span class="token builtin">int</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+   p<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   per <span class="token operator">:=</span> Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">}</span>
+   fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>per<span class="token punctuation">)</span> <span class="token comment">// {hjw 26}</span>
+   <span class="token comment">// 值传递, 方法内部修改不会影响方法外部</span>
+   per<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">&quot;zs&quot;</span><span class="token punctuation">)</span>
+   fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>per<span class="token punctuation">)</span> <span class="token comment">// {hjw 26}</span>
+   p <span class="token operator">:=</span> <span class="token operator">&amp;</span>per
+   <span class="token comment">// 地址传递, 方法内部修改会影响方法外部</span>
+   <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">18</span><span class="token punctuation">)</span>
+   fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>per<span class="token punctuation">)</span> <span class="token comment">// {hjw 18}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>地址传递的几种调用方式</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+   name <span class="token builtin">string</span>
+   age <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 接收者是一个变量</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Person<span class="token punctuation">)</span><span class="token function">setName</span><span class="token punctuation">(</span>name <span class="token builtin">string</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+   p<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+<span class="token punctuation">}</span>
+<span class="token comment">// 接收者是一个指针</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>Person<span class="token punctuation">)</span><span class="token function">setAge</span><span class="token punctuation">(</span>age <span class="token builtin">int</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+   p<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   per <span class="token operator">:=</span> Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">}</span>
+   <span class="token comment">// 方式一: 先拿到指针,然后再通过指针调用</span>
+   p <span class="token operator">:=</span> <span class="token operator">&amp;</span>per
+   <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">18</span><span class="token punctuation">)</span>
+   fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>per<span class="token punctuation">)</span> <span class="token comment">// {hjw 18}</span>
+   <span class="token comment">// 方式二: 直接利用变量调用, 底层会自动获取变量地址传递给接收者</span>
+   per<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">66</span><span class="token punctuation">)</span>
+   fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>per<span class="token punctuation">)</span> <span class="token comment">// {hjw 26}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li></ul> <h2 id="接口"><a href="#接口" aria-hidden="true" class="header-anchor">#</a> 接口</h2> <ul><li>Go语言中的接口和现实生活中的USB插槽很像, 它定义某种标准, 但不关心具体实现
+<ul><li>无论你到哪个商店里面去购买USB线,只要你告诉商家你需要一根USB线, 买回家之后就一定能插到电脑上使用. 之所以能用,原因就是电脑厂商在指定了USB插槽的标准(尺寸、排线等等), 生产厂家只需要按照标准生产即可</li> <li>同样在Go语言中我们可以通过接口来定义某种标准(函数声明),但不用不关心具体实现(函数实现), 只要将来有人按照标准实现了接口,我们就可以使用</li></ul></li> <li>定义接口格式</li></ul> <div class="language- extra-class"><pre class="language-text"><code>type 接口名称 interface{
+  函数声明
+}
+</code></pre></div><ul><li>示例: 定义一个通用的USB接口</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token comment">// 1.定义一个接口</span>
+<span class="token keyword">type</span> usber <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> Computer <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    name <span class="token builtin">string</span>
+    model <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 2.实现接口中的所有方法</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>cm Computer<span class="token punctuation">)</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;启动电脑&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>cm Computer<span class="token punctuation">)</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;关闭电脑&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Phone <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    name <span class="token builtin">string</span>
+    model <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 2.实现接口中的所有方法</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Phone<span class="token punctuation">)</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;启动手机&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Phone<span class="token punctuation">)</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;关闭手机&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 3.使用接口定义的方法</span>
+<span class="token keyword">func</span> <span class="token function">working</span><span class="token punctuation">(</span>u usber<span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    u<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    u<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cm <span class="token operator">:=</span> Computer<span class="token punctuation">{</span><span class="token string">&quot;戴尔&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;F1234&quot;</span><span class="token punctuation">}</span>
+    <span class="token function">working</span><span class="token punctuation">(</span>cm<span class="token punctuation">)</span> <span class="token comment">// 启动电脑 关闭电脑</span>
+
+    p <span class="token operator">:=</span> Phone<span class="token punctuation">{</span><span class="token string">&quot;华为&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;M10&quot;</span><span class="token punctuation">}</span>
+    <span class="token function">working</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span>  <span class="token comment">// 启动手机 关闭手机</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li><p>接口注意点</p> <ul><li>接口中只能有方法的声明不能有方法的实现</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> usber <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">// 错误</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;启动&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">func</span> <span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span> <span class="token comment">// 错误</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;停止&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>接口中只能有方法什么不能有字段</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> usber <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    name <span class="token builtin">string</span> <span class="token comment">// 错误</span>
+    <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>只有实现了接口中所有的方法, 才算实现了接口, 才能用<code>该接口类型</code>接收</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token comment">// 1.定义一个接口</span>
+<span class="token keyword">type</span> usber <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> Computer <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    name <span class="token builtin">string</span>
+    model <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 2.实现接口中的所有方法</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>cm Computer<span class="token punctuation">)</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;启动电脑&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>cm Computer<span class="token punctuation">)</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;关闭电脑&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 2.只实现了接口中部分方法</span>
+<span class="token keyword">type</span> Phone <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    name <span class="token builtin">string</span>
+    model <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Phone<span class="token punctuation">)</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;启动手机&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 1.定义一个usber接口类型变量</span>
+    <span class="token keyword">var</span> i usber
+    <span class="token comment">// 2.用usber接口类型变量接收Computer类型结构体</span>
+    i <span class="token operator">=</span> Computer<span class="token punctuation">{</span><span class="token string">&quot;戴尔&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;F1234&quot;</span><span class="token punctuation">}</span> <span class="token comment">// 实现了所有方法, 不会报错</span>
+    <span class="token comment">// 3.用usber接口类型变量接收Phone类型结构体</span>
+    <span class="token comment">//i = Phone{&quot;华为&quot;, &quot;M10&quot;} // 只实现了部分方法, 会报错</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>和结构体一样,接口中也可以嵌入接口</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">type</span> A <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">fna</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> B <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">fnb</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> C <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    A <span class="token comment">// 嵌入A接口</span>
+    B <span class="token comment">// 嵌入B接口</span>
+    <span class="token function">fnc</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Person<span class="token punctuation">)</span><span class="token function">fna</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;实现A接口中的方法&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Person<span class="token punctuation">)</span><span class="token function">fnb</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;实现B接口中的方法&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Person<span class="token punctuation">)</span><span class="token function">fnc</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;实现C接口中的方法&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    p <span class="token operator">:=</span> Person<span class="token punctuation">{</span><span class="token punctuation">}</span>
+    p<span class="token punctuation">.</span><span class="token function">fna</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 实现A接口中的方法</span>
+    p<span class="token punctuation">.</span><span class="token function">fnb</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 实现B接口中的方法</span>
+    p<span class="token punctuation">.</span><span class="token function">fnc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 实现C接口中的方法</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>和结构体一样,接口中嵌入接口时不能嵌入自己</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> A <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    A <span class="token comment">// 报错, 不能自己搞自己</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>接口中嵌入接口时不能出现相同的方法名称</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> A <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> B <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> C <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    A 
+    B <span class="token comment">// 报错, A接口和B接口都有名称叫做fn的方法</span>
+    <span class="token function">fnc</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>超集接口变量可以自动转换成子集接口变量, 子集接口变量不能转换为超集接口变量(本质就是没有实现所有方法)</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">type</span> aer <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">fna</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> ber <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    aer
+    <span class="token function">fnb</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// Person实现了超集接口所有方法</span>
+<span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Person<span class="token punctuation">)</span><span class="token function">fna</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;实现A接口中的方法&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Person<span class="token punctuation">)</span><span class="token function">fnb</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;实现B接口中的方法&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// Student实现了子集接口所有方法</span>
+<span class="token keyword">type</span> Student <span class="token keyword">struct</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Student<span class="token punctuation">)</span><span class="token function">fna</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;实现A接口中的方法&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> i ber
+    <span class="token comment">// 子集接口变量不能转换为超集接口变量</span>
+    <span class="token comment">//i = Student{}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token keyword">var</span> j aer
+    <span class="token comment">// 超集接口变量可以自动转换成子集接口变量,</span>
+    j <span class="token operator">=</span> Person<span class="token punctuation">{</span><span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>空接口类型可以接收任意类型数据</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 1.定义一个空接口类型变量</span>
+    <span class="token keyword">var</span> i <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token comment">// 2.用接口类型保存任意类型数据</span>
+    i <span class="token operator">=</span> <span class="token number">123</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment">// 123</span>
+    i <span class="token operator">=</span> <span class="token number">3.14</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment">// 3.14</span>
+    i <span class="token operator">=</span> <span class="token string">&quot;hjw&quot;</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment">// hjw</span>
+    i <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment">// [1 3 5]</span>
+    i <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment">// [2 4 6]</span>
+    i <span class="token operator">=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;hjw&quot;</span><span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment">// map[name: hjw]</span>
+    i <span class="token operator">=</span> Computer<span class="token punctuation">{</span><span class="token string">&quot;戴尔&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;F1234&quot;</span><span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment">// {戴尔 F1234}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>只要是自定义类型就可以实现接口</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token comment">// 1.定义一个接口</span>
+<span class="token keyword">type</span> usber <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 2.自定义int类型</span>
+<span class="token keyword">type</span> integer <span class="token builtin">int</span>
+<span class="token comment">// 2.实现接口中的所有方法</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>i integer<span class="token punctuation">)</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;int类型实现接口&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>i integer<span class="token punctuation">)</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;int类型实现接口&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> i integer <span class="token operator">=</span> <span class="token number">666</span>
+    i<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// int类型实现接口</span>
+    i<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// int类型实现接口</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>接口类型转换</p> <ul><li>接口类型变量可以接收实现了该接口类型的变量, 但是只能调用该变量中的方法, 不能访问该变量的属性</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">type</span> studier <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    name <span class="token builtin">string</span>
+    age <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Person<span class="token punctuation">)</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token string">&quot;正在学习&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 1.定义一个接口类型变量</span>
+    <span class="token keyword">var</span> s studier
+    <span class="token comment">// 2.用接口类型变量接收实现了接口的结构体</span>
+    s <span class="token operator">=</span> Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">}</span>
+    s<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;zs&quot;</span> <span class="token comment">// 报错, 由于s是接口类型, 所以不能访问属性</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>想要访问变量中的属性, 必须将接口类型还原为原始类型</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">type</span> studier <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    name <span class="token builtin">string</span>
+    age <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Person<span class="token punctuation">)</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token string">&quot;正在学习&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> s studier
+    s <span class="token operator">=</span> Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">}</span>
+    s<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;zs&quot;</span> <span class="token comment">// 报错, 由于s是接口类型, 所以不能访问属性</span>
+    <span class="token comment">// 2.定义一个结构体类型变量</span>
+    <span class="token comment">//var p Person</span>
+    <span class="token comment">// 不能用强制类型转换方式将接口类型转换为原始类型</span>
+    <span class="token comment">//p = Person(s) // 报错</span>
+
+    <span class="token comment">// 2.利用ok-idiom模式将接口类型还原为原始类型</span>
+    <span class="token comment">// s.(Person)这种格式我们称之为: 类型断言</span>
+    <span class="token keyword">if</span> p<span class="token punctuation">,</span> ok <span class="token operator">:=</span> s<span class="token punctuation">.</span><span class="token punctuation">(</span>Person<span class="token punctuation">)</span><span class="token punctuation">;</span> ok <span class="token punctuation">{</span>
+        p<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;zs&quot;</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 2.通过 type switch将接口类型还原为原始类型</span>
+   <span class="token comment">// 注意: type switch不支持fallthrought</span>
+    <span class="token keyword">switch</span> p <span class="token operator">:=</span> s<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token keyword">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> Person<span class="token punctuation">:</span>
+            p<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;zs&quot;</span>
+            fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token comment">// {zs 33}</span>
+        <span class="token keyword">default</span><span class="token punctuation">:</span>
+            fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;不是Person类型&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>除了可以将接口类型转换为原始类型以外, 企业开发中有时候可能我们还需要将抽象接口类型转换为具体接口类型</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token keyword">type</span> studier <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    name <span class="token builtin">string</span>
+    age <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Person<span class="token punctuation">)</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token string">&quot;正在学习&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 1.定义一个抽象接口类型</span>
+    <span class="token keyword">var</span> i <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    i <span class="token operator">=</span> Person<span class="token punctuation">{</span><span class="token string">&quot;hjw&quot;</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">}</span>
+    <span class="token comment">// 不能调用read方法, 因为抽象接口中没有这个方法</span>
+    <span class="token comment">//i.read()</span>
+    <span class="token comment">// 2.利用ok-idiom模式将抽象接口转换为具体接口</span>
+    <span class="token keyword">if</span> s<span class="token punctuation">,</span> ok <span class="token operator">:=</span> i<span class="token punctuation">.</span><span class="token punctuation">(</span>studier<span class="token punctuation">)</span><span class="token punctuation">;</span> ok<span class="token punctuation">{</span>
+        <span class="token comment">// 可以调用read方法,因为studier中声明了这个方法,并且结构体中实现了这个方法</span>
+        s<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// hjw 正在学习</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</code></pre></div></li></ul></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/source/go/13-thirteen.html" class="prev">
+          13-指针
+        </a></span> <span class="next"><a href="/source/go/15-fifteen.html">
+          15-Go语言面向对象
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.aee163d7.js" defer></script><script src="/assets/js/41.a292c8af.js" defer></script>
+  </body>
+</html>

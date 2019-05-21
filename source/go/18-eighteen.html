@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>18-Go语言和C语言交叉访问 | Jovins Blog</title>
+    <meta name="description" content="Work Hard, Play Hard">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.0d19fd84.css" as="style"><link rel="preload" href="/assets/js/app.aee163d7.js" as="script"><link rel="preload" href="/assets/js/45.09cdae5d.js" as="script"><link rel="prefetch" href="/assets/js/10.1e34e5ff.js"><link rel="prefetch" href="/assets/js/11.491dfd54.js"><link rel="prefetch" href="/assets/js/12.a55c1fe7.js"><link rel="prefetch" href="/assets/js/13.5af2a714.js"><link rel="prefetch" href="/assets/js/14.14535d2d.js"><link rel="prefetch" href="/assets/js/15.3a5c4d96.js"><link rel="prefetch" href="/assets/js/16.f0724826.js"><link rel="prefetch" href="/assets/js/17.a41afda0.js"><link rel="prefetch" href="/assets/js/18.8dd90a66.js"><link rel="prefetch" href="/assets/js/19.4fb6d9b8.js"><link rel="prefetch" href="/assets/js/2.b7fedc2a.js"><link rel="prefetch" href="/assets/js/20.c7ee29bf.js"><link rel="prefetch" href="/assets/js/21.ec5919dd.js"><link rel="prefetch" href="/assets/js/22.7351d6cc.js"><link rel="prefetch" href="/assets/js/23.8adf705b.js"><link rel="prefetch" href="/assets/js/24.5dda7d7c.js"><link rel="prefetch" href="/assets/js/25.d6c4beda.js"><link rel="prefetch" href="/assets/js/26.3fae1b4d.js"><link rel="prefetch" href="/assets/js/27.42848bbe.js"><link rel="prefetch" href="/assets/js/28.80aeb13f.js"><link rel="prefetch" href="/assets/js/29.d3f479f5.js"><link rel="prefetch" href="/assets/js/3.fe3c8939.js"><link rel="prefetch" href="/assets/js/30.b28e0cfa.js"><link rel="prefetch" href="/assets/js/31.39756cd5.js"><link rel="prefetch" href="/assets/js/32.475d42d9.js"><link rel="prefetch" href="/assets/js/33.db2c4cfb.js"><link rel="prefetch" href="/assets/js/34.8e9cd72f.js"><link rel="prefetch" href="/assets/js/35.48663882.js"><link rel="prefetch" href="/assets/js/36.f92ac67a.js"><link rel="prefetch" href="/assets/js/37.67c65ed9.js"><link rel="prefetch" href="/assets/js/38.841de0ec.js"><link rel="prefetch" href="/assets/js/39.9ee667aa.js"><link rel="prefetch" href="/assets/js/4.28e0dd42.js"><link rel="prefetch" href="/assets/js/40.0f4d2bb8.js"><link rel="prefetch" href="/assets/js/41.a292c8af.js"><link rel="prefetch" href="/assets/js/42.ca402a95.js"><link rel="prefetch" href="/assets/js/43.1a920a89.js"><link rel="prefetch" href="/assets/js/44.1136c43f.js"><link rel="prefetch" href="/assets/js/46.bf04cee8.js"><link rel="prefetch" href="/assets/js/47.4be1442f.js"><link rel="prefetch" href="/assets/js/48.c90986e6.js"><link rel="prefetch" href="/assets/js/49.e0df44d7.js"><link rel="prefetch" href="/assets/js/5.106e8893.js"><link rel="prefetch" href="/assets/js/50.e589f43d.js"><link rel="prefetch" href="/assets/js/51.52e2dd5e.js"><link rel="prefetch" href="/assets/js/52.9b9b1b60.js"><link rel="prefetch" href="/assets/js/53.51261bc0.js"><link rel="prefetch" href="/assets/js/54.9a082c0b.js"><link rel="prefetch" href="/assets/js/55.cb478dba.js"><link rel="prefetch" href="/assets/js/56.a9c5ea04.js"><link rel="prefetch" href="/assets/js/57.a1b56ab7.js"><link rel="prefetch" href="/assets/js/58.60e77be8.js"><link rel="prefetch" href="/assets/js/59.c07f2b7e.js"><link rel="prefetch" href="/assets/js/6.015a6f59.js"><link rel="prefetch" href="/assets/js/60.2d300070.js"><link rel="prefetch" href="/assets/js/61.f54bc147.js"><link rel="prefetch" href="/assets/js/62.0ec8ca93.js"><link rel="prefetch" href="/assets/js/63.7c8b03d9.js"><link rel="prefetch" href="/assets/js/64.78d7222e.js"><link rel="prefetch" href="/assets/js/65.866ef779.js"><link rel="prefetch" href="/assets/js/66.a52448b6.js"><link rel="prefetch" href="/assets/js/67.9d0c871c.js"><link rel="prefetch" href="/assets/js/68.27308da1.js"><link rel="prefetch" href="/assets/js/69.88f30473.js"><link rel="prefetch" href="/assets/js/7.e591ee0c.js"><link rel="prefetch" href="/assets/js/70.74560474.js"><link rel="prefetch" href="/assets/js/71.3f81de49.js"><link rel="prefetch" href="/assets/js/72.261a96ba.js"><link rel="prefetch" href="/assets/js/73.7d09ee13.js"><link rel="prefetch" href="/assets/js/74.668f53a7.js"><link rel="prefetch" href="/assets/js/75.5a07cf00.js"><link rel="prefetch" href="/assets/js/76.5cb7756e.js"><link rel="prefetch" href="/assets/js/77.ee0ac284.js"><link rel="prefetch" href="/assets/js/78.a4bf6899.js"><link rel="prefetch" href="/assets/js/79.86d6a675.js"><link rel="prefetch" href="/assets/js/8.c3659f73.js"><link rel="prefetch" href="/assets/js/80.ca1d23ad.js"><link rel="prefetch" href="/assets/js/81.834d4fa2.js"><link rel="prefetch" href="/assets/js/82.c1c44655.js"><link rel="prefetch" href="/assets/js/83.b2f5aaef.js"><link rel="prefetch" href="/assets/js/84.49bf081e.js"><link rel="prefetch" href="/assets/js/85.036dd295.js"><link rel="prefetch" href="/assets/js/86.8ede464d.js"><link rel="prefetch" href="/assets/js/9.6d2e7baf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d19fd84.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jovins Blog</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link router-link-active">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link router-link-active">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>Go</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/source/go/" class="sidebar-link">Go语言开篇</a></li><li><a href="/source/go/go-deployed-on-the-server.html" class="sidebar-link">Go部署在阿里云linux服务器</a></li><li><a href="/source/go/Go-Path-Variable.html" class="sidebar-link">Go 环境变量</a></li><li><a href="/source/go/Go-Go-echarts.html" class="sidebar-link">Go Go-echarts</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Go Web学习</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>Go 基础教程</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/source/go/01-first.html" class="sidebar-link">01-C语言和Go语言对比</a></li><li><a href="/source/go/02-two.html" class="sidebar-link">02-Go语言开发环境搭建</a></li><li><a href="/source/go/03-three.html" class="sidebar-link">03-第一个Go语言程序</a></li><li><a href="/source/go/04-four.html" class="sidebar-link">04-Go语言关键字和标识符</a></li><li><a href="/source/go/05-five.html" class="sidebar-link">05-Go语言常量和变量</a></li><li><a href="/source/go/06-six.html" class="sidebar-link">06-输入输出函数</a></li><li><a href="/source/go/07-seven.html" class="sidebar-link">07-Go语言命令行参数</a></li><li><a href="/source/go/08-eight.html" class="sidebar-link">08-Go语言运算符</a></li><li><a href="/source/go/09-nine.html" class="sidebar-link">09-Go语言流程控制</a></li><li><a href="/source/go/10-ten.html" class="sidebar-link">10-Go语言函数</a></li><li><a href="/source/go/11-eleven.html" class="sidebar-link">11-Go语言数组和切片</a></li><li><a href="/source/go/12-twelve.html" class="sidebar-link">12-Go语言字典和结构体</a></li><li><a href="/source/go/13-thirteen.html" class="sidebar-link">13-指针</a></li><li><a href="/source/go/14-fourteen.html" class="sidebar-link">14-Go方法和接口</a></li><li><a href="/source/go/15-fifteen.html" class="sidebar-link">15-Go语言面向对象</a></li><li><a href="/source/go/16-sixteen.html" class="sidebar-link">16-Go语言异常处理</a></li><li><a href="/source/go/17-seventeen.html" class="sidebar-link">17-Go语言字符串和正则表达式</a></li><li><a href="/source/go/18-eighteen.html" class="active sidebar-link">18-Go语言和C语言交叉访问</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/source/go/18-eighteen.html#go语言中调用c语言函数" class="sidebar-link">Go语言中调用C语言函数</a></li><li class="sidebar-sub-header"><a href="/source/go/18-eighteen.html#c语言中调用go语言函数-很少使用" class="sidebar-link">C语言中调用Go语言函数(很少使用)</a></li></ul></li><li><a href="/source/go/19-nineteen.html" class="sidebar-link">19-文件操作</a></li><li><a href="/source/go/20-concurrent.html" class="sidebar-link">20-Go语言并发编程</a></li><li><a href="/source/go/21-Channel.html" class="sidebar-link">21-Channel</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="_18-go语言和c语言交叉访问"><a href="#_18-go语言和c语言交叉访问" aria-hidden="true" class="header-anchor">#</a> 18-Go语言和C语言交叉访问</h1> <h2 id="go语言中调用c语言函数"><a href="#go语言中调用c语言函数" aria-hidden="true" class="header-anchor">#</a> Go语言中调用C语言函数</h2> <ul><li>在Go语言开篇中我们已经知道, Go语言与C语言之间有着千丝万缕的关系, 甚至被称之为21世纪的C语言</li> <li>所以在Go与C语言互操作方面，Go更是提供了强大的支持。尤其是在Go中使用C，你甚至可以直接在Go源文件中编写C代码，这是其他语言所无法望其项背的</li> <li>格式:
+<ul><li>在import &quot;C&quot;之前通过单行注释或者通过多行注释编写C语言代码</li> <li>在import &quot;C&quot;之后编写Go语言代码</li> <li>在Go语言代码中通过C.函数名称() 调用C语言代码即可</li> <li>注意: import &quot;C&quot;和前面的注释之间不能出现空行或其它内容, 必须紧紧相连</li></ul></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token comment">//#include &lt;stdio.h&gt;</span>
+<span class="token comment">//void say(){</span>
+<span class="token comment">// printf(&quot;Hello World\n&quot;);</span>
+<span class="token comment">//}</span>
+<span class="token keyword">import</span> <span class="token string">&quot;C&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    C<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token comment">/*
+#include &lt;stdio.h&gt;
+void say(){
+    printf(&quot;Hello World\n&quot;);
+}
+*/</span>
+<span class="token keyword">import</span> <span class="token string">&quot;C&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    C<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><ul><li>Go语言中没有包名是C的包, 但是这个导入会促使Go编译器利用cgo工具预处理文件</li> <li>在预处理过程中,cgo会产生一个临时包, 这个包里包含了所有C函数和类型对应的Go语言声明</li> <li>最终使得cgo工具可以通过一种特殊的方式来调用import &quot;C&quot;之前的C语言代码</li></ul></blockquote> <ul><li>常规问题:
+<ul><li>如果编译报错<code>cc1.exe: sorry, unimplemented: 64-bit mode not compiled in</code></li> <li>说明你使用的是64的golang，而你使用的32位的MinGW，所以需要下载64位的mingw并配置环境变量</li> <li>下载地址: <a href="https://www.baidu.com/s?wd=sorry%2C%20unimplemented%3A%2064-bit%20mode%20not%20compiled%20in" target="_blank" rel="noopener noreferrer">https://www.baidu.com/s?wd=sorry%2C%20unimplemented%3A%2064-bit%20mode%20not%20compiled%20in<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul> <hr> <h2 id="c语言中调用go语言函数-很少使用"><a href="#c语言中调用go语言函数-很少使用" aria-hidden="true" class="header-anchor">#</a> C语言中调用Go语言函数(很少使用)</h2> <ul><li>在Go代码中通过 <code>//export Go函数名称</code>导出Go的函数名称</li> <li>在C代码中通过 <code>extern 返回值类型 Go函数名称(形参列表);</code> 声明Go中导出的函数名称</li> <li>注意: <code>//export Go函数名称</code>和<code>extern 返回值类型 Go函数名称(形参列表);</code>不能在同一个文件中</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">&quot;C&quot;</span>
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+<span class="token comment">// 导出Go函数声明, 给C使用</span>
+<span class="token comment">//export GoFunction</span>
+<span class="token keyword">func</span> <span class="token function">GoFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;GoFunction!!!&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token comment">/*
+#include &lt;stdio.h&gt;
+// 声明Go中的函数
+extern void GoFunction();
+
+void CFunction() {
+        printf(&quot;CFunction!\n&quot;);
+        GoFunction();
+}
+*/</span>
+<span class="token keyword">import</span> <span class="token string">&quot;C&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    C<span class="token punctuation">.</span><span class="token function">CFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><ul><li>由于不在同一个文件, 所以需要通过go build或者go install同时编译多个文件</li></ul></blockquote> <ul><li>Go中使用C语言的类型</li> <li>基本数据类型
+<ul><li>在Go中可以用如下方式访问C原生的数值类型：</li></ul></li></ul> <div class="language-c extra-class"><pre class="language-c"><code>C<span class="token punctuation">.</span><span class="token keyword">char</span><span class="token punctuation">,</span>
+C<span class="token punctuation">.</span>schar <span class="token punctuation">(</span><span class="token keyword">signed</span> <span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+C<span class="token punctuation">.</span>uchar <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+C<span class="token punctuation">.</span><span class="token keyword">short</span><span class="token punctuation">,</span>
+C<span class="token punctuation">.</span>ushort <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">short</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+C<span class="token punctuation">.</span><span class="token keyword">int</span><span class="token punctuation">,</span> C<span class="token punctuation">.</span>uint <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+C<span class="token punctuation">.</span><span class="token keyword">long</span><span class="token punctuation">,</span>
+C<span class="token punctuation">.</span>ulong <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+C<span class="token punctuation">.</span>longlong <span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+C<span class="token punctuation">.</span>ulonglong <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+C<span class="token punctuation">.</span><span class="token keyword">float</span><span class="token punctuation">,</span>
+C<span class="token punctuation">.</span><span class="token keyword">double</span>
+</code></pre></div><ul><li>Go的数值类型与C中的数值类型不是一一对应的。因此在使用对方类型变量时必须显式转型操作</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token comment">/*
+#include &lt;stdio.h&gt;
+int num = 123;
+float value = 3.14;
+char ch = 'N';
+*/</span>
+<span class="token keyword">import</span> <span class="token string">&quot;C&quot;</span>
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> num1 C<span class="token punctuation">.</span><span class="token builtin">int</span> <span class="token operator">=</span> C<span class="token punctuation">.</span>num
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span>
+    <span class="token keyword">var</span> num2 <span class="token builtin">int</span>
+    <span class="token comment">//num2 = num1 // 报错</span>
+    num2 <span class="token operator">=</span> <span class="token function">int</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>num2<span class="token punctuation">)</span>
+
+
+    <span class="token keyword">var</span> value1 C<span class="token punctuation">.</span>float <span class="token operator">=</span> C<span class="token punctuation">.</span>value
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>value1<span class="token punctuation">)</span>
+    <span class="token keyword">var</span> value2 <span class="token builtin">float32</span> <span class="token operator">=</span> <span class="token function">float32</span><span class="token punctuation">(</span>C<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>value2<span class="token punctuation">)</span>
+
+
+    <span class="token keyword">var</span> ch1 C<span class="token punctuation">.</span>char <span class="token operator">=</span> C<span class="token punctuation">.</span>ch
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>ch1<span class="token punctuation">)</span>
+    <span class="token keyword">var</span> ch2 <span class="token builtin">byte</span> <span class="token operator">=</span> <span class="token function">byte</span><span class="token punctuation">(</span>C<span class="token punctuation">.</span>ch<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>ch2<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>字符串类型
+<ul><li>C语言中并不没有字符串类型，在C中用带结尾'\0'的字符数组来表示字符串；而在Go中string类型是原生类型，因此在两种语言互操作是必须要做字符串类型的转换</li> <li>C字符串转换Go字符串: <code>C.GoString(str)</code></li> <li>Go字符串转换C字符串: <code>C.CString(str)</code></li></ul></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token comment">/*
+#include &lt;stdio.h&gt;
+char *str = &quot;www.it666.com&quot;;
+void say(char *name){
+    printf(&quot;my name is %s&quot;, name);
+}
+*/</span>
+<span class="token keyword">import</span> <span class="token string">&quot;C&quot;</span>
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;unsafe&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    <span class="token comment">// 1.C语言字符串转换Go语言字符串</span>
+    str1 <span class="token operator">:=</span> C<span class="token punctuation">.</span>str
+    str2 <span class="token operator">:=</span> C<span class="token punctuation">.</span><span class="token function">GoString</span><span class="token punctuation">(</span>str1<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>str2<span class="token punctuation">)</span>
+
+    <span class="token comment">// 2.Go语言字符串转换C语言字符串</span>
+    str <span class="token operator">:=</span> <span class="token string">&quot;hjw&quot;</span>
+    cs <span class="token operator">:=</span> C<span class="token punctuation">.</span><span class="token function">CString</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+    C<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span>cs<span class="token punctuation">)</span>
+    <span class="token comment">// 注意: 转换后所得到的C字符串cs并不能由Go的gc所管理，我们必须手动释放cs所占用的内存</span>
+    C<span class="token punctuation">.</span><span class="token function">free</span><span class="token punctuation">(</span>unsafe<span class="token punctuation">.</span><span class="token function">Pointer</span><span class="token punctuation">(</span>cs<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>指针类型
+<ul><li>原生数值类型的指针类型可按Go语法在类型前面加上*，例如:var p *C.int。</li> <li>而void*比较特殊，用Go中的unsafe.Pointer表示。
+<ul><li>unsafe.Pointer：通用指针类型，用于转换不同类型的指针，不能进行指针运算</li></ul></li> <li>uintptr：用于指针运算，GC 不把 uintptr 当指针，uintptr 无法持有对象。uintptr 类型的目标会被回收</li> <li>也就是说 unsafe.Pointer 是桥梁，可以让任意类型的指针实现相互转换，也可以将任意类型的指针转换为uintptr 进行指针运算</li></ul></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token comment">/*
+#include &lt;stdio.h&gt;
+int num = 123;
+void *ptr = &amp;num;
+*/</span>
+<span class="token keyword">import</span> <span class="token string">&quot;C&quot;</span>
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;unsafe&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    <span class="token comment">// 这是一个C语言变量</span>
+    <span class="token keyword">var</span> num C<span class="token punctuation">.</span><span class="token builtin">int</span> <span class="token operator">=</span> C<span class="token punctuation">.</span>num
+    <span class="token comment">// 这是一个C语言指针</span>
+    <span class="token keyword">var</span> p1 <span class="token operator">*</span>C<span class="token punctuation">.</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>num
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token operator">*</span>p1<span class="token punctuation">)</span>
+
+    <span class="token comment">//var p2 *C.void = C.ptr // 报错</span>
+    <span class="token comment">// 利用unsafe.Pointer接收viod *</span>
+    <span class="token keyword">var</span> p2 unsafe<span class="token punctuation">.</span>Pointer <span class="token operator">=</span> C<span class="token punctuation">.</span>ptr
+    <span class="token comment">// 将unsafe.Pointer转换为具体类型</span>
+    <span class="token keyword">var</span> p3 <span class="token operator">*</span>C<span class="token punctuation">.</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>C<span class="token punctuation">.</span><span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">(</span>p2<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token operator">*</span>p3<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>枚举类型
+<ul><li>C语言中的枚举类型在Go语言中的表现形式为C.enum_XXX</li> <li>访问枚举和访问普通变量无异, 直接通过C.枚举值即可</li></ul></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token comment">/*
+#include &lt;stdio.h&gt;
+enum Gender {
+   GenderMale,
+   GenderFemale,
+   GenderYao
+};
+*/</span>
+<span class="token keyword">import</span> <span class="token string">&quot;C&quot;</span>
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> sex C<span class="token punctuation">.</span>enum_Gender <span class="token operator">=</span> C<span class="token punctuation">.</span>GenderMale
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>sex<span class="token punctuation">)</span>
+    sex <span class="token operator">=</span> C<span class="token punctuation">.</span>GenderFemale
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>sex<span class="token punctuation">)</span>
+    sex <span class="token operator">=</span> C<span class="token punctuation">.</span>GenderYao
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>sex<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>结构体类型
+<ul><li>C语言中的结构体类型在Go语言中的表现形式为C.struct_XXX</li> <li>访问结构体 直接通过<code>结构体变量.属性名称</code>即可</li></ul></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token comment">/*
+#include &lt;stdio.h&gt;
+struct Point {
+    float x;
+    float y;
+};
+*/</span>
+<span class="token keyword">import</span> <span class="token string">&quot;C&quot;</span>
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    <span class="token comment">// 1.利用C的结构体类型创建结构体</span>
+    <span class="token keyword">var</span> cp C<span class="token punctuation">.</span>struct_Point <span class="token operator">=</span> C<span class="token punctuation">.</span>struct_Point<span class="token punctuation">{</span><span class="token number">6.6</span><span class="token punctuation">,</span> <span class="token number">8.8</span><span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>cp<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%T\n&quot;</span><span class="token punctuation">,</span> cp<span class="token punctuation">)</span>
+
+    <span class="token comment">// 2.将C语言结构体转换为Go语言结构体</span>
+    <span class="token keyword">type</span> GoPoint <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+        x <span class="token builtin">float32</span>
+        y <span class="token builtin">float32</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> gp GoPoint
+    gp<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token function">float32</span><span class="token punctuation">(</span>cp<span class="token punctuation">.</span>x<span class="token punctuation">)</span>
+    gp<span class="token punctuation">.</span>y <span class="token operator">=</span> <span class="token function">float32</span><span class="token punctuation">(</span>cp<span class="token punctuation">.</span>y<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>gp<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>数组类型
+<ul><li>C语言中的数组与Go语言中的数组差异较大， C中的数组是指针类型,  Go中的数组是值类型</li> <li>目前似乎无法直接显式的在两者之间进行转型，官方文档也没有说明。</li></ul></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token comment">/*
+#include &lt;stdio.h&gt;
+int cArray[5] = {1, 2, 3, 4, 5};
+*/</span>
+<span class="token keyword">import</span> <span class="token string">&quot;C&quot;</span>
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> cArr <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span>C<span class="token punctuation">.</span><span class="token builtin">int</span> <span class="token operator">=</span> C<span class="token punctuation">.</span>cArray
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>cArr<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%T\n&quot;</span><span class="token punctuation">,</span> cArr<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>利用Go语言调用C语言函数, 实现无缓冲区输入
+<ul><li>请在终端运行</li></ul></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token comment">/*
+#include &lt;stdio.h&gt;
+char lowerCase(char ch){
+    // 1.判断当前是否是小写字母
+    if(ch &gt;= 'a' &amp;&amp; ch &lt;= 'z'){
+        return ch;
+    }
+    // 注意点: 不能直接编写else, 因为执行到else不一定是一个大写字母
+    else if(ch &gt;= 'A' &amp;&amp; ch &lt;= 'Z'){
+        return ch + ('a' - 'A');
+    }
+    return ' ';
+}
+char getCh(){
+    // 1.接收用户输入的数据
+    char ch;
+    scanf(&quot;%c&quot;, &amp;ch);
+    setbuf(stdin, NULL);
+    // 2.大小写转换
+    ch = lowerCase(ch);
+    // 3.返回转换好的字符
+    return ch;
+}
+ */</span>
+<span class="token keyword">import</span> <span class="token string">&quot;C&quot;</span>
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    <span class="token keyword">for</span><span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;请输入w a s d其中一个字符, 控制小人走出迷宫&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">var</span> ch <span class="token builtin">byte</span> <span class="token operator">=</span> <span class="token function">byte</span><span class="token punctuation">(</span>C<span class="token punctuation">.</span><span class="token function">getCh</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%c&quot;</span><span class="token punctuation">,</span> ch<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/source/go/17-seventeen.html" class="prev">
+          17-Go语言字符串和正则表达式
+        </a></span> <span class="next"><a href="/source/go/19-nineteen.html">
+          19-文件操作
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.aee163d7.js" defer></script><script src="/assets/js/45.09cdae5d.js" defer></script>
+  </body>
+</html>

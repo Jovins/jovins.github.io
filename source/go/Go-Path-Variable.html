@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Go 环境变量 | Jovins Blog</title>
+    <meta name="description" content="Work Hard, Play Hard">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.0d19fd84.css" as="style"><link rel="preload" href="/assets/js/app.aee163d7.js" as="script"><link rel="preload" href="/assets/js/52.9b9b1b60.js" as="script"><link rel="prefetch" href="/assets/js/10.1e34e5ff.js"><link rel="prefetch" href="/assets/js/11.491dfd54.js"><link rel="prefetch" href="/assets/js/12.a55c1fe7.js"><link rel="prefetch" href="/assets/js/13.5af2a714.js"><link rel="prefetch" href="/assets/js/14.14535d2d.js"><link rel="prefetch" href="/assets/js/15.3a5c4d96.js"><link rel="prefetch" href="/assets/js/16.f0724826.js"><link rel="prefetch" href="/assets/js/17.a41afda0.js"><link rel="prefetch" href="/assets/js/18.8dd90a66.js"><link rel="prefetch" href="/assets/js/19.4fb6d9b8.js"><link rel="prefetch" href="/assets/js/2.b7fedc2a.js"><link rel="prefetch" href="/assets/js/20.c7ee29bf.js"><link rel="prefetch" href="/assets/js/21.ec5919dd.js"><link rel="prefetch" href="/assets/js/22.7351d6cc.js"><link rel="prefetch" href="/assets/js/23.8adf705b.js"><link rel="prefetch" href="/assets/js/24.5dda7d7c.js"><link rel="prefetch" href="/assets/js/25.d6c4beda.js"><link rel="prefetch" href="/assets/js/26.3fae1b4d.js"><link rel="prefetch" href="/assets/js/27.42848bbe.js"><link rel="prefetch" href="/assets/js/28.80aeb13f.js"><link rel="prefetch" href="/assets/js/29.d3f479f5.js"><link rel="prefetch" href="/assets/js/3.fe3c8939.js"><link rel="prefetch" href="/assets/js/30.b28e0cfa.js"><link rel="prefetch" href="/assets/js/31.39756cd5.js"><link rel="prefetch" href="/assets/js/32.475d42d9.js"><link rel="prefetch" href="/assets/js/33.db2c4cfb.js"><link rel="prefetch" href="/assets/js/34.8e9cd72f.js"><link rel="prefetch" href="/assets/js/35.48663882.js"><link rel="prefetch" href="/assets/js/36.f92ac67a.js"><link rel="prefetch" href="/assets/js/37.67c65ed9.js"><link rel="prefetch" href="/assets/js/38.841de0ec.js"><link rel="prefetch" href="/assets/js/39.9ee667aa.js"><link rel="prefetch" href="/assets/js/4.28e0dd42.js"><link rel="prefetch" href="/assets/js/40.0f4d2bb8.js"><link rel="prefetch" href="/assets/js/41.a292c8af.js"><link rel="prefetch" href="/assets/js/42.ca402a95.js"><link rel="prefetch" href="/assets/js/43.1a920a89.js"><link rel="prefetch" href="/assets/js/44.1136c43f.js"><link rel="prefetch" href="/assets/js/45.09cdae5d.js"><link rel="prefetch" href="/assets/js/46.bf04cee8.js"><link rel="prefetch" href="/assets/js/47.4be1442f.js"><link rel="prefetch" href="/assets/js/48.c90986e6.js"><link rel="prefetch" href="/assets/js/49.e0df44d7.js"><link rel="prefetch" href="/assets/js/5.106e8893.js"><link rel="prefetch" href="/assets/js/50.e589f43d.js"><link rel="prefetch" href="/assets/js/51.52e2dd5e.js"><link rel="prefetch" href="/assets/js/53.51261bc0.js"><link rel="prefetch" href="/assets/js/54.9a082c0b.js"><link rel="prefetch" href="/assets/js/55.cb478dba.js"><link rel="prefetch" href="/assets/js/56.a9c5ea04.js"><link rel="prefetch" href="/assets/js/57.a1b56ab7.js"><link rel="prefetch" href="/assets/js/58.60e77be8.js"><link rel="prefetch" href="/assets/js/59.c07f2b7e.js"><link rel="prefetch" href="/assets/js/6.015a6f59.js"><link rel="prefetch" href="/assets/js/60.2d300070.js"><link rel="prefetch" href="/assets/js/61.f54bc147.js"><link rel="prefetch" href="/assets/js/62.0ec8ca93.js"><link rel="prefetch" href="/assets/js/63.7c8b03d9.js"><link rel="prefetch" href="/assets/js/64.78d7222e.js"><link rel="prefetch" href="/assets/js/65.866ef779.js"><link rel="prefetch" href="/assets/js/66.a52448b6.js"><link rel="prefetch" href="/assets/js/67.9d0c871c.js"><link rel="prefetch" href="/assets/js/68.27308da1.js"><link rel="prefetch" href="/assets/js/69.88f30473.js"><link rel="prefetch" href="/assets/js/7.e591ee0c.js"><link rel="prefetch" href="/assets/js/70.74560474.js"><link rel="prefetch" href="/assets/js/71.3f81de49.js"><link rel="prefetch" href="/assets/js/72.261a96ba.js"><link rel="prefetch" href="/assets/js/73.7d09ee13.js"><link rel="prefetch" href="/assets/js/74.668f53a7.js"><link rel="prefetch" href="/assets/js/75.5a07cf00.js"><link rel="prefetch" href="/assets/js/76.5cb7756e.js"><link rel="prefetch" href="/assets/js/77.ee0ac284.js"><link rel="prefetch" href="/assets/js/78.a4bf6899.js"><link rel="prefetch" href="/assets/js/79.86d6a675.js"><link rel="prefetch" href="/assets/js/8.c3659f73.js"><link rel="prefetch" href="/assets/js/80.ca1d23ad.js"><link rel="prefetch" href="/assets/js/81.834d4fa2.js"><link rel="prefetch" href="/assets/js/82.c1c44655.js"><link rel="prefetch" href="/assets/js/83.b2f5aaef.js"><link rel="prefetch" href="/assets/js/84.49bf081e.js"><link rel="prefetch" href="/assets/js/85.036dd295.js"><link rel="prefetch" href="/assets/js/86.8ede464d.js"><link rel="prefetch" href="/assets/js/9.6d2e7baf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d19fd84.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jovins Blog</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link router-link-active">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/go/" class="nav-link router-link-active">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>Go</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/source/go/" class="sidebar-link">Go语言开篇</a></li><li><a href="/source/go/go-deployed-on-the-server.html" class="sidebar-link">Go部署在阿里云linux服务器</a></li><li><a href="/source/go/Go-Path-Variable.html" class="active sidebar-link">Go 环境变量</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/source/go/Go-Path-Variable.html#常用环境变量" class="sidebar-link">常用环境变量</a></li><li class="sidebar-sub-header"><a href="/source/go/Go-Path-Variable.html#交叉编译" class="sidebar-link">交叉编译</a></li><li class="sidebar-sub-header"><a href="/source/go/Go-Path-Variable.html#环境变量列表" class="sidebar-link">环境变量列表</a></li></ul></li><li><a href="/source/go/Go-Go-echarts.html" class="sidebar-link">Go Go-echarts</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Go Web学习</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Go 基础教程</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="go-环境变量"><a href="#go-环境变量" aria-hidden="true" class="header-anchor">#</a> Go 环境变量</h1> <p>无论你是使用Windows,Linux还是Mac OS操作系统来开发Go应用程序，在安装好Go安装语言开发工具之后，都必须配置好Go语言开发所要求的 环境变量，才算初步完成Go开发环境的搭建。</p> <p>但对于一些初学者来说，可能不太明白Go语言中常用的<code>环境变量(Environment variables)</code>的作用以及如何设置环境变量，今天我们来讲讲。</p> <blockquote><p>注意：Go提供的Windows操作系统安装包(.msi后缀)安装完成后，会自动配置几个常用的环境变量。</p></blockquote> <h2 id="常用环境变量"><a href="#常用环境变量" aria-hidden="true" class="header-anchor">#</a> 常用环境变量</h2> <p>Go语言中可以设置的环境变量有很多，每个环境变量都有其作用，不过很多我们可能都用不到，一般需要了解也是最重要的有以下几个：</p> <div class="language- extra-class"><pre class="language-text"><code>$ go env //打印Go所有默认环境变量
+$ go env GOPATH //打印某个环境变量的值
+</code></pre></div><h4 id="goroot"><a href="#goroot" aria-hidden="true" class="header-anchor">#</a> GOROOT</h4> <p>环境变量<code>GOROOT</code>表示Go语言的安装目录。</p> <p>在<code>Windows</code>中，<code>GOROOT</code>的默认值是<code>C:/go</code>，而在<code>Mac OS</code>或<code>Linux</code>中<code>GOROOT</code>的默认值是<code>usr/loca/go</code>，如果将Go安装在其他目录中，而需要将GOROOT的值修改为对应的目录。</p> <p>另外，<code>GOROOT/bin</code>则包含Go为我们提供的工具链，因此，应该将<code>GOROOT/bin</code>配置到环境变量PATH中，方便我们在全局中使用Go工具链。</p> <p><strong>Linux设置GOROOT演示</strong></p> <div class="language- extra-class"><pre class="language-text"><code>export GOROOT=~/go
+export PATH=$PATH:$GOROOT/bin
+</code></pre></div><h4 id="gopath"><a href="#gopath" aria-hidden="true" class="header-anchor">#</a> GOPATH</h4> <blockquote><p>注意，<code>GOPATH</code>的值不能与<code>GOROOT</code>相同。</p></blockquote> <p>环境变量<code>GOPATH</code>用于指定我们的开发工作区(workspace),是存放源代码、测试文件、库静态文件、可执行文件的工作。</p> <p>在<code>类Unix</code>(Mac OS或Linux)操作系统中<code>GOPATH</code>的默认值是$home/go。而在Windows中GOPATH的默认值则为%USERPROFILE%\go(比如在Admin用户，其值为C:\Users\Admin\go)。</p> <p>当然，我们可以通过修改GOPATH来更换工作区，比如将工作设置<code>opt/go</code>方式如下：</p> <p><strong>Linux设置GOPATH演示</strong></p> <div class="language- extra-class"><pre class="language-text"><code>export GOPATH=/opt/go
+</code></pre></div><p>还有，可以在GOPATH中设置多个工作区，如：</p> <div class="language- extra-class"><pre class="language-text"><code>export GOPATH=/opt/go;$home/go
+</code></pre></div><p><strong>GOPATH的子目录</strong></p> <p>上面的代码表示我们指定两个工作区，不过当我们使用<code>go get</code>命令去获取远程库的时候，一般会安装到第一个工作区当中。</p> <p>按照Go开发规范，GOPATH目录下的每个工作一般分为三个子目录:<code>src</code>,<code>pkg</code>,<code>bin</code>，所以我们看到的每个工作区是这样子的：</p> <div class="language- extra-class"><pre class="language-text"><code>bin/
+    hello                      # 可执行文件
+    outyet                     # 可执行文件
+src/
+    github.com/golang/example/
+        .git/                 
+    hello/
+        hello.go               # 命令行代码
+    outyet/
+        main.go                # 命令行代码
+        main_test.go           # 测试代码
+    stringutil/
+        reverse.go             # 库文件
+        reverse_test.go        # 库文件
+    golang.org/x/image/
+        .git/                  
+    bmp/
+        reader.go              # 库文件
+        writer.go              # 库文件
+</code></pre></div><p><code>src</code>目录放的是我们开发的源代码文件，其下面对应的目录称为<code>包</code>,<code>pkg</code>放的是编译后的库静态文件，<code>bin</code>放的是源代码编译后台的可执行文件。</p> <h4 id="gobin"><a href="#gobin" aria-hidden="true" class="header-anchor">#</a> GOBIN</h4> <p>环境变量<code>GOBIN</code>表示我们开发程序编译后二进制命令的安装目录。</p> <p>当我们使用<code>go install</code>命令编译和打包应用程序时，该命令会将编译后二进制程序打包GOBIN目录，一般我们将GOBIN设置为<code>GOPATH/bin</code>目录。</p> <p><strong>Linux设置GOBIN演示</strong></p> <div class="language- extra-class"><pre class="language-text"><code>export GOBIN=$GOPATH/bin
+</code></pre></div><p>上面的代码中，我们都是使用export命令设置环境变量的，这样设置只能在当前shell中有效，如果想一直有效，如在Linux中，则应该将环境变量添加到<code>/etc/profile</code>等文件当中。</p> <h2 id="交叉编译"><a href="#交叉编译" aria-hidden="true" class="header-anchor">#</a> 交叉编译</h2> <p>什么是交叉编译？所谓的交叉编译，是指在一个平台上就能生成可以在另一个平台运行的代码，例如，我们可以32位的Windows操作系统开发环境上，生成可以在64位Linux操作系统上运行的二进制程序。</p> <p>在其他编程语言中进行交叉编译可能要借助第三方工具，但在Go语言进行交叉编译非常简单，最简单只需要设置GOOS和GOARCH这两个环境变量就可以了。</p> <p>####GOOS与GOARCH</p> <p>GOOS的默认值是我们当前的操作系统， 如果windows，linux,注意mac os操作的上的值是darwin。 GOARCH则表示CPU架构，如386，amd64,arm等。</p> <p><strong>获取GOOS和GOARCH的值</strong></p> <p>我们可以使用<code>go env</code>命令获取当前GOOS和GOARCH的值。</p> <div class="language- extra-class"><pre class="language-text"><code>$ go env GOOS GOARCH
+</code></pre></div><p><strong>GOOS和GOARCH的取值范围</strong></p> <p>GOOS和GOARCH的值成对出现，而且只能是下面列表对应的值。</p> <div class="language- extra-class"><pre class="language-text"><code>$GOOS	    $GOARCH
+android	    arm
+darwin	    386
+darwin	    amd64
+darwin	    arm
+darwin	    arm64
+dragonfly   amd64
+freebsd	    386
+freebsd	    amd64
+freebsd	    arm
+linux	    386
+linux	    amd64
+linux	    arm
+linux	    arm64
+linux	    ppc64
+linux	    ppc64le
+linux	    mips
+linux	    mipsle
+linux	    mips64
+linux	    mips64le
+linux	    s390x
+netbsd	    386
+netbsd	    amd64
+netbsd	    arm
+openbsd	    386
+openbsd	    amd64
+openbsd	    arm
+plan9	    386
+plan9	    amd64
+solaris	    amd64
+windows	    386
+windows	    amd64
+</code></pre></div><h4 id="示例"><a href="#示例" aria-hidden="true" class="header-anchor">#</a> 示例</h4> <p><strong>编译在64位Linux操作系统上运行的目标程序</strong></p> <div class="language- extra-class"><pre class="language-text"><code>$ GOOS=linux GOARCH=amd64 go build main.go
+</code></pre></div><p><strong>编译arm架构Android操作上的目标程序</strong></p> <div class="language- extra-class"><pre class="language-text"><code>$ GOOS=android GOARCH=arm GOARM=7 go build main.go
+</code></pre></div><h2 id="环境变量列表"><a href="#环境变量列表" aria-hidden="true" class="header-anchor">#</a> 环境变量列表</h2> <p>虽然我们一般虽然配置的环境变量就那么几个，但其实Go语言是提供了非常多的环境变量，让我们可以自由地定制开发和编译器行为。</p> <p>下面是Go提供的所有的环境变量列表，一般可以划分为下面几大类，大概了解一下就可以了，因为有些环境变量我们可以永远都不会用到。</p> <h4 id="通过环境变量"><a href="#通过环境变量" aria-hidden="true" class="header-anchor">#</a> 通过环境变量</h4> <div class="language- extra-class"><pre class="language-text"><code>GCCGO
+GOARCH
+GOBIN
+GOCACHE
+GOFLAGS
+GOOS
+GOPATH
+GOPROXY
+GORACE
+GOROOT
+GOTMPDIR
+</code></pre></div><h4 id="和cgo一起使用的环境变量"><a href="#和cgo一起使用的环境变量" aria-hidden="true" class="header-anchor">#</a> 和cgo一起使用的环境变量</h4> <div class="language- extra-class"><pre class="language-text"><code>CC
+CGO_ENABLED
+CGO_CFLAGS
+CGO_CFLAGS_ALLOW
+CGO_CFLAGS_DISALLOW
+CGO_CPPFLAGS, CGO_CPPFLAGS_ALLOW, CGO_CPPFLAGS_DISALLOW
+CGO_CXXFLAGS, CGO_CXXFLAGS_ALLOW, CGO_CXXFLAGS_DISALLOW
+CGO_FFLAGS, CGO_FFLAGS_ALLOW, CGO_FFLAGS_DISALLOW
+CGO_LDFLAGS, CGO_LDFLAGS_ALLOW, CGO_LDFLAGS_DISALLOW
+CXX
+PKG_CONFIG
+AR
+</code></pre></div><h4 id="与系统架构体系相关的环境变量"><a href="#与系统架构体系相关的环境变量" aria-hidden="true" class="header-anchor">#</a> 与系统架构体系相关的环境变量</h4> <div class="language- extra-class"><pre class="language-text"><code>GOARM
+GO386
+GOMIPS
+GOMIPS64
+复制代码
+</code></pre></div><h4 id="专用的环境变量"><a href="#专用的环境变量" aria-hidden="true" class="header-anchor">#</a> 专用的环境变量</h4> <div class="language- extra-class"><pre class="language-text"><code>GCCGOTOOLDIR
+GOROOT_FINAL
+GO_EXTLINK_ENABLED
+GIT_ALLOW_PROTOCOL
+</code></pre></div><h4 id="其他环境变量"><a href="#其他环境变量" aria-hidden="true" class="header-anchor">#</a> 其他环境变量</h4> <div class="language- extra-class"><pre class="language-text"><code>GOEXE
+GOHOSTARCH
+GOHOSTOS
+GOMOD
+GOTOOLDIR
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/source/go/go-deployed-on-the-server.html" class="prev">
+          Go部署在阿里云linux服务器
+        </a></span> <span class="next"><a href="/source/go/Go-Go-echarts.html">
+          Go Go-echarts
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.aee163d7.js" defer></script><script src="/assets/js/52.9b9b1b60.js" defer></script>
+  </body>
+</html>
