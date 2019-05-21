@@ -1,2 +1,1 @@
-# jovins.github.io
-Jovins Blog
+[Jovins Blog](https://jovins.cn/)
