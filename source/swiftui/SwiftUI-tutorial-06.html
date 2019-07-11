@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SwiftUI 官方教程六: 动画View与转场 | Jovins Blog</title>
+    <meta name="description" content="Work Hard, Play Hard">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.fa6af71c.css" as="style"><link rel="preload" href="/assets/js/app.645de36e.js" as="script"><link rel="preload" href="/assets/js/4.2257a595.js" as="script"><link rel="prefetch" href="/assets/js/10.eb273c57.js"><link rel="prefetch" href="/assets/js/100.1f4851a6.js"><link rel="prefetch" href="/assets/js/101.2a49a1ab.js"><link rel="prefetch" href="/assets/js/102.0cb85f20.js"><link rel="prefetch" href="/assets/js/103.b52c7c69.js"><link rel="prefetch" href="/assets/js/104.4412bf8a.js"><link rel="prefetch" href="/assets/js/105.3dc89f2c.js"><link rel="prefetch" href="/assets/js/106.c86ee8bc.js"><link rel="prefetch" href="/assets/js/107.b61d039d.js"><link rel="prefetch" href="/assets/js/108.d96bdab1.js"><link rel="prefetch" href="/assets/js/109.08bfc0f1.js"><link rel="prefetch" href="/assets/js/11.8b390e8b.js"><link rel="prefetch" href="/assets/js/110.690d99a2.js"><link rel="prefetch" href="/assets/js/111.ca5c403d.js"><link rel="prefetch" href="/assets/js/112.6c170a62.js"><link rel="prefetch" href="/assets/js/113.39d9608c.js"><link rel="prefetch" href="/assets/js/12.df1c45e8.js"><link rel="prefetch" href="/assets/js/13.247c5940.js"><link rel="prefetch" href="/assets/js/14.ad9ccb95.js"><link rel="prefetch" href="/assets/js/15.d9733c0d.js"><link rel="prefetch" href="/assets/js/16.3359d1d1.js"><link rel="prefetch" href="/assets/js/17.97ac7cd5.js"><link rel="prefetch" href="/assets/js/18.b24d44a3.js"><link rel="prefetch" href="/assets/js/19.c34d4a73.js"><link rel="prefetch" href="/assets/js/2.dacd214f.js"><link rel="prefetch" href="/assets/js/20.2e32e9ac.js"><link rel="prefetch" href="/assets/js/21.b186da30.js"><link rel="prefetch" href="/assets/js/22.ebea8b97.js"><link rel="prefetch" href="/assets/js/23.bfbe48cf.js"><link rel="prefetch" href="/assets/js/24.cea6c013.js"><link rel="prefetch" href="/assets/js/25.584ca57e.js"><link rel="prefetch" href="/assets/js/26.94fa318b.js"><link rel="prefetch" href="/assets/js/27.5c3bb545.js"><link rel="prefetch" href="/assets/js/28.2fb66889.js"><link rel="prefetch" href="/assets/js/29.b91c0a6b.js"><link rel="prefetch" href="/assets/js/3.7313ea5b.js"><link rel="prefetch" href="/assets/js/30.7f29df29.js"><link rel="prefetch" href="/assets/js/31.e1f530a1.js"><link rel="prefetch" href="/assets/js/32.eaa72b7f.js"><link rel="prefetch" href="/assets/js/33.542d027d.js"><link rel="prefetch" href="/assets/js/34.be43eb5e.js"><link rel="prefetch" href="/assets/js/35.adef513a.js"><link rel="prefetch" href="/assets/js/36.eca70d69.js"><link rel="prefetch" href="/assets/js/37.9566ea75.js"><link rel="prefetch" href="/assets/js/38.153a4495.js"><link rel="prefetch" href="/assets/js/39.08df67a7.js"><link rel="prefetch" href="/assets/js/40.772594fe.js"><link rel="prefetch" href="/assets/js/41.b990c7c9.js"><link rel="prefetch" href="/assets/js/42.d27a3ad6.js"><link rel="prefetch" href="/assets/js/43.d26af3e6.js"><link rel="prefetch" href="/assets/js/44.0d6441b5.js"><link rel="prefetch" href="/assets/js/45.10916794.js"><link rel="prefetch" href="/assets/js/46.f624fc73.js"><link rel="prefetch" href="/assets/js/47.fa8baccd.js"><link rel="prefetch" href="/assets/js/48.58daadef.js"><link rel="prefetch" href="/assets/js/49.064fc123.js"><link rel="prefetch" href="/assets/js/5.b885bab0.js"><link rel="prefetch" href="/assets/js/50.bc5bec67.js"><link rel="prefetch" href="/assets/js/51.ba116ee1.js"><link rel="prefetch" href="/assets/js/52.22554eab.js"><link rel="prefetch" href="/assets/js/53.c1fcd2d0.js"><link rel="prefetch" href="/assets/js/54.5b5cd2fc.js"><link rel="prefetch" href="/assets/js/55.6e17f0de.js"><link rel="prefetch" href="/assets/js/56.556371f4.js"><link rel="prefetch" href="/assets/js/57.3952dd85.js"><link rel="prefetch" href="/assets/js/58.fec91d72.js"><link rel="prefetch" href="/assets/js/59.76652e5d.js"><link rel="prefetch" href="/assets/js/6.445f2e85.js"><link rel="prefetch" href="/assets/js/60.47570b43.js"><link rel="prefetch" href="/assets/js/61.2c453ca7.js"><link rel="prefetch" href="/assets/js/62.926da836.js"><link rel="prefetch" href="/assets/js/63.daa81298.js"><link rel="prefetch" href="/assets/js/64.b2ff83ac.js"><link rel="prefetch" href="/assets/js/65.666258af.js"><link rel="prefetch" href="/assets/js/66.4edac8d2.js"><link rel="prefetch" href="/assets/js/67.d87446c6.js"><link rel="prefetch" href="/assets/js/68.1e9dccd5.js"><link rel="prefetch" href="/assets/js/69.d4eeb7e0.js"><link rel="prefetch" href="/assets/js/7.22dc9c5b.js"><link rel="prefetch" href="/assets/js/70.036f9be7.js"><link rel="prefetch" href="/assets/js/71.ddf85cb1.js"><link rel="prefetch" href="/assets/js/72.74e2684e.js"><link rel="prefetch" href="/assets/js/73.71ebe8fc.js"><link rel="prefetch" href="/assets/js/74.0f773f6e.js"><link rel="prefetch" href="/assets/js/75.a7fa7d80.js"><link rel="prefetch" href="/assets/js/76.a62cb859.js"><link rel="prefetch" href="/assets/js/77.80adb570.js"><link rel="prefetch" href="/assets/js/78.d26b7cfb.js"><link rel="prefetch" href="/assets/js/79.6cc4f11a.js"><link rel="prefetch" href="/assets/js/8.001bf67a.js"><link rel="prefetch" href="/assets/js/80.1f880b90.js"><link rel="prefetch" href="/assets/js/81.e6478e45.js"><link rel="prefetch" href="/assets/js/82.c2b354db.js"><link rel="prefetch" href="/assets/js/83.2f284755.js"><link rel="prefetch" href="/assets/js/84.05d77ad9.js"><link rel="prefetch" href="/assets/js/85.613acc1e.js"><link rel="prefetch" href="/assets/js/86.2198e606.js"><link rel="prefetch" href="/assets/js/87.ffc979ab.js"><link rel="prefetch" href="/assets/js/88.c56ae228.js"><link rel="prefetch" href="/assets/js/89.ea11aeac.js"><link rel="prefetch" href="/assets/js/9.4c3a9bd4.js"><link rel="prefetch" href="/assets/js/90.e96d2dc9.js"><link rel="prefetch" href="/assets/js/91.51ec4669.js"><link rel="prefetch" href="/assets/js/92.095e417b.js"><link rel="prefetch" href="/assets/js/93.b606b221.js"><link rel="prefetch" href="/assets/js/94.dcf1e5c9.js"><link rel="prefetch" href="/assets/js/95.f5202eae.js"><link rel="prefetch" href="/assets/js/96.54651072.js"><link rel="prefetch" href="/assets/js/97.c0137e33.js"><link rel="prefetch" href="/assets/js/98.bd0bedf9.js"><link rel="prefetch" href="/assets/js/99.e0a69f1a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.fa6af71c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jovins Blog</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/swiftui/" class="nav-link router-link-active">SwiftUI</a></div><div class="nav-item"><a href="/source/summary/" class="nav-link">Summary</a></div><div class="nav-item"><a href="/source/go/" class="nav-link">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/swiftui/" class="nav-link router-link-active">SwiftUI</a></div><div class="nav-item"><a href="/source/summary/" class="nav-link">Summary</a></div><div class="nav-item"><a href="/source/go/" class="nav-link">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>SwiftUI 官方教程</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/source/swiftui/" class="sidebar-link">SwiftUI 官方教程一: SwiftUI</a></li><li><a href="/source/swiftui/SwiftUI-tutorial-02.html" class="sidebar-link">SwiftUI官方教程二: 创建和组合视图</a></li><li><a href="/source/swiftui/SwiftUI-tutorial-03.html" class="sidebar-link">SwiftUI 官方教程三: 构建列表与导航</a></li><li><a href="/source/swiftui/SwiftUI-tutorial-04.html" class="sidebar-link">SwiftUI 官方教程四: 处理用户输入</a></li><li><a href="/source/swiftui/SwiftUI-tutorial-05.html" class="sidebar-link">SwiftUI 官方教程五: 绘制Path和Shape</a></li><li><a href="/source/swiftui/SwiftUI-tutorial-06.html" class="active sidebar-link">SwiftUI 官方教程六: 动画View与转场</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/source/swiftui/SwiftUI-tutorial-06.html#_1-给单个-view-添加动画" class="sidebar-link">1. 给单个 View 添加动画</a></li><li class="sidebar-sub-header"><a href="/source/swiftui/SwiftUI-tutorial-06.html#_2-将状态的改变动画化" class="sidebar-link">2. 将状态的改变动画化</a></li><li class="sidebar-sub-header"><a href="/source/swiftui/SwiftUI-tutorial-06.html#_3-自定义-view-的转场" class="sidebar-link">3. 自定义 View 的转场</a></li><li class="sidebar-sub-header"><a href="/source/swiftui/SwiftUI-tutorial-06.html#_4-给复杂的效果组合动画" class="sidebar-link">4. 给复杂的效果组合动画</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="swiftui-官方教程六-动画view与转场"><a href="#swiftui-官方教程六-动画view与转场" aria-hidden="true" class="header-anchor">#</a> SwiftUI 官方教程六: 动画View与转场</h1> <blockquote><p>使用 <code>SwiftUI</code> 时，无论用作何处，我们都可以单独为 view 添加动画，或者对 view 的状态进行动画处理。 <code>SwiftUI</code> 为我们处理所有动画的组合、重叠和中断的复杂性。</p> <p>在本文中，我们会给包含图表的 view 设置动画，跟踪用户在使用 <code>Landmarks</code> app 时行为。我们会看到通过使用 <code>animation(_:)</code> 方法为 view 设置动画是多么简单。</p> <p>下载项目文件并按照以下步骤操作，也可以打开已完成的项目自行浏览代码。</p> <ul><li>预计完成时间：20 分钟</li> <li>项目文件：<a href="https://github.com/Jovins/SwiftUI-Training/tree/master/AnimatingAndTransitions" target="_blank" rel="noopener noreferrer">Demo下载<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></blockquote> <h2 id="_1-给单个-view-添加动画"><a href="#_1-给单个-view-添加动画" aria-hidden="true" class="header-anchor">#</a> 1. 给单个 View 添加动画</h2> <p>当我们在一个 view 上使用 <code>animation(_:)</code> 方法时， <code>SwiftUI</code> 会动态的修改这个 view 的可动画属性。一个 view 的颜色、透明度、旋转、大小以及其他属性都是可动画的。</p> <p><img src="/assets/img/SwiftUI-06-01.5afbf017.png" alt></p> <p><strong>1.1 在 <code>HikeView.swift</code> 中，打开实时预览来测试显示和隐藏图表。</strong></p> <p>确保在本文中过程中都打开了实时预览，这样就可以测试到每一步的结果。</p> <p><img src="/assets/img/SwiftUI-06-02.50192c2d.gif" alt></p> <p><strong>1.2 添加 <code>animation(.basic())</code> 方法来打开按钮的旋转动画。</strong></p> <blockquote><p>HikeView.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">HikeView</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> hike<span class="token punctuation">:</span> <span class="token builtin">Hike</span>
+    @<span class="token builtin">State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> showDetail <span class="token operator">=</span> <span class="token boolean">false</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">VStack</span> <span class="token punctuation">{</span>
+            <span class="token builtin">HStack</span> <span class="token punctuation">{</span>
+                <span class="token function">HikeGraph</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> hike<span class="token punctuation">.</span>observations<span class="token punctuation">,</span> path<span class="token punctuation">:</span> \<span class="token punctuation">.</span>elevation<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">)</span>
+
+                <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>distanceText<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token function">Spacer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+                <span class="token function">Button</span><span class="token punctuation">(</span>action<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">self</span><span class="token punctuation">.</span>showDetail<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Image</span><span class="token punctuation">(</span>systemName<span class="token punctuation">:</span> <span class="token string">&quot;chevron.right.circle&quot;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">imageScale</span><span class="token punctuation">(</span><span class="token punctuation">.</span>large<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">rotationEffect</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">degrees</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">90</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">animation</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">basic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> showDetail <span class="token punctuation">{</span>
+                <span class="token function">HikeDetail</span><span class="token punctuation">(</span>hike<span class="token punctuation">:</span> hike<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-06-03.644e437e.png" alt></p> <p><strong>1.3 添加一个在图表显示时让按钮变大的动画。</strong></p> <p><code>animation(_:)</code> 会作用于 view 所包装的所有可动画的修改。</p> <blockquote><p>HikeView.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">HikeView</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> hike<span class="token punctuation">:</span> <span class="token builtin">Hike</span>
+    @<span class="token builtin">State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> showDetail <span class="token operator">=</span> <span class="token boolean">false</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">VStack</span> <span class="token punctuation">{</span>
+            <span class="token builtin">HStack</span> <span class="token punctuation">{</span>
+                <span class="token function">HikeGraph</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> hike<span class="token punctuation">.</span>observations<span class="token punctuation">,</span> path<span class="token punctuation">:</span> \<span class="token punctuation">.</span>elevation<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">)</span>
+
+                <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>distanceText<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token function">Spacer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+                <span class="token function">Button</span><span class="token punctuation">(</span>action<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">self</span><span class="token punctuation">.</span>showDetail<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Image</span><span class="token punctuation">(</span>systemName<span class="token punctuation">:</span> <span class="token string">&quot;chevron.right.circle&quot;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">imageScale</span><span class="token punctuation">(</span><span class="token punctuation">.</span>large<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">rotationEffect</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">degrees</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">90</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">scaleEffect</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">1.5</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">animation</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">basic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> showDetail <span class="token punctuation">{</span>
+                <span class="token function">HikeDetail</span><span class="token punctuation">(</span>hike<span class="token punctuation">:</span> hike<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-06-04.0779c8c9.png" alt></p> <p><strong>1.4 把动画类型从 <code>.basic()</code> 改成 <code>.spring()</code> 。</strong></p> <p><code>SwiftUI</code> 包含带有预设或自定义缓动的基本动画，以及弹性和流体动画。我们可以调整动画的速度、在动画开始之前设置延迟，或指定动画的重复。</p> <blockquote><p>HikeView.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">HikeView</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> hike<span class="token punctuation">:</span> <span class="token builtin">Hike</span>
+    @<span class="token builtin">State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> showDetail <span class="token operator">=</span> <span class="token boolean">false</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">VStack</span> <span class="token punctuation">{</span>
+            <span class="token builtin">HStack</span> <span class="token punctuation">{</span>
+                <span class="token function">HikeGraph</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> hike<span class="token punctuation">.</span>observations<span class="token punctuation">,</span> path<span class="token punctuation">:</span> \<span class="token punctuation">.</span>elevation<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">)</span>
+
+                <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>distanceText<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token function">Spacer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+                <span class="token function">Button</span><span class="token punctuation">(</span>action<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">self</span><span class="token punctuation">.</span>showDetail<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Image</span><span class="token punctuation">(</span>systemName<span class="token punctuation">:</span> <span class="token string">&quot;chevron.right.circle&quot;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">imageScale</span><span class="token punctuation">(</span><span class="token punctuation">.</span>large<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">rotationEffect</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">degrees</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">90</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">scaleEffect</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">1.5</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">animation</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">spring</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> showDetail <span class="token punctuation">{</span>
+                <span class="token function">HikeDetail</span><span class="token punctuation">(</span>hike<span class="token punctuation">:</span> hike<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-06-05.92361a69.png" alt></p> <p><strong>1.5 尝试在 <code>scaleEffect</code> 方法上方添加另一个动画方法来关闭旋转动画。</strong></p> <p>围绕 <code>SwiftUI</code> 尝试结合不同的动画效果，看看都有哪些效果。</p> <blockquote><p>HikeView.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">HikeView</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> hike<span class="token punctuation">:</span> <span class="token builtin">Hike</span>
+    @<span class="token builtin">State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> showDetail <span class="token operator">=</span> <span class="token boolean">false</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">VStack</span> <span class="token punctuation">{</span>
+            <span class="token builtin">HStack</span> <span class="token punctuation">{</span>
+                <span class="token function">HikeGraph</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> hike<span class="token punctuation">.</span>observations<span class="token punctuation">,</span> path<span class="token punctuation">:</span> \<span class="token punctuation">.</span>elevation<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">)</span>
+
+                <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>distanceText<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token function">Spacer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+                <span class="token function">Button</span><span class="token punctuation">(</span>action<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">self</span><span class="token punctuation">.</span>showDetail<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Image</span><span class="token punctuation">(</span>systemName<span class="token punctuation">:</span> <span class="token string">&quot;chevron.right.circle&quot;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">imageScale</span><span class="token punctuation">(</span><span class="token punctuation">.</span>large<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">rotationEffect</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">degrees</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">90</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">animation</span><span class="token punctuation">(</span><span class="token constant">nil</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">scaleEffect</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">1.5</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">animation</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">spring</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> showDetail <span class="token punctuation">{</span>
+                <span class="token function">HikeDetail</span><span class="token punctuation">(</span>hike<span class="token punctuation">:</span> hike<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-06-06.dfc5e00b.png" alt></p> <p><strong>1.6 在继续下一节前，移除两个 <code>animation(_:)</code> 方法。</strong></p> <blockquote><p>HikeView.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">HikeView</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> hike<span class="token punctuation">:</span> <span class="token builtin">Hike</span>
+    @<span class="token builtin">State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> showDetail <span class="token operator">=</span> <span class="token boolean">false</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">VStack</span> <span class="token punctuation">{</span>
+            <span class="token builtin">HStack</span> <span class="token punctuation">{</span>
+                <span class="token function">HikeGraph</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> hike<span class="token punctuation">.</span>observations<span class="token punctuation">,</span> path<span class="token punctuation">:</span> \<span class="token punctuation">.</span>elevation<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">)</span>
+
+                <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>distanceText<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token function">Spacer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+                <span class="token function">Button</span><span class="token punctuation">(</span>action<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">self</span><span class="token punctuation">.</span>showDetail<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Image</span><span class="token punctuation">(</span>systemName<span class="token punctuation">:</span> <span class="token string">&quot;chevron.right.circle&quot;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">imageScale</span><span class="token punctuation">(</span><span class="token punctuation">.</span>large<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">rotationEffect</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">degrees</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">90</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+                        <span class="token punctuation">.</span><span class="token function">scaleEffect</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">1.5</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> showDetail <span class="token punctuation">{</span>
+                <span class="token function">HikeDetail</span><span class="token punctuation">(</span>hike<span class="token punctuation">:</span> hike<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-06-07.f7efcfe7.png" alt></p> <h2 id="_2-将状态的改变动画化"><a href="#_2-将状态的改变动画化" aria-hidden="true" class="header-anchor">#</a> 2. 将状态的改变动画化</h2> <p>现在我们已经学会如果给单个 view 添加动画，是时候给状态的值的改变添加动画了。</p> <p>这一节，我们会给用户点击按钮并切换 <code>showDetail</code> 状态属性时发生的所有更改添加动画。</p> <p><img src="/assets/img/SwiftUI-06-08.999a357a.png" alt></p> <p><strong>2.1 将 <code>showDetail.toggle()</code> 的调用包装到 <code>withAnimation</code> 函数中。</strong></p> <p>受 <code>showDetail</code> 属性影响的公开按钮和 <code>HikeDetail</code> view 现在就都有了动画过渡。</p> <blockquote><p>HikeView.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">HikeView</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> hike<span class="token punctuation">:</span> <span class="token builtin">Hike</span>
+    @<span class="token builtin">State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> showDetail <span class="token operator">=</span> <span class="token boolean">false</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">VStack</span> <span class="token punctuation">{</span>
+            <span class="token builtin">HStack</span> <span class="token punctuation">{</span>
+                <span class="token function">HikeGraph</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> hike<span class="token punctuation">.</span>observations<span class="token punctuation">,</span> path<span class="token punctuation">:</span> \<span class="token punctuation">.</span>elevation<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">)</span>
+
+                <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>distanceText<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token function">Spacer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+                <span class="token function">Button</span><span class="token punctuation">(</span>action<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    withAnimation <span class="token punctuation">{</span>
+                        <span class="token keyword">self</span><span class="token punctuation">.</span>showDetail<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Image</span><span class="token punctuation">(</span>systemName<span class="token punctuation">:</span> <span class="token string">&quot;chevron.right.circle&quot;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">imageScale</span><span class="token punctuation">(</span><span class="token punctuation">.</span>large<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">rotationEffect</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">degrees</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">90</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">scaleEffect</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">1.5</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> showDetail <span class="token punctuation">{</span>
+                <span class="token function">HikeDetail</span><span class="token punctuation">(</span>hike<span class="token punctuation">:</span> hike<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-06-09.3733c9fb.png" alt></p> <p>减缓动画，看看 <code>SwiftUI</code> 动画是如何可以中断的。</p> <p><strong>2.2 给 <code>withAnimation</code> 方法传递一个 4 秒的基础动画。</strong></p> <p>我们可以传递相同类型的动画给 <code>animation(_:)</code> 的 <code>withAnimation</code> 函数。</p> <blockquote><p>HikeView.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">HikeView</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> hike<span class="token punctuation">:</span> <span class="token builtin">Hike</span>
+    @<span class="token builtin">State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> showDetail <span class="token operator">=</span> <span class="token boolean">false</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">VStack</span> <span class="token punctuation">{</span>
+            <span class="token builtin">HStack</span> <span class="token punctuation">{</span>
+                <span class="token function">HikeGraph</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> hike<span class="token punctuation">.</span>observations<span class="token punctuation">,</span> path<span class="token punctuation">:</span> \<span class="token punctuation">.</span>elevation<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">)</span>
+
+                <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>distanceText<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token function">Spacer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+                <span class="token function">Button</span><span class="token punctuation">(</span>action<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    <span class="token function">withAnimation</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">basic</span><span class="token punctuation">(</span>duration<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token keyword">self</span><span class="token punctuation">.</span>showDetail<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Image</span><span class="token punctuation">(</span>systemName<span class="token punctuation">:</span> <span class="token string">&quot;chevron.right.circle&quot;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">imageScale</span><span class="token punctuation">(</span><span class="token punctuation">.</span>large<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">rotationEffect</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">degrees</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">90</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">scaleEffect</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">1.5</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> showDetail <span class="token punctuation">{</span>
+                <span class="token function">HikeDetail</span><span class="token punctuation">(</span>hike<span class="token punctuation">:</span> hike<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-06-10.7fc65079.png" alt></p> <p><strong>2.3 尝试在动画期间打开和关闭图表 view 。</strong></p> <p><img src="/assets/img/SwiftUI-06-11.282c2412.gif" alt></p> <p><strong>2.4 在进入下一节前，从 <code>withAnimation</code> 函数中移除缓慢动画。</strong></p> <blockquote><p>HikeView.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">HikeView</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> hike<span class="token punctuation">:</span> <span class="token builtin">Hike</span>
+    @<span class="token builtin">State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> showDetail <span class="token operator">=</span> <span class="token boolean">false</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">VStack</span> <span class="token punctuation">{</span>
+            <span class="token builtin">HStack</span> <span class="token punctuation">{</span>
+                <span class="token function">HikeGraph</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> hike<span class="token punctuation">.</span>observations<span class="token punctuation">,</span> path<span class="token punctuation">:</span> \<span class="token punctuation">.</span>elevation<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">)</span>
+
+                <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>distanceText<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token function">Spacer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+                <span class="token function">Button</span><span class="token punctuation">(</span>action<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    withAnimation <span class="token punctuation">{</span>
+                        <span class="token keyword">self</span><span class="token punctuation">.</span>showDetail<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Image</span><span class="token punctuation">(</span>systemName<span class="token punctuation">:</span> <span class="token string">&quot;chevron.right.circle&quot;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">imageScale</span><span class="token punctuation">(</span><span class="token punctuation">.</span>large<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">rotationEffect</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">degrees</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">90</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">scaleEffect</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">1.5</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> showDetail <span class="token punctuation">{</span>
+                <span class="token function">HikeDetail</span><span class="token punctuation">(</span>hike<span class="token punctuation">:</span> hike<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-06-12.20994758.png" alt></p> <h2 id="_3-自定义-view-的转场"><a href="#_3-自定义-view-的转场" aria-hidden="true" class="header-anchor">#</a> 3. 自定义 View 的转场</h2> <p>默认情况下，view 通过淡入和淡出过渡到屏幕上和屏幕外。我们可以使用 <code>transition(_:)</code> 方法来自定义转场。</p> <p><img src="/assets/img/SwiftUI-06-13.69104f90.gif" alt></p> <p><strong>3.1 给满足条件时显示的 <code>HikeView</code> 添加一个 <code>transition(_:)</code> 方法。</strong></p> <p>现在图标会滑动显示和消失。</p> <blockquote><p>HikeView.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">HikeView</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> hike<span class="token punctuation">:</span> <span class="token builtin">Hike</span>
+    @<span class="token builtin">State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> showDetail <span class="token operator">=</span> <span class="token boolean">false</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">VStack</span> <span class="token punctuation">{</span>
+            <span class="token builtin">HStack</span> <span class="token punctuation">{</span>
+                <span class="token function">HikeGraph</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> hike<span class="token punctuation">.</span>observations<span class="token punctuation">,</span> path<span class="token punctuation">:</span> \<span class="token punctuation">.</span>elevation<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">)</span>
+
+                <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>distanceText<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token function">Spacer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+                <span class="token function">Button</span><span class="token punctuation">(</span>action<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    withAnimation <span class="token punctuation">{</span>
+                        <span class="token keyword">self</span><span class="token punctuation">.</span>showDetail<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Image</span><span class="token punctuation">(</span>systemName<span class="token punctuation">:</span> <span class="token string">&quot;chevron.right.circle&quot;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">imageScale</span><span class="token punctuation">(</span><span class="token punctuation">.</span>large<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">rotationEffect</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">degrees</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">90</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">scaleEffect</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">1.5</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> showDetail <span class="token punctuation">{</span>
+                <span class="token function">HikeDetail</span><span class="token punctuation">(</span>hike<span class="token punctuation">:</span> hike<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">transition</span><span class="token punctuation">(</span><span class="token punctuation">.</span>slide<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-06-14.7b39cd88.png" alt></p> <p><strong>3.2 将转场提取为 <code>AnyTransition</code> 的静态属性。</strong></p> <p>这可以在您展开自定义转场时保持代码清晰。对于自定义转场，我们可以使用与 <code>SwiftUI</code> 所用相同的 <code>.</code> 符号。</p> <blockquote><p>HikeView.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">extension</span> <span class="token builtin">AnyTransition</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> moveAndFade<span class="token punctuation">:</span> <span class="token builtin">AnyTransition</span> <span class="token punctuation">{</span>
+        <span class="token builtin">AnyTransition</span><span class="token punctuation">.</span>slide
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">HikeView</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> hike<span class="token punctuation">:</span> <span class="token builtin">Hike</span>
+    @<span class="token builtin">State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> showDetail <span class="token operator">=</span> <span class="token boolean">false</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">VStack</span> <span class="token punctuation">{</span>
+            <span class="token builtin">HStack</span> <span class="token punctuation">{</span>
+                <span class="token function">HikeGraph</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> hike<span class="token punctuation">.</span>observations<span class="token punctuation">,</span> path<span class="token punctuation">:</span> \<span class="token punctuation">.</span>elevation<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">)</span>
+
+                <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>distanceText<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token function">Spacer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+                <span class="token function">Button</span><span class="token punctuation">(</span>action<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    withAnimation <span class="token punctuation">{</span>
+                        <span class="token keyword">self</span><span class="token punctuation">.</span>showDetail<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Image</span><span class="token punctuation">(</span>systemName<span class="token punctuation">:</span> <span class="token string">&quot;chevron.right.circle&quot;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">imageScale</span><span class="token punctuation">(</span><span class="token punctuation">.</span>large<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">rotationEffect</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">degrees</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">90</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">scaleEffect</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">1.5</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> showDetail <span class="token punctuation">{</span>
+                <span class="token function">HikeDetail</span><span class="token punctuation">(</span>hike<span class="token punctuation">:</span> hike<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">transition</span><span class="token punctuation">(</span><span class="token punctuation">.</span>moveAndFade<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-06-15.f2ae0845.png" alt></p> <p><strong>3.3 换成使用 <code>move(edge:)</code> 转场，这样图表会从同一边滑入和滑出。</strong></p> <blockquote><p>HikeView.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">extension</span> <span class="token builtin">AnyTransition</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> moveAndFade<span class="token punctuation">:</span> <span class="token builtin">AnyTransition</span> <span class="token punctuation">{</span>
+        <span class="token builtin">AnyTransition</span><span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span>edge<span class="token punctuation">:</span> <span class="token punctuation">.</span>trailing<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">HikeView</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> hike<span class="token punctuation">:</span> <span class="token builtin">Hike</span>
+    @<span class="token builtin">State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> showDetail <span class="token operator">=</span> <span class="token boolean">false</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">VStack</span> <span class="token punctuation">{</span>
+            <span class="token builtin">HStack</span> <span class="token punctuation">{</span>
+                <span class="token function">HikeGraph</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> hike<span class="token punctuation">.</span>observations<span class="token punctuation">,</span> path<span class="token punctuation">:</span> \<span class="token punctuation">.</span>elevation<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">)</span>
+
+                <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>distanceText<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token function">Spacer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+                <span class="token function">Button</span><span class="token punctuation">(</span>action<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    withAnimation <span class="token punctuation">{</span>
+                        <span class="token keyword">self</span><span class="token punctuation">.</span>showDetail<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Image</span><span class="token punctuation">(</span>systemName<span class="token punctuation">:</span> <span class="token string">&quot;chevron.right.circle&quot;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">imageScale</span><span class="token punctuation">(</span><span class="token punctuation">.</span>large<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">rotationEffect</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">degrees</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">90</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">scaleEffect</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">1.5</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> showDetail <span class="token punctuation">{</span>
+                <span class="token function">HikeDetail</span><span class="token punctuation">(</span>hike<span class="token punctuation">:</span> hike<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">transition</span><span class="token punctuation">(</span><span class="token punctuation">.</span>moveAndFade<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-06-16.ef4ebf36.png" alt></p> <p><strong>3.4 使用 <code>asymmetric(insertion:removal:)</code> 方法来给 view 显示和消失时提供不同的转场。</strong></p> <blockquote><p>HikeView.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">extension</span> <span class="token builtin">AnyTransition</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> moveAndFade<span class="token punctuation">:</span> <span class="token builtin">AnyTransition</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> insertion <span class="token operator">=</span> <span class="token builtin">AnyTransition</span><span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span>edge<span class="token punctuation">:</span> <span class="token punctuation">.</span>trailing<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">combined</span><span class="token punctuation">(</span>with<span class="token punctuation">:</span> <span class="token punctuation">.</span>opacity<span class="token punctuation">)</span>
+        <span class="token keyword">let</span> removal <span class="token operator">=</span> <span class="token builtin">AnyTransition</span><span class="token punctuation">.</span><span class="token function">scale</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">combined</span><span class="token punctuation">(</span>with<span class="token punctuation">:</span> <span class="token punctuation">.</span>opacity<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token punctuation">.</span><span class="token function">asymmetric</span><span class="token punctuation">(</span>insertion<span class="token punctuation">:</span> insertion<span class="token punctuation">,</span> removal<span class="token punctuation">:</span> removal<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">HikeView</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> hike<span class="token punctuation">:</span> <span class="token builtin">Hike</span>
+    @<span class="token builtin">State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> showDetail <span class="token operator">=</span> <span class="token boolean">false</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">VStack</span> <span class="token punctuation">{</span>
+            <span class="token builtin">HStack</span> <span class="token punctuation">{</span>
+                <span class="token function">HikeGraph</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> hike<span class="token punctuation">.</span>observations<span class="token punctuation">,</span> path<span class="token punctuation">:</span> \<span class="token punctuation">.</span>elevation<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">)</span>
+
+                <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>hike<span class="token punctuation">.</span>distanceText<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token function">Spacer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+                <span class="token function">Button</span><span class="token punctuation">(</span>action<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    withAnimation <span class="token punctuation">{</span>
+                        <span class="token keyword">self</span><span class="token punctuation">.</span>showDetail<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Image</span><span class="token punctuation">(</span>systemName<span class="token punctuation">:</span> <span class="token string">&quot;chevron.right.circle&quot;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">imageScale</span><span class="token punctuation">(</span><span class="token punctuation">.</span>large<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">rotationEffect</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">degrees</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">90</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">scaleEffect</span><span class="token punctuation">(</span>showDetail <span class="token operator">?</span> <span class="token number">1.5</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> showDetail <span class="token punctuation">{</span>
+                <span class="token function">HikeDetail</span><span class="token punctuation">(</span>hike<span class="token punctuation">:</span> hike<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">transition</span><span class="token punctuation">(</span><span class="token punctuation">.</span>moveAndFade<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-06-17.d2c6de35.png" alt></p> <h2 id="_4-给复杂的效果组合动画"><a href="#_4-给复杂的效果组合动画" aria-hidden="true" class="header-anchor">#</a> 4. 给复杂的效果组合动画</h2> <p>单击条形下方的按钮时，图形会在三组不同的数据之间切换。在本节中，我们将使用组合动画为构成图形的 <code>Capsule</code> 提供动态、波动的转场。</p> <p><img src="/assets/img/SwiftUI-06-18.02328cbf.png" alt></p> <p><strong>4.1 把 <code>showDetail</code> 的默认值改成 <code>true</code> ，并把 <code>HikeView</code> 的预览固定在 <code>canvas</code> 中，这让我们在其他文件中制作动画时依然能在上下文中看到图表。</strong></p> <p><img src="/assets/img/SwiftUI-06-19.c257d203.png" alt></p> <p><strong>4.2 在 <code>GraphCapsule.swift</code> 中，添加一个新的计算动画属性，并将其应用于 <code>Capsule</code> 的 <code>shape</code> 。</strong></p> <blockquote><p>GraphCapsule.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">GraphCapsule</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> index<span class="token punctuation">:</span> <span class="token builtin">Int</span>
+    <span class="token keyword">var</span> height<span class="token punctuation">:</span> <span class="token builtin">Length</span>
+    <span class="token keyword">var</span> range<span class="token punctuation">:</span> <span class="token builtin">Range</span><span class="token operator">&lt;</span><span class="token builtin">Double</span><span class="token operator">&gt;</span>
+    <span class="token keyword">var</span> overallRange<span class="token punctuation">:</span> <span class="token builtin">Range</span><span class="token operator">&lt;</span><span class="token builtin">Double</span><span class="token operator">&gt;</span>
+
+    <span class="token keyword">var</span> heightRatio<span class="token punctuation">:</span> <span class="token builtin">Length</span> <span class="token punctuation">{</span>
+        <span class="token function">max</span><span class="token punctuation">(</span><span class="token function">Length</span><span class="token punctuation">(</span><span class="token function">magnitude</span><span class="token punctuation">(</span>of<span class="token punctuation">:</span> range<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token function">magnitude</span><span class="token punctuation">(</span>of<span class="token punctuation">:</span> overallRange<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.15</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> offsetRatio<span class="token punctuation">:</span> <span class="token builtin">Length</span> <span class="token punctuation">{</span>
+        <span class="token function">Length</span><span class="token punctuation">(</span><span class="token punctuation">(</span>range<span class="token punctuation">.</span>lowerBound <span class="token operator">-</span> overallRange<span class="token punctuation">.</span>lowerBound<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token function">magnitude</span><span class="token punctuation">(</span>of<span class="token punctuation">:</span> overallRange<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> animation<span class="token punctuation">:</span> <span class="token builtin">Animation</span> <span class="token punctuation">{</span>
+        <span class="token builtin">Animation</span><span class="token punctuation">.</span><span class="token keyword">default</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">Capsule</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token builtin">Color</span><span class="token punctuation">.</span>gray<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>height<span class="token punctuation">:</span> height <span class="token operator">*</span> heightRatio<span class="token punctuation">,</span> alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>bottom<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">offset</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> height <span class="token operator">*</span> <span class="token operator">-</span>offsetRatio<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">animation</span><span class="token punctuation">(</span>animation<span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-06-20.00d31a98.png" alt></p> <p><strong>4.3 将动画改为弹性动画，使用初始速度让条形图跳跃。</strong></p> <blockquote><p>GraphCapsule.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">GraphCapsule</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> index<span class="token punctuation">:</span> <span class="token builtin">Int</span>
+    <span class="token keyword">var</span> height<span class="token punctuation">:</span> <span class="token builtin">Length</span>
+    <span class="token keyword">var</span> range<span class="token punctuation">:</span> <span class="token builtin">Range</span><span class="token operator">&lt;</span><span class="token builtin">Double</span><span class="token operator">&gt;</span>
+    <span class="token keyword">var</span> overallRange<span class="token punctuation">:</span> <span class="token builtin">Range</span><span class="token operator">&lt;</span><span class="token builtin">Double</span><span class="token operator">&gt;</span>
+
+    <span class="token keyword">var</span> heightRatio<span class="token punctuation">:</span> <span class="token builtin">Length</span> <span class="token punctuation">{</span>
+        <span class="token function">max</span><span class="token punctuation">(</span><span class="token function">Length</span><span class="token punctuation">(</span><span class="token function">magnitude</span><span class="token punctuation">(</span>of<span class="token punctuation">:</span> range<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token function">magnitude</span><span class="token punctuation">(</span>of<span class="token punctuation">:</span> overallRange<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.15</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> offsetRatio<span class="token punctuation">:</span> <span class="token builtin">Length</span> <span class="token punctuation">{</span>
+        <span class="token function">Length</span><span class="token punctuation">(</span><span class="token punctuation">(</span>range<span class="token punctuation">.</span>lowerBound <span class="token operator">-</span> overallRange<span class="token punctuation">.</span>lowerBound<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token function">magnitude</span><span class="token punctuation">(</span>of<span class="token punctuation">:</span> overallRange<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> animation<span class="token punctuation">:</span> <span class="token builtin">Animation</span> <span class="token punctuation">{</span>
+        <span class="token builtin">Animation</span><span class="token punctuation">.</span><span class="token function">spring</span><span class="token punctuation">(</span>initialVelocity<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">Capsule</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token builtin">Color</span><span class="token punctuation">.</span>gray<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>height<span class="token punctuation">:</span> height <span class="token operator">*</span> heightRatio<span class="token punctuation">,</span> alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>bottom<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">offset</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> height <span class="token operator">*</span> <span class="token operator">-</span>offsetRatio<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">animation</span><span class="token punctuation">(</span>animation<span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-06-21.1da006ad.png" alt></p> <p><strong>4.4 加快动画速度，缩短每个小节移动到新位置所需的时间。</strong></p> <blockquote><p>GraphCapsule.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">GraphCapsule</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> index<span class="token punctuation">:</span> <span class="token builtin">Int</span>
+    <span class="token keyword">var</span> height<span class="token punctuation">:</span> <span class="token builtin">Length</span>
+    <span class="token keyword">var</span> range<span class="token punctuation">:</span> <span class="token builtin">Range</span><span class="token operator">&lt;</span><span class="token builtin">Double</span><span class="token operator">&gt;</span>
+    <span class="token keyword">var</span> overallRange<span class="token punctuation">:</span> <span class="token builtin">Range</span><span class="token operator">&lt;</span><span class="token builtin">Double</span><span class="token operator">&gt;</span>
+
+    <span class="token keyword">var</span> heightRatio<span class="token punctuation">:</span> <span class="token builtin">Length</span> <span class="token punctuation">{</span>
+        <span class="token function">max</span><span class="token punctuation">(</span><span class="token function">Length</span><span class="token punctuation">(</span><span class="token function">magnitude</span><span class="token punctuation">(</span>of<span class="token punctuation">:</span> range<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token function">magnitude</span><span class="token punctuation">(</span>of<span class="token punctuation">:</span> overallRange<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.15</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> offsetRatio<span class="token punctuation">:</span> <span class="token builtin">Length</span> <span class="token punctuation">{</span>
+        <span class="token function">Length</span><span class="token punctuation">(</span><span class="token punctuation">(</span>range<span class="token punctuation">.</span>lowerBound <span class="token operator">-</span> overallRange<span class="token punctuation">.</span>lowerBound<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token function">magnitude</span><span class="token punctuation">(</span>of<span class="token punctuation">:</span> overallRange<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> animation<span class="token punctuation">:</span> <span class="token builtin">Animation</span> <span class="token punctuation">{</span>
+        <span class="token builtin">Animation</span><span class="token punctuation">.</span><span class="token function">spring</span><span class="token punctuation">(</span>initialVelocity<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">speed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">Capsule</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token builtin">Color</span><span class="token punctuation">.</span>gray<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>height<span class="token punctuation">:</span> height <span class="token operator">*</span> heightRatio<span class="token punctuation">,</span> alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>bottom<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">offset</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> height <span class="token operator">*</span> <span class="token operator">-</span>offsetRatio<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">animation</span><span class="token punctuation">(</span>animation<span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-06-22.2a5b0a0e.png" alt></p> <p><strong>4.5 根据 <code>Capsule</code> 在图表上的位置为每个动画添加延迟。</strong></p> <blockquote><p>GraphCapsule.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">GraphCapsule</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> index<span class="token punctuation">:</span> <span class="token builtin">Int</span>
+    <span class="token keyword">var</span> height<span class="token punctuation">:</span> <span class="token builtin">Length</span>
+    <span class="token keyword">var</span> range<span class="token punctuation">:</span> <span class="token builtin">Range</span><span class="token operator">&lt;</span><span class="token builtin">Double</span><span class="token operator">&gt;</span>
+    <span class="token keyword">var</span> overallRange<span class="token punctuation">:</span> <span class="token builtin">Range</span><span class="token operator">&lt;</span><span class="token builtin">Double</span><span class="token operator">&gt;</span>
+
+    <span class="token keyword">var</span> heightRatio<span class="token punctuation">:</span> <span class="token builtin">Length</span> <span class="token punctuation">{</span>
+        <span class="token function">max</span><span class="token punctuation">(</span><span class="token function">Length</span><span class="token punctuation">(</span><span class="token function">magnitude</span><span class="token punctuation">(</span>of<span class="token punctuation">:</span> range<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token function">magnitude</span><span class="token punctuation">(</span>of<span class="token punctuation">:</span> overallRange<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.15</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> offsetRatio<span class="token punctuation">:</span> <span class="token builtin">Length</span> <span class="token punctuation">{</span>
+        <span class="token function">Length</span><span class="token punctuation">(</span><span class="token punctuation">(</span>range<span class="token punctuation">.</span>lowerBound <span class="token operator">-</span> overallRange<span class="token punctuation">.</span>lowerBound<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token function">magnitude</span><span class="token punctuation">(</span>of<span class="token punctuation">:</span> overallRange<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> animation<span class="token punctuation">:</span> <span class="token builtin">Animation</span> <span class="token punctuation">{</span>
+        <span class="token builtin">Animation</span><span class="token punctuation">.</span><span class="token function">spring</span><span class="token punctuation">(</span>initialVelocity<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">speed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">0.03</span> <span class="token operator">*</span> <span class="token function">Double</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">Capsule</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token builtin">Color</span><span class="token punctuation">.</span>gray<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>height<span class="token punctuation">:</span> height <span class="token operator">*</span> heightRatio<span class="token punctuation">,</span> alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>bottom<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">offset</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> height <span class="token operator">*</span> <span class="token operator">-</span>offsetRatio<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">animation</span><span class="token punctuation">(</span>animation<span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-06-23.231bbff8.png" alt></p> <p><strong>4.6 观察自定义动画在图表之间转场时是如何营造波纹效果的。</strong></p> <p><img src="/assets/img/SwiftUI-06-24.7abcad77.gif" alt></p></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/source/swiftui/SwiftUI-tutorial-05.html" class="prev">
+          SwiftUI 官方教程五: 绘制Path和Shape
+        </a></span> <!----></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.645de36e.js" defer></script><script src="/assets/js/4.2257a595.js" defer></script>
+  </body>
+</html>
