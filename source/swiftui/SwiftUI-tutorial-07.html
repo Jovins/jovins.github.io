@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SwiftUI 官方教程七: 组合复杂界面 | Jovins Blog</title>
+    <meta name="description" content="Work Hard, Play Hard">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.fa6af71c.css" as="style"><link rel="preload" href="/assets/js/app.ad555431.js" as="script"><link rel="preload" href="/assets/js/5.7ad9792b.js" as="script"><link rel="prefetch" href="/assets/js/10.5630b3d6.js"><link rel="prefetch" href="/assets/js/100.e06a3107.js"><link rel="prefetch" href="/assets/js/101.4efe755c.js"><link rel="prefetch" href="/assets/js/102.cfe11c2f.js"><link rel="prefetch" href="/assets/js/103.1c9d82fd.js"><link rel="prefetch" href="/assets/js/104.8d2179cc.js"><link rel="prefetch" href="/assets/js/105.b697a993.js"><link rel="prefetch" href="/assets/js/106.0b049953.js"><link rel="prefetch" href="/assets/js/107.74d0e3ad.js"><link rel="prefetch" href="/assets/js/108.79cc93be.js"><link rel="prefetch" href="/assets/js/11.27d47b43.js"><link rel="prefetch" href="/assets/js/12.f48fc1ba.js"><link rel="prefetch" href="/assets/js/13.78b7cc30.js"><link rel="prefetch" href="/assets/js/14.8bff631b.js"><link rel="prefetch" href="/assets/js/15.20627438.js"><link rel="prefetch" href="/assets/js/16.67e48995.js"><link rel="prefetch" href="/assets/js/17.01045f3b.js"><link rel="prefetch" href="/assets/js/18.6afa9f8a.js"><link rel="prefetch" href="/assets/js/19.27b73a3e.js"><link rel="prefetch" href="/assets/js/2.79b17bef.js"><link rel="prefetch" href="/assets/js/20.3e81158e.js"><link rel="prefetch" href="/assets/js/21.b3a681a9.js"><link rel="prefetch" href="/assets/js/22.c4b7039d.js"><link rel="prefetch" href="/assets/js/23.93d71043.js"><link rel="prefetch" href="/assets/js/24.22532f19.js"><link rel="prefetch" href="/assets/js/25.b8ca8c03.js"><link rel="prefetch" href="/assets/js/26.a799dd2f.js"><link rel="prefetch" href="/assets/js/27.c36435c4.js"><link rel="prefetch" href="/assets/js/28.a3ed4ce8.js"><link rel="prefetch" href="/assets/js/29.e38d5359.js"><link rel="prefetch" href="/assets/js/3.7a23852d.js"><link rel="prefetch" href="/assets/js/30.c8bff20f.js"><link rel="prefetch" href="/assets/js/31.2b63ea05.js"><link rel="prefetch" href="/assets/js/32.5eb78af3.js"><link rel="prefetch" href="/assets/js/33.f37eb57b.js"><link rel="prefetch" href="/assets/js/34.c7d3713b.js"><link rel="prefetch" href="/assets/js/35.6d2ab721.js"><link rel="prefetch" href="/assets/js/36.f26d4302.js"><link rel="prefetch" href="/assets/js/37.6619882e.js"><link rel="prefetch" href="/assets/js/38.8fc45332.js"><link rel="prefetch" href="/assets/js/39.1af4045e.js"><link rel="prefetch" href="/assets/js/4.9de6e436.js"><link rel="prefetch" href="/assets/js/40.57d5eaed.js"><link rel="prefetch" href="/assets/js/41.d3d1f7d5.js"><link rel="prefetch" href="/assets/js/42.0edfe03d.js"><link rel="prefetch" href="/assets/js/43.2226e230.js"><link rel="prefetch" href="/assets/js/44.b5da95bb.js"><link rel="prefetch" href="/assets/js/45.6a7a243e.js"><link rel="prefetch" href="/assets/js/46.359ca4c4.js"><link rel="prefetch" href="/assets/js/47.de522185.js"><link rel="prefetch" href="/assets/js/48.d46de4ab.js"><link rel="prefetch" href="/assets/js/49.5a417db8.js"><link rel="prefetch" href="/assets/js/50.726feec1.js"><link rel="prefetch" href="/assets/js/51.e00b51a5.js"><link rel="prefetch" href="/assets/js/52.b08867a3.js"><link rel="prefetch" href="/assets/js/53.b51c6b43.js"><link rel="prefetch" href="/assets/js/54.17d7447a.js"><link rel="prefetch" href="/assets/js/55.cceeea20.js"><link rel="prefetch" href="/assets/js/56.c000a428.js"><link rel="prefetch" href="/assets/js/57.b2d67496.js"><link rel="prefetch" href="/assets/js/58.5410b1e2.js"><link rel="prefetch" href="/assets/js/59.8430d287.js"><link rel="prefetch" href="/assets/js/6.3d9c41ab.js"><link rel="prefetch" href="/assets/js/60.9c80e2db.js"><link rel="prefetch" href="/assets/js/61.6b6dfbbb.js"><link rel="prefetch" href="/assets/js/62.a56c9c18.js"><link rel="prefetch" href="/assets/js/63.3e97184b.js"><link rel="prefetch" href="/assets/js/64.e42a44d5.js"><link rel="prefetch" href="/assets/js/65.1343d703.js"><link rel="prefetch" href="/assets/js/66.905d8d75.js"><link rel="prefetch" href="/assets/js/67.5814750a.js"><link rel="prefetch" href="/assets/js/68.64f1e00b.js"><link rel="prefetch" href="/assets/js/69.b8229c96.js"><link rel="prefetch" href="/assets/js/7.3324267b.js"><link rel="prefetch" href="/assets/js/70.40f58544.js"><link rel="prefetch" href="/assets/js/71.e5de5b46.js"><link rel="prefetch" href="/assets/js/72.a485de3d.js"><link rel="prefetch" href="/assets/js/73.5a60e496.js"><link rel="prefetch" href="/assets/js/74.a67d4e48.js"><link rel="prefetch" href="/assets/js/75.4ba599f2.js"><link rel="prefetch" href="/assets/js/76.d7d2afd5.js"><link rel="prefetch" href="/assets/js/77.5eebb39f.js"><link rel="prefetch" href="/assets/js/78.f3435419.js"><link rel="prefetch" href="/assets/js/79.4812ffbb.js"><link rel="prefetch" href="/assets/js/8.26311239.js"><link rel="prefetch" href="/assets/js/80.dd9718ce.js"><link rel="prefetch" href="/assets/js/81.3e14a311.js"><link rel="prefetch" href="/assets/js/82.36f562fc.js"><link rel="prefetch" href="/assets/js/83.d50c22d4.js"><link rel="prefetch" href="/assets/js/84.0e4e5e21.js"><link rel="prefetch" href="/assets/js/85.5125c3c3.js"><link rel="prefetch" href="/assets/js/86.89407736.js"><link rel="prefetch" href="/assets/js/87.5830787b.js"><link rel="prefetch" href="/assets/js/88.2c8979b8.js"><link rel="prefetch" href="/assets/js/89.db36829e.js"><link rel="prefetch" href="/assets/js/9.2de57e36.js"><link rel="prefetch" href="/assets/js/90.d3819edc.js"><link rel="prefetch" href="/assets/js/91.c30b4ea0.js"><link rel="prefetch" href="/assets/js/92.a9a0a98e.js"><link rel="prefetch" href="/assets/js/93.feccbfe7.js"><link rel="prefetch" href="/assets/js/94.ad57aa83.js"><link rel="prefetch" href="/assets/js/95.824fa7d5.js"><link rel="prefetch" href="/assets/js/96.a897d7a8.js"><link rel="prefetch" href="/assets/js/97.266e9e51.js"><link rel="prefetch" href="/assets/js/98.1e7513d5.js"><link rel="prefetch" href="/assets/js/99.65c0ab26.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.fa6af71c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jovins Blog</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/swiftui/" class="nav-link router-link-active">SwiftUI</a></div><div class="nav-item"><a href="/source/summary/" class="nav-link">Summary</a></div><div class="nav-item"><a href="/source/go/" class="nav-link">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/source/swift/" class="nav-link">Swift</a></div><div class="nav-item"><a href="/source/swiftui/" class="nav-link router-link-active">SwiftUI</a></div><div class="nav-item"><a href="/source/summary/" class="nav-link">Summary</a></div><div class="nav-item"><a href="/source/go/" class="nav-link">Go</a></div><div class="nav-item"><a href="/source/program/" class="nav-link">小程序</a></div><div class="nav-item"><a href="/source/algorithm/" class="nav-link">算法</a></div><div class="nav-item"><a href="/source/git/" class="nav-link">Git</a></div><div class="nav-item"><a href="https://github.com/Jovins" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>SwiftUI 官方教程</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/source/swiftui/" class="sidebar-link">SwiftUI 官方教程一: SwiftUI</a></li><li><a href="/source/swiftui/SwiftUI-tutorial-02.html" class="sidebar-link">SwiftUI官方教程二: 创建和组合视图</a></li><li><a href="/source/swiftui/SwiftUI-tutorial-03.html" class="sidebar-link">SwiftUI 官方教程三: 构建列表与导航</a></li><li><a href="/source/swiftui/SwiftUI-tutorial-04.html" class="sidebar-link">SwiftUI 官方教程四: 处理用户输入</a></li><li><a href="/source/swiftui/SwiftUI-tutorial-05.html" class="sidebar-link">SwiftUI 官方教程五: 绘制Path和Shape</a></li><li><a href="/source/swiftui/SwiftUI-tutorial-06.html" class="sidebar-link">SwiftUI 官方教程六: 动画View与转场</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="swiftui-官方教程七-组合复杂界面"><a href="#swiftui-官方教程七-组合复杂界面" aria-hidden="true" class="header-anchor">#</a> SwiftUI 官方教程七: 组合复杂界面</h1> <blockquote><p><code>Landmarks</code> 的主屏显示了一个滚动的分类列表，每个分类中都有水平滚动的地标标记。通过构建这样的主导航，我们来探究组合 view 是怎样适配不同设备大小和方向的。</p> <p>下载项目文件并按照以下步骤操作，也可以打开已完成的项目自行浏览代码。</p> <ul><li>预计完成时间：20 分钟</li> <li>项目文件：<a href>下载</a></li></ul></blockquote> <h2 id="_1-添加-home-view"><a href="#_1-添加-home-view" aria-hidden="true" class="header-anchor">#</a> 1. 添加 Home View</h2> <p>现在我们已经做好了 <code>Landmarks</code> app 所需的所有 view，是时候给它们一个统一的 home view 了。 home view 不仅包含了所有其他 view，还提供了浏览和显示地标的方法。</p> <p><img src="/assets/img/SwiftUI-07-01.7fed51d2.png" alt></p> <p><strong>1.1 在一个新文件 <code>Home.swift</code> 中创建一个自定义 view <code>CategoryHome</code> 。</strong></p> <blockquote><p>Home.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;Landmarks Content&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#<span class="token keyword">if</span> <span class="token constant">DEBUG</span>
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">CategoryHome</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+#endif
+</code></pre></div><p><img src="/assets/img/SwiftUI-07-02.01ef1f56.png" alt></p> <p><strong>1.2 修改 <code>SceneDelegate</code> ，把显示的地标列表换成 <code>CategoryHome</code> view 。</strong></p> <blockquote><p>SceneDelegate.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+<span class="token keyword">import</span> <span class="token builtin">UIKit</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SceneDelegate</span><span class="token punctuation">:</span> <span class="token builtin">UIResponder</span><span class="token punctuation">,</span> <span class="token builtin">UIWindowSceneDelegate</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">var</span> window<span class="token punctuation">:</span> <span class="token builtin">UIWindow</span><span class="token operator">?</span>
+
+    <span class="token keyword">func</span> <span class="token function">scene</span><span class="token punctuation">(</span><span class="token number">_</span> scene<span class="token punctuation">:</span> <span class="token builtin">UIScene</span><span class="token punctuation">,</span> willConnectTo session<span class="token punctuation">:</span> <span class="token builtin">UISceneSession</span><span class="token punctuation">,</span> options connectionOptions<span class="token punctuation">:</span> <span class="token builtin">UIScene</span><span class="token punctuation">.</span><span class="token builtin">ConnectionOptions</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.</span>
+        <span class="token comment">// If using a storyboard, the `window` property will automatically be initialized and attached to the scene.</span>
+        <span class="token comment">// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).</span>
+
+        <span class="token comment">// Use a UIHostingController as window root view controller</span>
+        <span class="token keyword">let</span> window <span class="token operator">=</span> <span class="token function">UIWindow</span><span class="token punctuation">(</span>frame<span class="token punctuation">:</span> <span class="token builtin">UIScreen</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span>bounds<span class="token punctuation">)</span>
+        window<span class="token punctuation">.</span>rootViewController <span class="token operator">=</span> <span class="token function">UIHostingController</span><span class="token punctuation">(</span>rootView<span class="token punctuation">:</span> <span class="token function">CategoryHome</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">environmentObject</span><span class="token punctuation">(</span><span class="token function">UserData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>window <span class="token operator">=</span> window
+        window<span class="token punctuation">.</span><span class="token function">makeKeyAndVisible</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>现在 home view 成了 <code>Landmarks</code> app 的根，所系它需要一个方式去显示其他 view 。</p> <p><strong>1.3 在 <code>Landmarks</code> 中添加一个 <code>NavigationView</code> 来组织别的 view 。</strong></p> <blockquote><p>Home.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">NavigationView</span> <span class="token punctuation">{</span>
+            <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;Landmarks Content&quot;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#<span class="token keyword">if</span> <span class="token constant">DEBUG</span>
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">CategoryHome</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+#endif
+</code></pre></div><p><img src="/assets/img/SwiftUI-07-03.0673ec36.png" alt></p> <p><strong>1.4 把导航栏设置成 <code>Featured</code> 。</strong></p> <blockquote><p>Home.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">NavigationView</span> <span class="token punctuation">{</span>
+            <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;Landmarks Content&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">navigationBarTitle</span><span class="token punctuation">(</span><span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;Featured&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#<span class="token keyword">if</span> <span class="token constant">DEBUG</span>
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">CategoryHome</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+#endif
+</code></pre></div><p><img src="/assets/img/SwiftUI-07-04.cc62f93b.png" alt></p> <h2 id="_2-创建一个分类列表"><a href="#_2-创建一个分类列表" aria-hidden="true" class="header-anchor">#</a> 2. 创建一个分类列表</h2> <p><code>Landmarks</code> app 以垂直的独立 <code>row</code> 显示所有分类，这给浏览提供了便利。我们可以通过组合垂直和水平 <code>stacks</code> ，并给列表添加滚动来完成此需求。</p> <p><img src="/assets/img/SwiftUI-07-05.60c5ee3d.png" alt></p> <p><strong>2.1 使用 <code>Dictionary</code> 结构的初始化方法 <code>init(grouping:by:)</code> 把地标组合到分类中，输入地标的 <code>category</code> 属性。</strong></p> <p>初始化项目文件给每个地标包含了预设的分类。</p> <blockquote><p>Home.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> categories<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>
+            grouping<span class="token punctuation">:</span> landmarkData<span class="token punctuation">,</span>
+            by<span class="token punctuation">:</span> <span class="token punctuation">{</span> $<span class="token number">0</span><span class="token punctuation">.</span>category<span class="token punctuation">.</span>rawValue <span class="token punctuation">}</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">NavigationView</span> <span class="token punctuation">{</span>
+            <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;Landmarks Content&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">navigationBarTitle</span><span class="token punctuation">(</span><span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;Featured&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#<span class="token keyword">if</span> <span class="token constant">DEBUG</span>
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">CategoryHome</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+#endif
+</code></pre></div><p><strong>2.2 在 <code>Landmarks</code> 中使用 <code>List</code> 来显示分类。</strong></p> <p><code>Landmark.Category</code> 会匹配列表中每一项的 <code>name</code> ，这些项目在其他分类中必须是唯一的，因为它是枚举。</p> <blockquote><p>Home.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> categories<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>
+            grouping<span class="token punctuation">:</span> landmarkData<span class="token punctuation">,</span>
+            by<span class="token punctuation">:</span> <span class="token punctuation">{</span> $<span class="token number">0</span><span class="token punctuation">.</span>category<span class="token punctuation">.</span>rawValue <span class="token punctuation">}</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">NavigationView</span> <span class="token punctuation">{</span>
+            <span class="token builtin">List</span> <span class="token punctuation">{</span>
+                <span class="token function">ForEach</span><span class="token punctuation">(</span>categories<span class="token punctuation">.</span>keys<span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">identified</span><span class="token punctuation">(</span>by<span class="token punctuation">:</span> \<span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> key <span class="token keyword">in</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token punctuation">.</span><span class="token function">navigationBarTitle</span><span class="token punctuation">(</span><span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;Featured&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#<span class="token keyword">if</span> <span class="token constant">DEBUG</span>
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">CategoryHome</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+#endif
+</code></pre></div><p><img src="/assets/img/SwiftUI-07-06.da25e7b5.png" alt></p> <h2 id="_3-给-landmarks-添加-row"><a href="#_3-给-landmarks-添加-row" aria-hidden="true" class="header-anchor">#</a> 3. 给 Landmarks 添加 Row</h2> <p><code>Landmarks</code> 在一个水平滚动的 <code>row</code> 上显示每个分类。添加一个新的 view 类型来表示 <code>row</code> ，然后在这个新 view 中显示该分类所有的地标。</p> <p><img src="/assets/img/SwiftUI-07-07.d498a50b.gif" alt></p> <p><strong>3.1 定义一个新的自定义 view 来保存 <code>row</code> 的内容。</strong></p> <p>这个 view 需要保存显示特定地标分类的信息以及对应的地标。</p> <blockquote><p>CategoryRow.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryRow</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> categoryName<span class="token punctuation">:</span> <span class="token builtin">String</span>
+    <span class="token keyword">var</span> items<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span>
+    
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">Text</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">.</span>categoryName<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#<span class="token keyword">if</span> <span class="token constant">DEBUG</span>
+<span class="token keyword">struct</span> <span class="token builtin">CategoryRow_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">CategoryRow</span><span class="token punctuation">(</span>
+            categoryName<span class="token punctuation">:</span> landmarkData<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>category<span class="token punctuation">.</span>rawValue<span class="token punctuation">,</span>
+            items<span class="token punctuation">:</span> <span class="token function">Array</span><span class="token punctuation">(</span>landmarkData<span class="token punctuation">.</span><span class="token keyword">prefix</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+#endif
+</code></pre></div><p><img src="/assets/img/SwiftUI-07-08.122beb07.png" alt></p> <p><strong>3.2 更新 <code>CategoryRow</code> 的 <code>body</code> ，给新的 <code>row</code> 类型传入分类信息。</strong></p> <blockquote><p>CategoryRow.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryRow</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> categoryName<span class="token punctuation">:</span> <span class="token builtin">String</span>
+    <span class="token keyword">var</span> items<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">var</span> categories<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>
+            grouping<span class="token punctuation">:</span> landmarkData<span class="token punctuation">,</span>
+            by<span class="token punctuation">:</span> <span class="token punctuation">{</span> $<span class="token number">0</span><span class="token punctuation">.</span>category<span class="token punctuation">.</span>rawValue <span class="token punctuation">}</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">NavigationView</span> <span class="token punctuation">{</span>
+            <span class="token builtin">List</span> <span class="token punctuation">{</span>
+                <span class="token function">ForEach</span><span class="token punctuation">(</span>categories<span class="token punctuation">.</span>keys<span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">identified</span><span class="token punctuation">(</span>by<span class="token punctuation">:</span> \<span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> key <span class="token keyword">in</span>
+                    <span class="token function">CategoryRow</span><span class="token punctuation">(</span>categoryName<span class="token punctuation">:</span> key<span class="token punctuation">,</span> items<span class="token punctuation">:</span> <span class="token keyword">self</span><span class="token punctuation">.</span>categories<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token operator">!</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token punctuation">.</span><span class="token function">navigationBarTitle</span><span class="token punctuation">(</span><span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;Featured&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#<span class="token keyword">if</span> <span class="token constant">DEBUG</span>
+<span class="token keyword">struct</span> <span class="token builtin">CategoryRow_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">CategoryHome</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+#endif
+</code></pre></div><p><img src="/assets/img/SwiftUI-07-09.0db3e666.png" alt></p> <p><strong>3.3 在一个 <code>HStack</code> 中显示分类中的地标。</strong></p> <blockquote><p>CategoryRow.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryRow</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> categoryName<span class="token punctuation">:</span> <span class="token builtin">String</span>
+    <span class="token keyword">var</span> items<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span>
+    
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">HStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>top<span class="token punctuation">,</span> spacing<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">ForEach</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">.</span>items<span class="token punctuation">)</span> <span class="token punctuation">{</span> landmark <span class="token keyword">in</span>
+                <span class="token function">Text</span><span class="token punctuation">(</span>landmark<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#<span class="token keyword">if</span> <span class="token constant">DEBUG</span>
+<span class="token keyword">struct</span> <span class="token builtin">CategoryRow_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">CategoryRow</span><span class="token punctuation">(</span>
+            categoryName<span class="token punctuation">:</span> landmarkData<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>category<span class="token punctuation">.</span>rawValue<span class="token punctuation">,</span>
+            items<span class="token punctuation">:</span> <span class="token function">Array</span><span class="token punctuation">(</span>landmarkData<span class="token punctuation">.</span><span class="token keyword">prefix</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+#endif
+</code></pre></div><p><img src="/assets/img/SwiftUI-07-10.f99237dd.png" alt></p> <p><strong>3.4 调用 <code>frame(width:height:)</code> 让 <code>row</code> 的空间大一些，然后把 <code>stack</code> 包装在一个 <code>ScrollView</code> 中。</strong></p> <p>使用很长的数据样本更新预览来确保可以正确滚动。</p> <blockquote><p>CategoryRow.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryRow</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> categoryName<span class="token punctuation">:</span> <span class="token builtin">String</span>
+    <span class="token keyword">var</span> items<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span>
+    
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">Text</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">.</span>categoryName<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">.</span>leading<span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">.</span>top<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+            
+            <span class="token function">ScrollView</span><span class="token punctuation">(</span>showsHorizontalIndicator<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">HStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>top<span class="token punctuation">,</span> spacing<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">ForEach</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">.</span>items<span class="token punctuation">)</span> <span class="token punctuation">{</span> landmark <span class="token keyword">in</span>
+                        <span class="token function">Text</span><span class="token punctuation">(</span>landmark<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>height<span class="token punctuation">:</span> <span class="token number">185</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#<span class="token keyword">if</span> <span class="token constant">DEBUG</span>
+<span class="token keyword">struct</span> <span class="token builtin">CategoryRow_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">CategoryRow</span><span class="token punctuation">(</span>
+            categoryName<span class="token punctuation">:</span> landmarkData<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>category<span class="token punctuation">.</span>rawValue<span class="token punctuation">,</span>
+            items<span class="token punctuation">:</span> <span class="token function">Array</span><span class="token punctuation">(</span>landmarkData<span class="token punctuation">.</span><span class="token keyword">prefix</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+#endif
+</code></pre></div><p><img src="/assets/img/SwiftUI-07-11.1f86a585.png" alt></p> <h2 id="_4-组合-home-view"><a href="#_4-组合-home-view" aria-hidden="true" class="header-anchor">#</a> 4. 组合 Home View</h2> <p>在用户点击一个地标去了解详情之前， <code>Landmarks</code> app 的 home 界面需要显示地标的简易信息。</p> <p>重新使用我们在 <a href="https://github.com/WillieWangWei/SwiftUI-Tutorials/wiki/Creating-and-Combining-Views" target="_blank" rel="noopener noreferrer">创建和组合 view<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 中的 view 来创建类似但更简单的 view 预览，它们用来显示地标分类和特征。</p> <p><img src="/assets/img/SwiftUI-07-12.c971cadf.png" alt></p> <p><strong>4.1 在 <code>CategoryRow</code> 下面创建一个自定义 view <code>CategoryItem</code> ，然后用新 view 替换包含地标名称的 <code>Text</code> 。</strong></p> <blockquote><p>CategoryRow.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryRow</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> categoryName<span class="token punctuation">:</span> <span class="token builtin">String</span>
+    <span class="token keyword">var</span> items<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span>
+    
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">Text</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">.</span>categoryName<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">.</span>leading<span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">.</span>top<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+            
+            <span class="token function">ScrollView</span><span class="token punctuation">(</span>showsHorizontalIndicator<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">HStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>top<span class="token punctuation">,</span> spacing<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">ForEach</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">.</span>items<span class="token punctuation">)</span> <span class="token punctuation">{</span> landmark <span class="token keyword">in</span>
+                        <span class="token function">CategoryItem</span><span class="token punctuation">(</span>landmark<span class="token punctuation">:</span> landmark<span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>height<span class="token punctuation">:</span> <span class="token number">185</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryItem</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> landmark<span class="token punctuation">:</span> <span class="token builtin">Landmark</span>
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            landmark
+                <span class="token punctuation">.</span><span class="token function">image</span><span class="token punctuation">(</span>forSize<span class="token punctuation">:</span> <span class="token number">155</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">cornerRadius</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+            <span class="token function">Text</span><span class="token punctuation">(</span>landmark<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>caption<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">.</span>leading<span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#<span class="token keyword">if</span> <span class="token constant">DEBUG</span>
+<span class="token keyword">struct</span> <span class="token builtin">CategoryRow_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">CategoryRow</span><span class="token punctuation">(</span>
+            categoryName<span class="token punctuation">:</span> landmarkData<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>category<span class="token punctuation">.</span>rawValue<span class="token punctuation">,</span>
+            items<span class="token punctuation">:</span> <span class="token function">Array</span><span class="token punctuation">(</span>landmarkData<span class="token punctuation">.</span><span class="token keyword">prefix</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+#endif
+</code></pre></div><p><img src="/assets/img/SwiftUI-07-13.6abf3268.png" alt></p> <p><strong>4.2 在 <code>Home.swift</code> 中添加一个简单的 view <code>FeaturedLandmarks</code> ，用来显示只有被标记了 <code>isFeatured</code> 的地标。</strong></p> <p>我们会在稍后的教程中把这个 view 转换成一个可交互的轮播。目前，它显示一个缩放并裁剪后的地标特征图片。</p> <blockquote><p>Home.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> categories<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>
+            grouping<span class="token punctuation">:</span> landmarkData<span class="token punctuation">,</span>
+            by<span class="token punctuation">:</span> <span class="token punctuation">{</span> $<span class="token number">0</span><span class="token punctuation">.</span>category<span class="token punctuation">.</span>rawValue <span class="token punctuation">}</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">var</span> featured<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+        landmarkData<span class="token punctuation">.</span><span class="token builtin">filter</span> <span class="token punctuation">{</span> $<span class="token number">0</span><span class="token punctuation">.</span>isFeatured <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">NavigationView</span> <span class="token punctuation">{</span>
+            <span class="token builtin">List</span> <span class="token punctuation">{</span>
+                <span class="token function">FeaturedLandmarks</span><span class="token punctuation">(</span>landmarks<span class="token punctuation">:</span> featured<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">scaledToFill</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>height<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">clipped</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token function">ForEach</span><span class="token punctuation">(</span>categories<span class="token punctuation">.</span>keys<span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">identified</span><span class="token punctuation">(</span>by<span class="token punctuation">:</span> \<span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> key <span class="token keyword">in</span>
+                    <span class="token function">CategoryRow</span><span class="token punctuation">(</span>categoryName<span class="token punctuation">:</span> key<span class="token punctuation">,</span> items<span class="token punctuation">:</span> <span class="token keyword">self</span><span class="token punctuation">.</span>categories<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token operator">!</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token punctuation">.</span><span class="token function">navigationBarTitle</span><span class="token punctuation">(</span><span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;Featured&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">FeaturedLandmarks</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> landmarks<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span>
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        landmarks<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">image</span><span class="token punctuation">(</span>forSize<span class="token punctuation">:</span> <span class="token number">250</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">resizable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#<span class="token keyword">if</span> <span class="token constant">DEBUG</span>
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">CategoryHome</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+#endif
+</code></pre></div><p><img src="/assets/img/SwiftUI-07-14.5a3eb250.png" alt></p> <p><strong>4.3 把地标预览两边的 <code>edge insets</code> 都设置成 <code>zero</code> ，这样内容就可以展开到显示的边缘。</strong></p> <blockquote><p>Home.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> categories<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>
+            grouping<span class="token punctuation">:</span> landmarkData<span class="token punctuation">,</span>
+            by<span class="token punctuation">:</span> <span class="token punctuation">{</span> $<span class="token number">0</span><span class="token punctuation">.</span>category<span class="token punctuation">.</span>rawValue <span class="token punctuation">}</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">var</span> featured<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+        landmarkData<span class="token punctuation">.</span><span class="token builtin">filter</span> <span class="token punctuation">{</span> $<span class="token number">0</span><span class="token punctuation">.</span>isFeatured <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">NavigationView</span> <span class="token punctuation">{</span>
+            <span class="token builtin">List</span> <span class="token punctuation">{</span>
+                <span class="token function">FeaturedLandmarks</span><span class="token punctuation">(</span>landmarks<span class="token punctuation">:</span> featured<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">scaledToFill</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>height<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">clipped</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">listRowInsets</span><span class="token punctuation">(</span><span class="token function">EdgeInsets</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                
+                <span class="token function">ForEach</span><span class="token punctuation">(</span>categories<span class="token punctuation">.</span>keys<span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">identified</span><span class="token punctuation">(</span>by<span class="token punctuation">:</span> \<span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> key <span class="token keyword">in</span>
+                    <span class="token function">CategoryRow</span><span class="token punctuation">(</span>categoryName<span class="token punctuation">:</span> key<span class="token punctuation">,</span> items<span class="token punctuation">:</span> <span class="token keyword">self</span><span class="token punctuation">.</span>categories<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token operator">!</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+                <span class="token punctuation">.</span><span class="token function">listRowInsets</span><span class="token punctuation">(</span><span class="token function">EdgeInsets</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            <span class="token punctuation">.</span><span class="token function">navigationBarTitle</span><span class="token punctuation">(</span><span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;Featured&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">FeaturedLandmarks</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> landmarks<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span>
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        landmarks<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">image</span><span class="token punctuation">(</span>forSize<span class="token punctuation">:</span> <span class="token number">250</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">resizable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#<span class="token keyword">if</span> <span class="token constant">DEBUG</span>
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">CategoryHome</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+#endif
+</code></pre></div><p><img src="/assets/img/SwiftUI-07-16.962fdd75.png" alt></p> <h2 id="_5-在-sections-之间添加导航"><a href="#_5-在-sections-之间添加导航" aria-hidden="true" class="header-anchor">#</a> 5. 在 Sections 之间添加导航</h2> <p>现在，在 home view 中可以看到所有不同分类的地标，用户需要一种方法来访问 app 中的每个部分。使用 <code>navigation</code> 和 <code>presentation</code> API 可以从 <code>home view</code> 中导航到详情 view ，收藏列表和用户的 <code>profile</code> 。</p> <p><img src="/assets/img/SwiftUI-07-17.cd5542da.png" alt></p> <p><strong>5.1 在 <code>CategoryRow.swift</code> 中，把现有的 <code>CategoryItem</code> 包装在一个 <code>NavigationButton</code> 中。</strong></p> <p>分类项本身是按钮的 <code>label</code> ，它的目标是卡片中显示地标的详情 view 。</p> <blockquote><p>CategoryRow.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryRow</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> categoryName<span class="token punctuation">:</span> <span class="token builtin">String</span>
+    <span class="token keyword">var</span> items<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span>
+    
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">Text</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">.</span>categoryName<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">.</span>leading<span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">.</span>top<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+            
+            <span class="token function">ScrollView</span><span class="token punctuation">(</span>showsHorizontalIndicator<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">HStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>top<span class="token punctuation">,</span> spacing<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">ForEach</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">.</span>items<span class="token punctuation">)</span> <span class="token punctuation">{</span> landmark <span class="token keyword">in</span>
+                        <span class="token function">NavigationButton</span><span class="token punctuation">(</span>
+                            destination<span class="token punctuation">:</span> <span class="token function">LandmarkDetail</span><span class="token punctuation">(</span>
+                                landmark<span class="token punctuation">:</span> landmark
+                            <span class="token punctuation">)</span>
+                        <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                            <span class="token function">CategoryItem</span><span class="token punctuation">(</span>landmark<span class="token punctuation">:</span> landmark<span class="token punctuation">)</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>height<span class="token punctuation">:</span> <span class="token number">185</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryItem</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> landmark<span class="token punctuation">:</span> <span class="token builtin">Landmark</span>
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            landmark
+                <span class="token punctuation">.</span><span class="token function">image</span><span class="token punctuation">(</span>forSize<span class="token punctuation">:</span> <span class="token number">155</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">cornerRadius</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+            <span class="token function">Text</span><span class="token punctuation">(</span>landmark<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>caption<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">.</span>leading<span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#<span class="token keyword">if</span> <span class="token constant">DEBUG</span>
+<span class="token keyword">struct</span> <span class="token builtin">CategoryRow_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">CategoryRow</span><span class="token punctuation">(</span>
+            categoryName<span class="token punctuation">:</span> landmarkData<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>category<span class="token punctuation">.</span>rawValue<span class="token punctuation">,</span>
+            items<span class="token punctuation">:</span> <span class="token function">Array</span><span class="token punctuation">(</span>landmarkData<span class="token punctuation">.</span><span class="token keyword">prefix</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+#endif
+</code></pre></div><p><img src="/assets/img/SwiftUI-07-18.b6688d04.png" alt></p> <p><strong>5.2 通过应用 <code>renderingMode(_:)</code> 和 <code>color(_:)</code> 方法改变分类项的导航外观。</strong></p> <p>我们给作为 <code>navigation button</code> 的 <code>label</code> 传递的文字会使用环境的强调色渲染，图像可能会被当做 <code>template image</code> 来渲染。我们可以修改任何一种行为来满足设计。</p> <blockquote><p>CategoryRow.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryRow</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> categoryName<span class="token punctuation">:</span> <span class="token builtin">String</span>
+    <span class="token keyword">var</span> items<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span>
+    
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">Text</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">.</span>categoryName<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>headline<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">.</span>leading<span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">.</span>top<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+            
+            <span class="token function">ScrollView</span><span class="token punctuation">(</span>showsHorizontalIndicator<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">HStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>top<span class="token punctuation">,</span> spacing<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">ForEach</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">.</span>items<span class="token punctuation">)</span> <span class="token punctuation">{</span> landmark <span class="token keyword">in</span>
+                        <span class="token function">NavigationButton</span><span class="token punctuation">(</span>
+                            destination<span class="token punctuation">:</span> <span class="token function">LandmarkDetail</span><span class="token punctuation">(</span>
+                                landmark<span class="token punctuation">:</span> landmark
+                            <span class="token punctuation">)</span>
+                        <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                            <span class="token function">CategoryItem</span><span class="token punctuation">(</span>landmark<span class="token punctuation">:</span> landmark<span class="token punctuation">)</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>height<span class="token punctuation">:</span> <span class="token number">185</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryItem</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> landmark<span class="token punctuation">:</span> <span class="token builtin">Landmark</span>
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">VStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            landmark
+                <span class="token punctuation">.</span><span class="token function">image</span><span class="token punctuation">(</span>forSize<span class="token punctuation">:</span> <span class="token number">155</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">renderingMode</span><span class="token punctuation">(</span><span class="token punctuation">.</span>original<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">cornerRadius</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+            <span class="token function">Text</span><span class="token punctuation">(</span>landmark<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">color</span><span class="token punctuation">(</span><span class="token punctuation">.</span>primary<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>caption<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">.</span>leading<span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#<span class="token keyword">if</span> <span class="token constant">DEBUG</span>
+<span class="token keyword">struct</span> <span class="token builtin">CategoryRow_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">CategoryRow</span><span class="token punctuation">(</span>
+            categoryName<span class="token punctuation">:</span> landmarkData<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>category<span class="token punctuation">.</span>rawValue<span class="token punctuation">,</span>
+            items<span class="token punctuation">:</span> <span class="token function">Array</span><span class="token punctuation">(</span>landmarkData<span class="token punctuation">.</span><span class="token keyword">prefix</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+#endif
+</code></pre></div><p><img src="/assets/img/SwiftUI-07-19.a728fd8b.png" alt></p> <p><strong>5.3 在 <code>Home.swift</code> 中，在 tab bar 中点击 profile icon ，添加一个模态 view 来显示用户的 <code>profile</code> 。</strong></p> <blockquote><p>Home.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> categories<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>
+            grouping<span class="token punctuation">:</span> landmarkData<span class="token punctuation">,</span>
+            by<span class="token punctuation">:</span> <span class="token punctuation">{</span> $<span class="token number">0</span><span class="token punctuation">.</span>category<span class="token punctuation">.</span>rawValue <span class="token punctuation">}</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">var</span> featured<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+        landmarkData<span class="token punctuation">.</span><span class="token builtin">filter</span> <span class="token punctuation">{</span> $<span class="token number">0</span><span class="token punctuation">.</span>isFeatured <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">NavigationView</span> <span class="token punctuation">{</span>
+            <span class="token builtin">List</span> <span class="token punctuation">{</span>
+                <span class="token function">FeaturedLandmarks</span><span class="token punctuation">(</span>landmarks<span class="token punctuation">:</span> featured<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">scaledToFill</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>height<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">clipped</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">listRowInsets</span><span class="token punctuation">(</span><span class="token function">EdgeInsets</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                
+                <span class="token function">ForEach</span><span class="token punctuation">(</span>categories<span class="token punctuation">.</span>keys<span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">identified</span><span class="token punctuation">(</span>by<span class="token punctuation">:</span> \<span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> key <span class="token keyword">in</span>
+                    <span class="token function">CategoryRow</span><span class="token punctuation">(</span>categoryName<span class="token punctuation">:</span> key<span class="token punctuation">,</span> items<span class="token punctuation">:</span> <span class="token keyword">self</span><span class="token punctuation">.</span>categories<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token operator">!</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+                <span class="token punctuation">.</span><span class="token function">listRowInsets</span><span class="token punctuation">(</span><span class="token function">EdgeInsets</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            <span class="token punctuation">.</span><span class="token function">navigationBarTitle</span><span class="token punctuation">(</span><span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;Featured&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">navigationBarItems</span><span class="token punctuation">(</span>trailing<span class="token punctuation">:</span>
+                <span class="token function">PresentationButton</span><span class="token punctuation">(</span>destination<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;User Profile&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Image</span><span class="token punctuation">(</span>systemName<span class="token punctuation">:</span> <span class="token string">&quot;person.crop.circle&quot;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">imageScale</span><span class="token punctuation">(</span><span class="token punctuation">.</span>large<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">accessibility</span><span class="token punctuation">(</span>label<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;User Profile&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">FeaturedLandmarks</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> landmarks<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span>
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        landmarks<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">image</span><span class="token punctuation">(</span>forSize<span class="token punctuation">:</span> <span class="token number">250</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">resizable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#<span class="token keyword">if</span> <span class="token constant">DEBUG</span>
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">CategoryHome</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+#endif
+</code></pre></div><p><img src="/assets/img/SwiftUI-07-21.ea20d7d3.png" alt></p> <p><strong>5.4 添加一个 <code>navigation button</code> 来 home 界面，它指向一个包含所有地标的可过滤列表。</strong></p> <blockquote><p>Home.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> categories<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>
+            grouping<span class="token punctuation">:</span> landmarkData<span class="token punctuation">,</span>
+            by<span class="token punctuation">:</span> <span class="token punctuation">{</span> $<span class="token number">0</span><span class="token punctuation">.</span>category<span class="token punctuation">.</span>rawValue <span class="token punctuation">}</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">var</span> featured<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+        landmarkData<span class="token punctuation">.</span><span class="token builtin">filter</span> <span class="token punctuation">{</span> $<span class="token number">0</span><span class="token punctuation">.</span>isFeatured <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">NavigationView</span> <span class="token punctuation">{</span>
+            <span class="token builtin">List</span> <span class="token punctuation">{</span>
+                <span class="token function">FeaturedLandmarks</span><span class="token punctuation">(</span>landmarks<span class="token punctuation">:</span> featured<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">scaledToFill</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>height<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">clipped</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">listRowInsets</span><span class="token punctuation">(</span><span class="token function">EdgeInsets</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                
+                <span class="token function">ForEach</span><span class="token punctuation">(</span>categories<span class="token punctuation">.</span>keys<span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">identified</span><span class="token punctuation">(</span>by<span class="token punctuation">:</span> \<span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> key <span class="token keyword">in</span>
+                    <span class="token function">CategoryRow</span><span class="token punctuation">(</span>categoryName<span class="token punctuation">:</span> key<span class="token punctuation">,</span> items<span class="token punctuation">:</span> <span class="token keyword">self</span><span class="token punctuation">.</span>categories<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token operator">!</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+                <span class="token punctuation">.</span><span class="token function">listRowInsets</span><span class="token punctuation">(</span><span class="token function">EdgeInsets</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                
+                <span class="token function">NavigationButton</span><span class="token punctuation">(</span>destination<span class="token punctuation">:</span> <span class="token function">LandmarkList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;See All&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token punctuation">.</span><span class="token function">navigationBarTitle</span><span class="token punctuation">(</span><span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;Featured&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">navigationBarItems</span><span class="token punctuation">(</span>trailing<span class="token punctuation">:</span>
+                <span class="token function">PresentationButton</span><span class="token punctuation">(</span>destination<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;User Profile&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Image</span><span class="token punctuation">(</span>systemName<span class="token punctuation">:</span> <span class="token string">&quot;person.crop.circle&quot;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">imageScale</span><span class="token punctuation">(</span><span class="token punctuation">.</span>large<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">accessibility</span><span class="token punctuation">(</span>label<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;User Profile&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">FeaturedLandmarks</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> landmarks<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Landmark</span><span class="token punctuation">]</span>
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        landmarks<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">image</span><span class="token punctuation">(</span>forSize<span class="token punctuation">:</span> <span class="token number">250</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">resizable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#<span class="token keyword">if</span> <span class="token constant">DEBUG</span>
+<span class="token keyword">struct</span> <span class="token builtin">CategoryHome_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token function">CategoryHome</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+#endif
+</code></pre></div><p><img src="/assets/img/SwiftUI-07-22.0a40ae6a.png" alt></p> <p><strong>5.5 在 <code>LandmarkList.swift</code> 中，移除包装地标列表的 <code>NavigationView</code> ，并且把它添加到预览中。</strong></p> <p>在 <code>app</code> 的上下文中， <code>LandmarkList</code> 会始终显示在 <code>Home.swift</code> 声明的导航 view 上。</p> <blockquote><p>LandmarkList.swift</p></blockquote> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">import</span> <span class="token builtin">SwiftUI</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">LandmarkList</span><span class="token punctuation">:</span> <span class="token builtin">View</span> <span class="token punctuation">{</span>
+    @<span class="token builtin">EnvironmentObject</span> <span class="token keyword">var</span> userData<span class="token punctuation">:</span> <span class="token builtin">UserData</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+
+        <span class="token builtin">List</span> <span class="token punctuation">{</span>
+            <span class="token function">Toggle</span><span class="token punctuation">(</span>isOn<span class="token punctuation">:</span> $userData<span class="token punctuation">.</span>showFavoritesOnly<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;Favorites only&quot;</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token function">ForEach</span><span class="token punctuation">(</span>userData<span class="token punctuation">.</span>landmarks<span class="token punctuation">)</span> <span class="token punctuation">{</span> landmark <span class="token keyword">in</span>
+                <span class="token keyword">if</span> <span class="token operator">!</span><span class="token keyword">self</span><span class="token punctuation">.</span>userData<span class="token punctuation">.</span>showFavoritesOnly <span class="token operator">||</span> landmark<span class="token punctuation">.</span>isFavorite <span class="token punctuation">{</span>
+                    <span class="token function">NavigationButton</span><span class="token punctuation">(</span>destination<span class="token punctuation">:</span> <span class="token function">LandmarkDetail</span><span class="token punctuation">(</span>landmark<span class="token punctuation">:</span> landmark<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token function">LandmarkRow</span><span class="token punctuation">(</span>landmark<span class="token punctuation">:</span> landmark<span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token punctuation">.</span><span class="token function">navigationBarTitle</span><span class="token punctuation">(</span><span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">&quot;Landmarks&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">LandmarkList_Previews</span><span class="token punctuation">:</span> <span class="token builtin">PreviewProvider</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> previews<span class="token punctuation">:</span> some <span class="token builtin">View</span> <span class="token punctuation">{</span>
+        <span class="token builtin">NavigationView</span> <span class="token punctuation">{</span>
+            <span class="token function">LandmarkList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">environmentObject</span><span class="token punctuation">(</span><span class="token function">UserData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/SwiftUI-07-23.456c6aa6.png" alt></p></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.ad555431.js" defer></script><script src="/assets/js/5.7ad9792b.js" defer></script>
+  </body>
+</html>
